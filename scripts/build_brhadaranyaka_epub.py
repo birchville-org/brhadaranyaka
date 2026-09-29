@@ -9,7 +9,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT_DIR = ROOT / "data" / "output" / "brhadaranyaka_1_4"
+OUT_DIR = ROOT / "data" / "output"
 BOOKS_DIR = ROOT / "data" / "output" / "books" / "brhadaranyaka_1_4"
 MASTER_JSON = OUT_DIR / "brhadaranyaka_1_4_master.json"
 

@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 """
 AlexandriaSandwich — Generates QA Viewer & Editor for Bṛhadāraṇyaka-Upaniṣad I.4
-Implements the QA Viewer Pattern (Global Web Editor Standard):
+Implements the QA Viewer Pattern (Global Web Editor Standard) + Interactive Word-Click Popover:
 1. Split-Pane Layout (Preview left, editable source right)
 2. Local Storage First (File System Access API + localStorage fallback)
 3. Snippet Toolbar (IAST diacritics, Devanagari marks, philological brackets)
 4. Silent Auto-Repair on Save (Auto-repairs syntax/punctuation silently, save button blinks yellow)
+5. Interactive Word-Click Popover for detailed grammatical analysis (Padapāṭha, Lemma, POS, Morph, Gloss)
 """
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-OUT_DIR = ROOT / "data" / "output" / "brhadaranyaka_1_4"
+ROOT = Path("/Volumes/SanDisk1TB/proj/brhadaranyaka")
+OUT_DIR = ROOT / "data" / "output"
 MASTER_JSON = OUT_DIR / "brhadaranyaka_1_4_master.json"
-VIEWER_HTML = OUT_DIR / "viewer.html"
+VIEWER_HTML = ROOT / "viewer.html"
 
 
 def generate_viewer() -> None:
@@ -40,6 +41,8 @@ def generate_viewer() -> None:
     --primary-light: #fef2f2;
     --accent: #2563eb;
     --accent-light: #eff6ff;
+    --gold: #d97706;
+    --gold-light: #fef3c7;
     --warning: #f59e0b;
     --success: #10b981;
     --radius: 6px;
@@ -256,6 +259,7 @@ header.app-header {{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }}
 
 .pane-header {{
@@ -338,11 +342,179 @@ header.app-header {{
 
 .prev-iast {{
     font-family: var(--font-serif);
-    font-size: 14px;
-    font-style: italic;
-    color: #475569;
-    line-height: 1.55;
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.7;
     margin-bottom: 16px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}}
+
+.iast-hint {{
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}}
+
+/* Interactive Word Tokens */
+.iast-token-interactive {{
+    cursor: pointer;
+    font-style: italic;
+    padding: 1px 3px;
+    margin: 0 1px;
+    border-radius: 3px;
+    border-bottom: 1.5px dotted var(--primary);
+    transition: all 0.15s ease;
+    display: inline-block;
+}}
+.iast-token-interactive:hover {{
+    background: var(--gold-light);
+    color: #b45309;
+    border-bottom-color: #b45309;
+}}
+.iast-token-interactive.active {{
+    background: #fef3c7;
+    color: #92400e;
+    font-weight: 600;
+    border-bottom: 2px solid #b45309;
+}}
+
+/* Floating Grammar Popover */
+.grammar-popover {{
+    position: absolute;
+    z-index: 1000;
+    width: 320px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    display: none;
+    animation: popoverFadeIn 0.15s ease-out;
+}}
+
+@keyframes popoverFadeIn {{
+    from {{ opacity: 0; transform: translateY(-4px); }}
+    to {{ opacity: 1; transform: translateY(0); }}
+}}
+
+.popover-header {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}}
+
+.popover-token-title {{
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--primary);
+}}
+
+.popover-close-btn {{
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 2px 4px;
+}}
+.popover-close-btn:hover {{
+    color: #0f172a;
+}}
+
+.popover-sandhi-bar {{
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    color: #475569;
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+}}
+.popover-sandhi-label {{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 9.5px;
+    color: var(--text-muted);
+    margin-right: 4px;
+}}
+
+.popover-words-list {{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}}
+
+.popover-word-entry {{
+    padding: 8px 10px;
+    background: #f8fafc;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+}}
+
+.popover-word-head {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}}
+
+.popover-word-form {{
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+}}
+
+.popover-word-pos {{
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}}
+
+.popover-word-lemma {{
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 4px;
+}}
+.popover-word-lemma-val {{
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: #0f172a;
+    font-weight: 600;
+}}
+
+.popover-word-morph {{
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 3px;
+}}
+
+.popover-word-gloss {{
+    font-family: var(--font-serif);
+    font-size: 12.5px;
+    color: #8b1e22;
+    font-style: italic;
 }}
 
 .prev-trans-block {{
@@ -520,6 +692,8 @@ header.app-header {{
         <span class="app-badge">QA Viewer</span>
         <span class="app-title">Bṛhadāraṇyaka-Upaniṣad I.4</span>
         <span class="app-subtitle">— Synoptischer Text & Stellenkommentar (31 Abschnitte)</span>
+        <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 12px; margin-left: 10px;">← Startseite</a>
+        <a href="synopsis.html" style="color: #94a3b8; text-decoration: none; font-size: 12px; margin-left: 6px;">📖 Lesefassung</a>
     </div>
 
     <div class="app-controls">
@@ -543,7 +717,7 @@ header.app-header {{
     <!-- Main Split-Pane Workspace -->
     <main class="workspace">
         <!-- Pane 1: Preview (Left) -->
-        <section class="preview-pane">
+        <section class="preview-pane" id="previewPane">
             <div class="pane-header">
                 <div class="pane-title">
                     <span>👁 Vorschau</span>
@@ -556,6 +730,19 @@ header.app-header {{
                 </div>
             </div>
             <div id="previewBody" class="preview-body"></div>
+
+            <!-- Floating Grammar Popover Container -->
+            <div id="grammarPopover" class="grammar-popover">
+                <div class="popover-header">
+                    <span id="popoverTitle" class="popover-token-title">Token</span>
+                    <button class="popover-close-btn" onclick="hideGrammarPopover()">✕</button>
+                </div>
+                <div id="popoverSandhiBar" class="popover-sandhi-bar">
+                    <span class="popover-sandhi-label">Padapāṭha:</span>
+                    <span id="popoverSandhiVal">...</span>
+                </div>
+                <div id="popoverWordsList" class="popover-words-list"></div>
+            </div>
         </section>
 
         <!-- Pane 2: Editable Source (Right) -->
@@ -636,7 +823,6 @@ let fileHandle = null;
 
 // Initialize
 window.addEventListener('DOMContentLoaded', () => {{
-    // Check localStorage first
     const cached = localStorage.getItem('as_bau_1_4_data');
     if (cached) {{
         try {{
@@ -645,6 +831,20 @@ window.addEventListener('DOMContentLoaded', () => {{
     }}
     renderVerseList();
     selectVerse(0);
+
+    // Close popover when clicking elsewhere in preview
+    document.addEventListener('click', (e) => {{
+        const pop = document.getElementById('grammarPopover');
+        if (pop && pop.style.display === 'block') {{
+            if (!pop.contains(e.target) && !e.target.classList.contains('iast-token-interactive')) {{
+                hideGrammarPopover();
+            }}
+        }}
+    }});
+    // Close on escape
+    document.addEventListener('keydown', (e) => {{
+        if (e.key === 'Escape') hideGrammarPopover();
+    }});
 }});
 
 function renderVerseList() {{
@@ -653,9 +853,10 @@ function renderVerseList() {{
     MASTER_DATA.sections.forEach((sec, idx) => {{
         const li = document.createElement('li');
         li.className = 'verse-item' + (idx === activeIndex ? ' active' : '');
+        const hasGrammar = sec.grammar_analysis && sec.grammar_analysis.length > 0;
         li.innerHTML = `
             <span>BĀU ${{sec.canonical_id}}</span>
-            <span class="verse-item-tag">${{sec.commentary_slaje.length ? '📝 ' + sec.commentary_slaje.length : ''}}</span>
+            <span class="verse-item-tag">${{hasGrammar ? '✨ ' + sec.grammar_analysis.length : ''}}</span>
         `;
         li.onclick = () => selectVerse(idx);
         listEl.appendChild(li);
@@ -664,20 +865,18 @@ function renderVerseList() {{
 }}
 
 function selectVerse(idx) {{
-    // Save current values before switching
     commitCurrentFormToMemory();
+    hideGrammarPopover();
 
     activeIndex = idx;
     const sec = MASTER_DATA.sections[idx];
 
-    // Update list selection
     document.querySelectorAll('.verse-item').forEach((el, i) => {{
         el.classList.toggle('active', i === idx);
     }});
 
     document.getElementById('activeVerseTitle').textContent = sec.title;
 
-    // Fill form fields
     document.getElementById('editDeva').value = sec.sanskrit_devanagari || '';
     document.getElementById('editIast').value = sec.sanskrit_iast || '';
     document.getElementById('editSlaje').value = sec.translation_slaje || '';
@@ -706,9 +905,93 @@ function onFieldInput() {{
 
 function setPreviewTab(tab, btn) {{
     activeTab = tab;
+    hideGrammarPopover();
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderPreview();
+}}
+
+function renderInteractiveIast(sec) {{
+    if (!sec.grammar_analysis || sec.grammar_analysis.length === 0) {{
+        return escapeHtml(sec.sanskrit_iast || '');
+    }}
+
+    return sec.grammar_analysis.map((t, idx) => {{
+        const tokText = escapeHtml(t.token || '');
+        if (tokText === '|' || tokText === '||') {{
+            return `<span style="color:#94a3b8;font-style:normal;margin:0 2px;">${{tokText}}</span>`;
+        }}
+        return `<span class="iast-token-interactive" data-token-idx="${{idx}}" onclick="showGrammarPopover(event, ${{idx}})">${{tokText}}</span>`;
+    }}).join(' ');
+}}
+
+function showGrammarPopover(event, tokenIdx) {{
+    event.stopPropagation();
+    const sec = MASTER_DATA.sections[activeIndex];
+    if (!sec.grammar_analysis || !sec.grammar_analysis[tokenIdx]) return;
+
+    const tokenData = sec.grammar_analysis[tokenIdx];
+    const targetEl = event.currentTarget;
+    const pop = document.getElementById('grammarPopover');
+    const pane = document.getElementById('previewPane');
+
+    // Remove active state on other tokens
+    document.querySelectorAll('.iast-token-interactive').forEach(el => el.classList.remove('active'));
+    targetEl.classList.add('active');
+
+    // Fill content
+    document.getElementById('popoverTitle').textContent = tokenData.token || '';
+    document.getElementById('popoverSandhiVal').textContent = tokenData.sandhi || tokenData.token || '';
+
+    const listEl = document.getElementById('popoverWordsList');
+    listEl.innerHTML = '';
+    const words = tokenData.words || [];
+
+    if (words.length === 0) {{
+        listEl.innerHTML = '<div style="color:#64748b;font-size:11px;">Keine morphologische Zerlegung hinterlegt.</div>';
+    }} else {{
+        words.forEach(w => {{
+            const div = document.createElement('div');
+            div.className = 'popover-word-entry';
+            div.innerHTML = `
+                <div class="popover-word-head">
+                    <span class="popover-word-form">${{escapeHtml(w.form || '')}}</span>
+                    <span class="popover-word-pos">${{escapeHtml(w.pos || '')}}</span>
+                </div>
+                <div class="popover-word-lemma">
+                    Stamm/Wurzel: <span class="popover-word-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                </div>
+                <div class="popover-word-morph">${{escapeHtml(w.morph || '')}}</div>
+                <div class="popover-word-gloss">»${{escapeHtml(w.gloss || '')}}«</div>
+            `;
+            listEl.appendChild(div);
+        }});
+    }}
+
+    // Position relative to previewPane
+    pop.style.display = 'block';
+    const targetRect = targetEl.getBoundingClientRect();
+    const paneRect = pane.getBoundingClientRect();
+
+    let left = targetRect.left - paneRect.left;
+    let top = targetRect.bottom - paneRect.top + 6;
+
+    // Boundary protection
+    if (left + 330 > paneRect.width) {{
+        left = Math.max(10, paneRect.width - 340);
+    }}
+    if (top + pop.offsetHeight > paneRect.height) {{
+        top = Math.max(10, targetRect.top - paneRect.top - pop.offsetHeight - 6);
+    }}
+
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+}}
+
+function hideGrammarPopover() {{
+    const pop = document.getElementById('grammarPopover');
+    if (pop) pop.style.display = 'none';
+    document.querySelectorAll('.iast-token-interactive').forEach(el => el.classList.remove('active'));
 }}
 
 function renderPreview() {{
@@ -730,12 +1013,18 @@ function renderPreview() {{
         `;
     }}
 
+    const iastHtml = renderInteractiveIast(sec);
+
     if (activeTab === 'synopsis') {{
         previewEl.innerHTML = `
             <div class="preview-card">
                 <span class="prev-badge">BĀU ${{sec.canonical_id}}</span>
                 <div class="prev-deva">${{escapeHtml(sec.sanskrit_devanagari)}}</div>
-                <div class="prev-iast">${{escapeHtml(sec.sanskrit_iast)}}</div>
+                
+                <div class="prev-iast">
+                    <span class="iast-hint">💡 Klick auf ein Wort öffnet die grammatische Analyse:</span>
+                    ${{iastHtml}}
+                </div>
 
                 <div class="prev-trans-block slaje">
                     <div class="prev-trans-label">Walter Slaje (2009) — Ursubjekt</div>
@@ -803,18 +1092,14 @@ function insertSnippet(before, after = '') {{
 function silentAutoRepairAndSave() {{
     commitCurrentFormToMemory();
 
-    // Auto-Repair Logic across all sections
     MASTER_DATA.sections.forEach(sec => {{
-        // 1. Normalize spaces (NBSP -> standard space)
         if (sec.sanskrit_iast) {{
             sec.sanskrit_iast = sec.sanskrit_iast.replace(/\\u00a0/g, ' ').replace(/\\s+/g, ' ').trim();
         }}
         if (sec.sanskrit_devanagari) {{
             sec.sanskrit_devanagari = sec.sanskrit_devanagari.replace(/\\u00a0/g, ' ').replace(/\\s+/g, ' ').trim();
-            // Ensure proper danda spacing
             sec.sanskrit_devanagari = sec.sanskrit_devanagari.replace(/\\s*।\\s*/g, ' । ').replace(/\\s*॥\\s*/g, ' ॥ ').trim();
         }}
-        // 2. Clean quotation marks and brackets in German translations
         if (sec.translation_slaje) {{
             sec.translation_slaje = sec.translation_slaje.replace(/\\u00a0/g, ' ').replace(/\\s+/g, ' ').trim();
         }}
@@ -823,21 +1108,17 @@ function silentAutoRepairAndSave() {{
         }}
     }});
 
-    // Update active form with repaired values
     selectVerse(activeIndex);
 
-    // Save to LocalStorage first
     localStorage.setItem('as_bau_1_4_data', JSON.stringify(MASTER_DATA));
 
-    // Save via File System Access API if handle available
     if (fileHandle) {{
         writeToHandle(fileHandle, JSON.stringify(MASTER_DATA, null, 2));
     }}
 
-    // Subtle Visual Feedback: Save Button Blinks Yellow Briefly
     const saveBtn = document.getElementById('btnSave');
     saveBtn.classList.remove('btn-save-repair');
-    void saveBtn.offsetWidth; // Trigger reflow
+    void saveBtn.offsetWidth;
     saveBtn.classList.add('btn-save-repair');
 
     const statusEl = document.getElementById('saveStatus');
@@ -847,7 +1128,7 @@ function silentAutoRepairAndSave() {{
     }}, 2000);
 }}
 
-/* Local Storage First & File System Access API (Requirement 2) */
+/* Local Storage First & File System Access API */
 async function openLocalFile() {{
     try {{
         if ('showOpenFilePicker' in window) {{

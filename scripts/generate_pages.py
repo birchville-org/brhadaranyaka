@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 AlexandriaSandwich / Bṛhadāraṇyaka — GitHub Pages Website Generator
-Builds a showcase web experience for GitHub Pages:
-1. index.html (Rich Aesthetics Landing Page + Interactive Synoptic Explorer)
-2. synopsis.html (Full 31-verse reading edition with top navigation)
-3. Updates viewer.html with global navigation links
+Builds a showcase web experience with interactive Word-Click Popover for grammar analysis:
+1. index.html (Landing Page + Interactive Explorer with Word-by-Word Grammatical Glossing)
+2. synopsis.html (Full 31-verse reading edition with navigation)
+3. Copies viewer.html to data/output/viewer.html for parity
 """
 from __future__ import annotations
 
@@ -17,7 +17,6 @@ DATA_FILE = ROOT / "data" / "output" / "brhadaranyaka_1_4_master.json"
 
 def build_index_html(data: dict) -> str:
     work = data["work"]
-    sections = data["sections"]
     data_json_str = json.dumps(data, ensure_ascii=False)
 
     return f"""<!DOCTYPE html>
@@ -324,6 +323,7 @@ section.explorer {{
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem 5rem 2rem;
+    position: relative;
 }}
 
 .section-header {{
@@ -437,15 +437,180 @@ section.explorer {{
     margin-bottom: 0.75rem;
 }}
 
-.verse-iast {{
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
-    font-style: italic;
-    color: #cbd5e1;
-    line-height: 1.55;
+.verse-iast-container {{
     margin-bottom: 1.5rem;
     padding-bottom: 1.25rem;
     border-bottom: 1px dashed rgba(255,255,255,0.08);
+}}
+
+.iast-hint-banner {{
+    font-size: 0.75rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}}
+
+.verse-iast-tokens {{
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+}}
+
+/* Clickable Word Token */
+.iast-word-token {{
+    cursor: pointer;
+    font-style: italic;
+    padding: 1px 4px;
+    margin: 0 1px;
+    border-radius: 4px;
+    border-bottom: 1.5px dotted var(--primary-light);
+    transition: var(--transition);
+    display: inline-block;
+}}
+.iast-word-token:hover {{
+    background: rgba(201, 59, 59, 0.2);
+    color: #ffffff;
+    border-bottom-color: var(--gold-light);
+}}
+.iast-word-token.active {{
+    background: rgba(217, 119, 6, 0.3);
+    color: #fff;
+    border-bottom: 2px solid var(--gold-light);
+}}
+
+/* Floating Popover */
+.interactive-popover {{
+    position: fixed;
+    z-index: 9999;
+    width: 320px;
+    background: rgba(19, 27, 42, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    display: none;
+    animation: popoverFadeIn 0.15s ease-out;
+}}
+
+@keyframes popoverFadeIn {{
+    from {{ opacity: 0; transform: translateY(-4px); }}
+    to {{ opacity: 1; transform: translateY(0); }}
+}}
+
+.pop-head {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}}
+
+.pop-title {{
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--primary-light);
+}}
+
+.pop-close {{
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 1.1rem;
+}}
+.pop-close:hover {{
+    color: #fff;
+}}
+
+.pop-sandhi {{
+    background: rgba(255,255,255,0.04);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-family: var(--font-serif);
+}}
+.pop-sandhi-label {{
+    color: var(--gold-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin-right: 4px;
+}}
+
+.pop-words {{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}}
+
+.pop-word-card {{
+    background: rgba(11, 15, 23, 0.6);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    padding: 8px 10px;
+}}
+
+.pop-word-top {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}}
+
+.pop-word-form {{
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}}
+
+.pop-word-pos {{
+    background: rgba(37, 99, 235, 0.2);
+    color: #93c5fd;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}}
+
+.pop-word-lemma {{
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}}
+.pop-word-lemma-val {{
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 600;
+}}
+
+.pop-word-morph {{
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 3px;
+}}
+
+.pop-word-gloss {{
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: var(--primary-light);
+    font-style: italic;
 }}
 
 .verse-synopsis-columns {{
@@ -634,8 +799,9 @@ footer.global-footer {{
     <div class="hero-subtitle">Das Ursubjekt (ātman) & der altindische Schöpfungsmythos</div>
     <p class="hero-desc">
         Vollständige philologische Gegenüberstellung von 31 kanonischen Textabschnitten:
-        Kanonischer Sanskrit-Urtext (Devanagari & IAST), Walter Slajes moderne Rekonstruktion (2009), 
-        Otto von Böhtlingks historische Erstausgabe (1889) und der 36-teilige Stellenkommentar.
+        Kanonischer Sanskrit-Urtext (Devanagari & IAST mit interaktiver Wortgrammatik), 
+        Walter Slajes moderne Rekonstruktion (2009), Otto von Böhtlingks historische Erstausgabe (1889) 
+        und der 36-teilige Stellenkommentar.
     </p>
 
     <div class="sanskrit-quote-card">
@@ -665,7 +831,7 @@ footer.global-footer {{
     <div class="section-header">
         <div class="section-title-group">
             <h2>Kanonische Synopse (31 Abschnitte)</h2>
-            <p>Vergleichende Lektüre von Devanagari, IAST, Slaje (2009) und Böhtlingk (1889).</p>
+            <p>Vergleichende Lektüre mit interaktivem Wort-Popover: Klicke auf ein IAST-Wort zur grammatischen Analyse.</p>
         </div>
         <div class="search-box">
             <span class="search-icon">🔍</span>
@@ -674,6 +840,19 @@ footer.global-footer {{
     </div>
 
     <div id="versesGrid" class="verses-grid"></div>
+
+    <!-- Floating Global Grammar Popover -->
+    <div id="globalGrammarPopover" class="interactive-popover">
+        <div class="pop-head">
+            <span id="popTitle" class="pop-title">Token</span>
+            <button class="pop-close" onclick="hideGlobalPopover()">✕</button>
+        </div>
+        <div id="popSandhiBar" class="pop-sandhi">
+            <span class="pop-sandhi-label">Padapāṭha:</span>
+            <span id="popSandhiVal">...</span>
+        </div>
+        <div id="popWordsList" class="pop-words"></div>
+    </div>
 </section>
 
 <section id="artifacts" class="artifacts">
@@ -689,7 +868,7 @@ footer.global-footer {{
             <div>
                 <div class="artifact-type">Web Application</div>
                 <div class="artifact-name">Interaktiver QA-Viewer</div>
-                <div class="artifact-desc">Autarker Split-Pane Web-Editor mit File System Access API, Snippet-Toolbar und Silent Auto-Repair on Save.</div>
+                <div class="artifact-desc">Autarker Split-Pane Web-Editor mit File System Access API, Snippet-Toolbar, Silent Auto-Repair und Wortgrammatik-Popover.</div>
             </div>
             <span class="artifact-link-action">Viewer starten →</span>
         </a>
@@ -743,7 +922,7 @@ footer.global-footer {{
             <div>
                 <div class="artifact-type">Single Source of Truth</div>
                 <div class="artifact-name">Master JSON (AST)</div>
-                <div class="artifact-desc">Vollständiger strukturierter Datenbaum aller 31 Verse, Varianten und 36 philologischen Kommentare.</div>
+                <div class="artifact-desc">Vollständiger strukturierter Datenbaum aller 31 Verse, 1.087 grammatischen Tokens und 36 philologischen Kommentare.</div>
             </div>
             <span class="artifact-link-action">JSON betrachten →</span>
         </a>
@@ -771,6 +950,95 @@ footer.global-footer {{
 <script>
 const DATA = {data_json_str};
 
+function renderInteractiveIast(sec, secIdx) {{
+    if (!sec.grammar_analysis || sec.grammar_analysis.length === 0) {{
+        return escapeHtml(sec.sanskrit_iast || '');
+    }}
+
+    return sec.grammar_analysis.map((t, tIdx) => {{
+        const tokText = escapeHtml(t.token || '');
+        if (tokText === '|' || tokText === '||') {{
+            return `<span style="color:#64748b;font-style:normal;margin:0 3px;">${{tokText}}</span>`;
+        }}
+        return `<span class="iast-word-token" data-sec-idx="${{secIdx}}" data-token-idx="${{tIdx}}" onclick="showPopover(event, ${{secIdx}}, ${{tIdx}})">${{tokText}}</span>`;
+    }}).join(' ');
+}}
+
+function showPopover(event, secIdx, tokenIdx) {{
+    event.stopPropagation();
+    const sec = DATA.sections[secIdx];
+    if (!sec || !sec.grammar_analysis || !sec.grammar_analysis[tokenIdx]) return;
+
+    const tokenData = sec.grammar_analysis[tokenIdx];
+    const targetEl = event.currentTarget;
+    const pop = document.getElementById('globalGrammarPopover');
+
+    document.querySelectorAll('.iast-word-token').forEach(el => el.classList.remove('active'));
+    targetEl.classList.add('active');
+
+    document.getElementById('popTitle').textContent = tokenData.token || '';
+    document.getElementById('popSandhiVal').textContent = tokenData.sandhi || tokenData.token || '';
+
+    const listEl = document.getElementById('popWordsList');
+    listEl.innerHTML = '';
+    const words = tokenData.words || [];
+
+    if (words.length === 0) {{
+        listEl.innerHTML = '<div style="color:#94a3b8;font-size:0.8rem;">Keine morphologische Zerlegung hinterlegt.</div>';
+    }} else {{
+        words.forEach(w => {{
+            const card = document.createElement('div');
+            card.className = 'pop-word-card';
+            card.innerHTML = `
+                <div class="pop-word-top">
+                    <span class="pop-word-form">${{escapeHtml(w.form || '')}}</span>
+                    <span class="pop-word-pos">${{escapeHtml(w.pos || '')}}</span>
+                </div>
+                <div class="pop-word-lemma">
+                    Stamm/Wurzel: <span class="pop-word-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                </div>
+                <div class="pop-word-morph">${{escapeHtml(w.morph || '')}}</div>
+                <div class="pop-word-gloss">»${{escapeHtml(w.gloss || '')}}«</div>
+            `;
+            listEl.appendChild(card);
+        }});
+    }}
+
+    pop.style.display = 'block';
+    const rect = targetEl.getBoundingClientRect();
+
+    let left = rect.left + window.scrollX;
+    let top = rect.bottom + window.scrollY + 6;
+
+    if (left + 330 > window.innerWidth) {{
+        left = Math.max(10, window.innerWidth - 340);
+    }}
+    if (rect.bottom + pop.offsetHeight > window.innerHeight) {{
+        top = Math.max(10, rect.top + window.scrollY - pop.offsetHeight - 6);
+    }}
+
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+}}
+
+function hideGlobalPopover() {{
+    const pop = document.getElementById('globalGrammarPopover');
+    if (pop) pop.style.display = 'none';
+    document.querySelectorAll('.iast-word-token').forEach(el => el.classList.remove('active'));
+}}
+
+document.addEventListener('click', (e) => {{
+    const pop = document.getElementById('globalGrammarPopover');
+    if (pop && pop.style.display === 'block') {{
+        if (!pop.contains(e.target) && !e.target.classList.contains('iast-word-token')) {{
+            hideGlobalPopover();
+        }}
+    }}
+}});
+document.addEventListener('keydown', (e) => {{
+    if (e.key === 'Escape') hideGlobalPopover();
+}});
+
 function renderVerses(list) {{
     const container = document.getElementById('versesGrid');
     if (!list || list.length === 0) {{
@@ -779,6 +1047,7 @@ function renderVerses(list) {{
     }}
 
     container.innerHTML = list.map(sec => {{
+        const secIdx = DATA.sections.findIndex(s => s.verse_num === sec.verse_num);
         let commHtml = '';
         if (sec.commentary_slaje && sec.commentary_slaje.length > 0) {{
             commHtml = `
@@ -794,6 +1063,8 @@ function renderVerses(list) {{
             `;
         }}
 
+        const iastHtml = renderInteractiveIast(sec, secIdx);
+
         return `
             <article class="verse-card" id="v-${{sec.verse_num}}">
                 <div class="verse-card-header">
@@ -802,7 +1073,11 @@ function renderVerses(list) {{
                 </div>
 
                 <div class="verse-deva">${{escapeHtml(sec.sanskrit_devanagari || '')}}</div>
-                <div class="verse-iast">${{escapeHtml(sec.sanskrit_iast || '')}}</div>
+                
+                <div class="verse-iast-container">
+                    <div class="iast-hint-banner">💡 Klick auf ein Wort öffnet die grammatische Analyse:</div>
+                    <div class="verse-iast-tokens">${{iastHtml}}</div>
+                </div>
 
                 <div class="verse-synopsis-columns">
                     <div class="trans-panel slaje">
@@ -843,7 +1118,17 @@ function filterVerses() {{
         const inComm = (sec.commentary_slaje || []).some(c => 
             (c.lemma || '').toLowerCase().includes(q) || (c.text || '').toLowerCase().includes(q)
         );
-        return inDeva || inIast || inSlaje || inBoht || inComm;
+        const inGrammar = (sec.grammar_analysis || []).some(t =>
+            (t.token || '').toLowerCase().includes(q) ||
+            (t.sandhi || '').toLowerCase().includes(q) ||
+            (t.words || []).some(w =>
+                (w.form || '').toLowerCase().includes(q) ||
+                (w.lemma || '').toLowerCase().includes(q) ||
+                (w.gloss || '').toLowerCase().includes(q) ||
+                (w.morph || '').toLowerCase().includes(q)
+            )
+        );
+        return inDeva || inIast || inSlaje || inBoht || inComm || inGrammar;
     }});
 
     renderVerses(filtered);
@@ -868,11 +1153,9 @@ window.addEventListener('DOMContentLoaded', () => {{
 
 
 def build_synopsis_html(data: dict) -> str:
-    # Load the base synopsis generated earlier
     src = ROOT / "data" / "output" / "brhadaranyaka_1_4_synopsis.html"
     content = src.read_text(encoding="utf-8")
 
-    # Add a top sticky navigation bar to return to index.html or viewer.html
     nav_bar = """
 <div style="position: sticky; top: 0; z-index: 1000; background: #1e293b; color: #fff; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; font-family: -apple-system, sans-serif; font-size: 13px; border-bottom: 1px solid #334155; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <div style="display: flex; align-items: center; gap: 12px;">
@@ -888,23 +1171,8 @@ def build_synopsis_html(data: dict) -> str:
     </div>
 </div>
 """
-    # Insert right after <body>
     content = content.replace("<body>", f"<body>\n{nav_bar}")
     return content
-
-
-def update_viewer_html() -> None:
-    viewer_file = ROOT / "viewer.html"
-    content = viewer_file.read_text(encoding="utf-8")
-
-    # Add navigation link in app-title-group
-    target = '<span class="app-subtitle">— Synoptischer Text & Stellenkommentar (31 Abschnitte)</span>'
-    replacement = '<span class="app-subtitle">— Synoptischer Text & Stellenkommentar (31 Abschnitte)</span> <a href="index.html" style="color: #94a3b8; text-decoration: none; font-size: 12px; margin-left: 10px;">← Startseite</a> <a href="synopsis.html" style="color: #94a3b8; text-decoration: none; font-size: 12px; margin-left: 6px;">📖 Lesefassung</a>'
-
-    if target in content and "Startseite" not in content:
-        content = content.replace(target, replacement)
-        viewer_file.write_text(content, encoding="utf-8")
-        print("-> Updated viewer.html with navigation links")
 
 
 def main() -> None:
@@ -920,8 +1188,12 @@ def main() -> None:
     (ROOT / "synopsis.html").write_text(synopsis_html, encoding="utf-8")
     print(f"-> Successfully generated {ROOT / 'synopsis.html'} ({(ROOT / 'synopsis.html').stat().st_size} bytes)")
 
-    # 3. Update viewer.html
-    update_viewer_html()
+    # 3. Copy viewer.html to data/output/viewer.html for parity
+    viewer_src = ROOT / "viewer.html"
+    viewer_dst = ROOT / "data" / "output" / "viewer.html"
+    if viewer_src.exists():
+        viewer_dst.write_text(viewer_src.read_text(encoding="utf-8"), encoding="utf-8")
+        print("-> Synchronized data/output/viewer.html")
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT_DIR = ROOT / "data" / "output" / "brhadaranyaka_1_4"
+OUT_DIR = ROOT / "data" / "output"
 MASTER_JSON = OUT_DIR / "brhadaranyaka_1_4_master.json"
 TEI_XML = OUT_DIR / "brhadaranyaka_1_4.tei.xml"
 
