@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bṛhadāraṇyaka-Upaniṣad I.4 — Das Ursubjekt & Schöpfungsmythos</title>
+<meta name="description" content="Synoptische philologische Edition, Master-JSON, TEI-P5 XML & interaktiver QA-Viewer für Bṛhadāraṇyaka-Upaniṣad 1.4.1–1.4.31 (Mādhyandina-Rezension).">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg-base: #0b0f17;
+    --bg-surface: #131b2a;
+    --bg-surface-elevated: #1a253a;
+    --bg-card: rgba(22, 32, 50, 0.75);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-accent: rgba(184, 51, 42, 0.35);
+    
+    --primary: #c93b3b;
+    --primary-light: #e55353;
+    --primary-dark: #8b1e22;
+    --primary-glow: rgba(201, 59, 59, 0.25);
+    
+    --gold: #d97706;
+    --gold-light: #fbbf24;
+    --gold-glow: rgba(217, 119, 6, 0.2);
+    
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    
+    --font-heading: 'Cinzel', serif;
+    --font-serif: 'EB Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-deva: 'Noto Sans Devanagari', 'Devanagari MT', serif;
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(139, 30, 34, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.06) 0%, transparent 60%);
+    background-attachment: fixed;
+}
+
+/* Navigation Bar */
+nav.global-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 15, 23, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.brand-badge {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.08em;
+    box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.nav-link:hover {
+    color: var(--text-main);
+}
+
+.btn-nav {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 0 14px var(--primary-glow);
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.btn-nav:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* Hero Section */
+header.hero {
+    max-width: 1200px;
+    margin: 4rem auto 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(201, 59, 59, 0.12);
+    border: 1px solid var(--border-accent);
+    color: var(--primary-light);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.25rem;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    background: linear-gradient(180deg, #ffffff 20%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    max-width: 780px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Primary Sanskrit Banner */
+.sanskrit-quote-card {
+    max-width: 880px;
+    margin: 0 auto 3rem auto;
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2.25rem;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sanskrit-quote-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary), var(--gold), transparent);
+}
+
+.sanskrit-quote-deva {
+    font-family: var(--font-deva);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.sanskrit-quote-iast {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #cbd5e1;
+    margin-bottom: 1rem;
+}
+
+.sanskrit-quote-de {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+.sanskrit-quote-author {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* Action Matrix */
+.actions-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary-action {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 16px var(--primary-glow);
+}
+.btn-primary-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--primary-glow);
+}
+
+.btn-secondary-action {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    border: 1px solid var(--border-subtle);
+}
+.btn-secondary-action:hover {
+    background: var(--bg-surface-elevated);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Main Explorer Section */
+section.explorer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem 2rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 1.25rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.section-title-group h2 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 0.35rem;
+}
+
+.section-title-group p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.search-box {
+    position: relative;
+    min-width: 280px;
+}
+
+.search-input {
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 0.65rem 1rem 0.65rem 2.25rem;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    outline: none;
+    transition: var(--transition);
+}
+.search-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold-glow);
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    pointer-events: none;
+}
+
+/* Verse Cards Container */
+.verses-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.verse-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 2rem;
+    transition: var(--transition);
+    position: relative;
+}
+.verse-card:hover {
+    border-color: rgba(201, 59, 59, 0.4);
+    box-shadow: 0 8px 30px -10px rgba(0,0,0,0.6);
+}
+
+.verse-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.verse-canonical-badge {
+    background: var(--primary);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+.verse-source-tag {
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.verse-deva {
+    font-family: var(--font-deva);
+    font-size: 1.4rem;
+    line-height: 1.65;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.verse-iast {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #cbd5e1;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+
+.verse-synopsis-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+@media (max-width: 860px) {
+    .verse-synopsis-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trans-panel {
+    background: rgba(11, 15, 23, 0.55);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+}
+.trans-panel.slaje {
+    border-left: 3px solid var(--primary);
+}
+.trans-panel.bohtlingk {
+    border-left: 3px solid #64748b;
+}
+
+.trans-meta-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+}
+.trans-meta-header.slaje {
+    color: var(--primary-light);
+}
+.trans-meta-header.bohtlingk {
+    color: #94a3b8;
+}
+
+.trans-body {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f1f5f9;
+}
+
+/* Commentary Box */
+.commentary-container {
+    margin-top: 1rem;
+    background: rgba(217, 119, 6, 0.06);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+}
+
+.commentary-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.commentary-item {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+}
+.commentary-lemma {
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-right: 0.4rem;
+}
+
+/* Downloads & Artifacts Section */
+section.artifacts {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem 2rem;
+}
+
+.artifacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.artifact-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.artifact-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5);
+}
+
+.artifact-type {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+}
+
+.artifact-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.artifact-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.artifact-link-action {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Footer */
+footer.global-footer {
+    background: #070a10;
+    border-top: 1px solid var(--border-subtle);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.875rem;
+}
+
+.footer-quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+</style>
+</head>
+<body>
+
+<nav class="global-nav">
+    <a href="#" class="nav-brand">
+        <span class="brand-badge">BĀU I.4</span>
+        <span class="brand-title">Bṛhadāraṇyaka-Upaniṣad</span>
+    </a>
+    <div class="nav-links">
+        <a href="#explorer" class="nav-link">Synopse</a>
+        <a href="synopsis.html" class="nav-link">Lesefassung</a>
+        <a href="viewer.html" class="nav-link">QA-Viewer</a>
+        <a href="#artifacts" class="nav-link">Downloads</a>
+        <a href="https://github.com/birchville-org/brhadaranyaka" target="_blank" class="nav-link">GitHub ↗</a>
+        <a href="viewer.html" class="btn-nav">🚀 Editor öffnen</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-tag">Mādhyandina-Rezension · Kritische Synopse</div>
+    <h1 class="hero-title">Bṛhadāraṇyaka-Upaniṣad I.4</h1>
+    <div class="hero-subtitle">Das Ursubjekt (ātman) & der altindische Schöpfungsmythos</div>
+    <p class="hero-desc">
+        Vollständige philologische Gegenüberstellung von 31 kanonischen Textabschnitten:
+        Kanonischer Sanskrit-Urtext (Devanagari & IAST), Walter Slajes moderne Rekonstruktion (2009), 
+        Otto von Böhtlingks historische Erstausgabe (1889) und der 36-teilige Stellenkommentar.
+    </p>
+
+    <div class="sanskrit-quote-card">
+        <div class="sanskrit-quote-deva">आत्मैवेदम् अग्र आसीत् पुरुषविधः । सो ऽनुवीक्ष्य नान्यद् आत्मनो ऽपश्यत् । सो ऽहम् अस्मीत्य् अग्रे व्याहरत् ।</div>
+        <div class="sanskrit-quote-iast">ātmaivedam agra āsīt puruṣavidhaḥ | so 'nuvīkṣya nānyad ātmano 'paśyat | so 'ham asmīty agre vyāharat |</div>
+        <div class="sanskrit-quote-de">»Am Anfang gab es hier nur das Ursubjekt (ātman) in Mannesgestalt. Als es umherblickte, sah es nichts anderes als sich selbst. ›Das da bin ich!‹ war, was es zuallererst aussprach.«</div>
+        <div class="sanskrit-quote-author">— Bṛhadāraṇyaka-Upaniṣad 1.4.1</div>
+    </div>
+
+    <div class="actions-grid">
+        <a href="viewer.html" class="btn-action btn-primary-action">
+            <span>🚀 Interaktiven QA-Viewer starten</span>
+        </a>
+        <a href="synopsis.html" class="btn-action btn-secondary-action">
+            <span>📖 Zur synoptischen Lesefassung</span>
+        </a>
+        <a href="data/output/brhadaranyaka_1_4_synopsis.pdf" target="_blank" class="btn-action btn-secondary-action">
+            <span>📄 Satz-PDF (33 S.)</span>
+        </a>
+        <a href="data/output/brhadaranyaka_1_4.tei.xml" target="_blank" class="btn-action btn-secondary-action">
+            <span>🏛️ TEI-P5 XML</span>
+        </a>
+    </div>
+</header>
+
+<section id="explorer" class="explorer">
+    <div class="section-header">
+        <div class="section-title-group">
+            <h2>Kanonische Synopse (31 Abschnitte)</h2>
+            <p>Vergleichende Lektüre von Devanagari, IAST, Slaje (2009) und Böhtlingk (1889).</p>
+        </div>
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" class="search-input" placeholder="Sanskrit, Deutsch oder Noten durchsuchen..." oninput="filterVerses()">
+        </div>
+    </div>
+
+    <div id="versesGrid" class="verses-grid"></div>
+</section>
+
+<section id="artifacts" class="artifacts">
+    <div class="section-header">
+        <div class="section-title-group">
+            <h2>Editions-Artefakte & Download-Matrix</h2>
+            <p>Sämtliche Zielformate der AlexandriaSandwich-Digitalisierungspipeline.</p>
+        </div>
+    </div>
+
+    <div class="artifacts-grid">
+        <a href="viewer.html" class="artifact-card">
+            <div>
+                <div class="artifact-type">Web Application</div>
+                <div class="artifact-name">Interaktiver QA-Viewer</div>
+                <div class="artifact-desc">Autarker Split-Pane Web-Editor mit File System Access API, Snippet-Toolbar und Silent Auto-Repair on Save.</div>
+            </div>
+            <span class="artifact-link-action">Viewer starten →</span>
+        </a>
+
+        <a href="synopsis.html" class="artifact-card">
+            <div>
+                <div class="artifact-type">Web Edition</div>
+                <div class="artifact-name">Synoptische Lesefassung</div>
+                <div class="artifact-desc">Kompakte Gesamtdarstellung aller 31 Abschnitte mit Sanskrit-Devanagari, IAST und vergleichender Übersetzung.</div>
+            </div>
+            <span class="artifact-link-action">Online lesen →</span>
+        </a>
+
+        <a href="data/output/brhadaranyaka_1_4_synopsis.pdf" target="_blank" class="artifact-card">
+            <div>
+                <div class="artifact-type">Print / Digital PDF</div>
+                <div class="artifact-name">Satz-PDF (33 Seiten)</div>
+                <div class="artifact-desc">Typografisch optimiertes Editions-PDF im A4-Format, gerendert mit WeasyPrint (EB Garamond & Noto Sans Devanagari).</div>
+            </div>
+            <span class="artifact-link-action">PDF herunterladen →</span>
+        </a>
+
+        <a href="data/output/brhadaranyaka_1_4.tei.xml" target="_blank" class="artifact-card">
+            <div>
+                <div class="artifact-type">Digital Humanities</div>
+                <div class="artifact-name">TEI-P5 XML Archivformat</div>
+                <div class="artifact-desc">Standardisiertes XML-Korpus nach Richtlinien der Text Encoding Initiative mit paralleler Schichtung aller Textzeugen.</div>
+            </div>
+            <span class="artifact-link-action">XML öffnen →</span>
+        </a>
+
+        <a href="data/output/brhadaranyaka_1_4.epub" target="_blank" class="artifact-card">
+            <div>
+                <div class="artifact-type">E-Reader eBook</div>
+                <div class="artifact-name">Reflowable EPUB 3</div>
+                <div class="artifact-desc">E-Book für E-Reader und Mobilgeräte mit fest eingebetteten Unicode-Schriften (Noto Serif Devanagari).</div>
+            </div>
+            <span class="artifact-link-action">EPUB 3 laden →</span>
+        </a>
+
+        <a href="data/output/slaje2009.sandwich.pdf" target="_blank" class="artifact-card">
+            <div>
+                <div class="artifact-type">1:1 Faksimile</div>
+                <div class="artifact-name">1:1 Sandwich-PDF</div>
+                <div class="artifact-desc">Archivkonformes PDF/A-2b mit hochauflösendem Originalscan und unsichtbarer, punktgenau durchsuchbarer Textebene.</div>
+            </div>
+            <span class="artifact-link-action">Sandwich-PDF öffnen →</span>
+        </a>
+
+        <a href="data/output/brhadaranyaka_1_4_master.json" target="_blank" class="artifact-card">
+            <div>
+                <div class="artifact-type">Single Source of Truth</div>
+                <div class="artifact-name">Master JSON (AST)</div>
+                <div class="artifact-desc">Vollständiger strukturierter Datenbaum aller 31 Verse, Varianten und 36 philologischen Kommentare.</div>
+            </div>
+            <span class="artifact-link-action">JSON betrachten →</span>
+        </a>
+
+        <a href="data/output/brhadaranyaka_1_4_master.md" target="_blank" class="artifact-card">
+            <div>
+                <div class="artifact-type">Text & AI Pipeline</div>
+                <div class="artifact-name">Bereinigtes Markdown</div>
+                <div class="artifact-desc">Strukturiertes Markdown-Dokument für RAG-Systeme, LLM-Pipelines und universelle Textverarbeitung.</div>
+            </div>
+            <span class="artifact-link-action">Markdown anzeigen →</span>
+        </a>
+    </div>
+</section>
+
+<footer class="global-footer">
+    <div class="footer-quote">
+        »brahma vā idam agra āsīt | tad ātmānam evāvet | ahaṃ brahmāsmīti | tasmāt tat sarvam abhavat« (BĀU 1.4.21)
+    </div>
+    <div>
+        Bṛhadāraṇyaka-Upaniṣad I.4 Synoptische Edition · Bereitgestellt via <a href="https://github.com/birchville-org/brhadaranyaka" style="color:var(--gold-light);text-decoration:none;">birchville-org/brhadaranyaka</a> auf GitHub Pages.
+    </div>
+</footer>
+
+<script>
+const DATA = {"work": {"title": "Bṛhadāraṇyaka-Upaniṣad", "adhyaya": 1, "brahmana": 4, "subtitle": "Ursubjekt (ātman) / Schöpfungsmythos", "recension": "Mādhyandina (mit Referenz zur Kāṇva-Zählung)", "sources": [{"siglum": "Slaje2009", "author": "Walter Slaje", "year": 2009, "title": "Upanischaden: Arkanum des Veda", "publisher": "Verlag der Weltreligionen (Insel Verlag)", "place": "Frankfurt am Main / Leipzig", "pages": "108–117 (Text) u. 482–493 (Kommentar)"}, {"siglum": "Böhtlingk1889", "author": "Otto von Böhtlingk", "year": 1889, "title": "Bṛhadāraṇjakopanishad in der Mādhyandina-Recension", "publisher": "Kaiserliche Akademie der Wissenschaften", "place": "St. Petersburg", "pages": "5–9 (Devanagari-Text) u. 10–14 (Übersetzung)"}, {"siglum": "EspositoIAST", "editor": "Anna Esposito", "title": "Text Bṛhadāraṇyaka-Upaniṣad I.4", "format": "IAST Standard Transliteration"}], "total_verses": 31, "introduction_slaje": "6. BRHADĀRANYAKA-UPANIŠAD\n\n# UPANISCHADEN DES WEISSEN YAJUR-VEDA\n\n# 6. *Brhadāraṇyaka-Upaniṣad* (*Mādhyandina*)\n\nDie *Brhadāraṇyaka-Upaniṣad* (BĀU) ist unstreitig die älteste aller in das Corpus der Upanischaden aufgenommenen Textkompositionen. Darauf weisen nicht nur ihr formaler Namensbestandteil *Āraṇyaka* = »Wildnistexte« als Denomination einer speziellen Textkategorie, die der Literaturschicht der Upanischaden kompositionsgeschichtlich vorangeht, sondern auch linguistische Kriterien, die die BĀU enger an vedische Spracheigentümlichkeiten binden, als das bei den übrigen Upanischaden der Fall ist. Die BĀU umfaßt Teile des Buches 10 sowie das Buch 14 des *Śatapatha-Brāhmaṇa*, bildet somit dessen Abschluß. Als Teil des *Śatapatha-Brāhmaṇa* gehört die BĀU zur *Vājasaneyi-Sambitā*, auch »Weißer Yajurveda« (*Śukla-Yajurveda*) genannt. Diese Veda-Tradition – und mit ihr die BĀU – zerfällt in zwei Rezensionen: *Mādhyandina* und *Kāṇva*. Diese wiederum unterscheiden sich einesteils in weitreichenden Punkten im Wortlaut voneinander sowie auch dadurch, daß die *Mādhyandina*-Rezension noch vollständig mit vedischem Akzent (vgl. dazu Cardona) überliefert ist und in dieser Form ediert vorliegt, was für die *Kāṇva*-Rezension gegenwärtig nur für die beiden ersten Kapitel zutrifft (Maue, Pérez Coffie). Im linguistischen und metrischen Vergleich erwies *Mādhyandina* sich als erheblich archaischer als *Kāṇva* (COH, S. 99). Auch bezüglich Kohärenz und Plausibilität des Inhalts wurden wiederholt Beobachtungen angestellt, wonach *Mādhyandina* im Vergleich mit *Kāṇva* eine erheblich zuverlässigere Überlieferung bewahrt habe (Hock, *Yājñavalkya Cycle*; Lindquist, *Riddle*). Die – von Bronkhorst (*Magadha*, S. 239f.) nicht uneingeschränkt geteilte – Altertümlichkeit der *Mādhyandina*-Rezension erstreckt sich ebenso auf grundlegend hylozoistische Vorstellungen, darunter die Idee, daß Wach- und Traumwelt aus dem gleichen Material (*mātrā*) gemacht seien (z. B. BĀU IV 3, 10 und 31; IV 4, 5), oder die durchgehende Unterscheidung\n\nzwischen einem leiblichen, von Lebenskräften begleiteten, und einem erkenntnishaften Wesenskern, der von Wissen und Werken begleitet wird (Kommentar zu I 2, 1). Dasselbe Bild bietet indirekt auch der Rezeptionsbefund der einheimischen exegetischen Traditionen. Es spricht einiges dafür, daß maßgebliche Vertreter der systematischen Veda-Exegese (*Mīmāṃsā*) sich auf die *Mādhyandina*-Rezension bezogen, wenn sie BĀU zitierten und erklärten (Slaje, *Yājñavalkya-brāhmaṇas*, S. 135 ff.; 138). Auch werden Vertreter der *Mādhyandinas* schon im 3. Jahrhundert v. Chr. von Griechen genannt (Witzel, *Yājñavalkya*, S. 137). *Kāṇva* dagegen wurde vor allem durch Śaṅkaras Kommentar populär gemacht. Śaṅkara (7./8. Jahrhundert) ist jedoch kein verlässlicher Erklärer der Upanischaden im historischen Sinne (vgl. Kommentareinleitung). Die Kompositionsgeschichte und die mehrfachen Redaktionsschritte unter wechselseitiger Beeinflussung der beiden Rezensionen sind äußerst komplex (Brereton, *Sleeping Dog*; Hock, *Yājñavalkya Cycle*). Brereton hat zudem versucht, sie anhand eines detaillierten Vergleichs der beiden Fassungen des Maitreyī-Dialogs (BĀU II 4 und IV 5) paradigmatisch aufzudecken (*Composition*, S. 323 f.). Bronkhorst kommt – auf der Basis von *Kāṇva* – aufgrund eines Vergleichs der Lehrerreihen am Ende jedes der drei *Kāṇḍas* sowie aufgrund seiner Analyse der Darstellungen der Wiedergeburtslehre zu folgendem Resultat (*Magadha*, S. 219-240): Die ursprüngliche Formulierung des *Yājñavalkya-kāṇḍa* sei nachbuddhistisch und sei eine Zeitlang als unabhängiger Text tradiert worden. Danach sei dieser *Kāṇḍa* an den *Madhukāṇḍa* gefügt und dieses Ergebnis sodann durch Hinzufügung des *Khilakāṇḍa* zu dem heute bekannten Umfang erweitert worden (S. 237 f.). Hintergrund für die Abfassung des *Yājñavalkya-kāṇḍa* sei die Tatsache, daß die neu aufgekommenen Lehren von der Wiedergeburt und Tatvergeltung nach explizitem Ausweis der Texte nicht in vedischen Kreisen der Brahmanen entstanden, sondern daß solche Lehren von Angehörigen des Adelsstands aus der »Kultur des Großraums Magadha« (S. 134) an sie weitergegeben worden waren (KauśU I, 1; ChU V 3, 7; BĀU VI 1, 11). Diese »Beschämung« des Brah-\n\nmanen Uddālaka durch überlegenes Wissen habe man durch Abfassung des *Yājñavalkya-kāṇḍa* wettzumachen versucht, da es in diesen Abschnitten der Brahmane Yājñavalkya sei, der den Aristokraten Janaka über das Thema belehre, was erlaube, den Wiedergeburts- und Tatvergeltungslehren letzten Endes brahmanische Herkunft unterzuschieben (S. 119f.; 130ff.).\n\nDie Struktur der BĀU (*Mādhyandina*), wie sie uns heute vorliegt, geht wohl auf eine letzte, erst im 2. Jahrhundert v. Chr. erfolgte redaktionelle Maßnahme zurück (Witzel, *Yājñavalkya*, S. 135; 139) und zerfällt in drei aus je zwei aufeinanderfolgenden Abschnitten (*adhyāya*) bestehende Abteilungen (*kāṇḍa*): 1) Honig (*madhu*), 2) Yājñavalkya, 3) Nachträge (*khila*). Unter diesen ist es vor allem die Persönlichkeit des Yājñavalkya, dessen unkonventionelles Verhalten und geistreiche Dispute einen nachhaltigen Einfluß auf die im Westen insgesamt sehr positive Rezeption der Upanischaden sowie auf die innerindisch legendarische Verklärung Yājñavalkya ausgeübt haben. Es gibt gute Gründe, Yājñavalkya als historische Gestalt, als Redaktor der *Vājasaneyī-Sambitā* sowie als Autor der Formeln (*mantra*) dieses Yajur-Veda zu akzeptieren. Mit großer Wahrscheinlichkeit wurde dieser deshalb »weiß« (*śukla*) genannt, weil er Yājñavalkya von der »lichten Sonne« geoffenbart worden sein soll (Witzel, *Yājñavalkya*, S. 135f.; 138). Yājñavalkya sprachliche Idiosynkrasien, die später imitiert bzw. übernommen wurden und – wie etwa der zuerst von ihm geprägte Begriff *advaita* – die philosophische Terminologie Indiens auf geradezu bahnbrechende Weise beeinflußt haben, finden sich bei Witzel (*Yājñavalkya*, S. 128ff.) untersucht. Der dritte Abschnitt der »Nachträge« (*khila*), bietet ein anschauliches Bild dafür, wie man sich die Entstehung der beiden ersten Abschnitte, aber auch die Redaktion anderer großer alter Prosa-Upanischaden durch Zusammenstellung kleinerer Texteinheiten denken kann. *Khila* heißt Nachtrag im Sinne von Texten, die aus uns unbekannten Gründen keine Aufnahme mehr in eine als kanonisch und damit als abgeschlossen geltende Sammlung fanden. Ihr Charakter entspricht somit dem unserer Apokryphen. Die in der BĀU oftmals sehr knapp gehalte-\n\nnen Nachtrags-Textstücke (V-VI) berühren sich sprachlich und inhaltlich mit vielem, was sich in den vorangegangenen Abschnitten (I-IV) teilweise ausführlicher, teilweise aber auch unter erheblichen Abweichungen gesagt findet. Ein oder mehrere weitere Redaktionsschritte hätten genügt, diese Apokryphen ebenso in das Gesamtcorpus einzuarbeiten, wie es mit den ursprünglich vereinzelten Textstücken auch der Abschnitte I-IV geschehen sein muß. Dann wäre ihr heterogener und widersprüchlicher Charakter nicht mehr auf Anhieb erkennbar gewesen und es hätte der sorgsamen historisch-kritischen Analyse bedurft, um sie als solche überhaupt sichtbar zu machen.\n\nAus den oben genannten Gründen wird hier die von der Forschung weitgehend vernachlässigte *Mādhyandina*-Rezension nach der auf Webers Ausgabe (*Catapatha-Brahmana*) aufbauenden, von Titus bereitgestellten elektronischen Fassung (TIT) unter begleitender Konsultation der Ausgabe Böhtlingks (*Bṛhadāranjakopanishad*) sowie des *Śatapathabrahmana* (Mādhyandina Rezension, Ausgabe Delhi 1987) übersetzt. Die erste und letzte Übersetzung der *Mādhyandina*-Rezension der BĀU datiert ins Jahr 1889, liegt also bereits 120 Jahre zurück (Böhtlingk, *Bṛhadāranjakopanishad*). Im Jahre 1921 hatte Hillebrandt (*Brahmanas und Upaniṣaden*) seine BĀU-Auszüge ebenfalls auf *Mādhyandina* gegründet. Auch Hocks *Reader* (2007) hat seine Auswahl aus der *Mādhyandina*-Rezension zusammengestellt.\n\nUnsere Zählung folgt Böhtlingk, eine vollständige Stellenkonkordanz der *Mādhyandina*- und *Kāṇva*-Rezensionen findet sich bei OLI (S. 33 ff.).\n\n#### Inhalt\n\nI-II Honig-Abschnitt (*Madhukāṇḍa*)\n\nIII-IV Yājñavalkya-Abschnitt (*Yājñavalkyakāṇḍa*)\n\nV-VI Apokryphen-Abschnitt (*Khilakāṇḍa*)\n\n#### I. Honig\n\n1-2 Identifikation von Opferpferd und Universum.\n\n3 Wettstreit der Götter und Dämonen."}, "sections": [{"verse_num": 1, "canonical_id": "1.4.1", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.1", "sanskrit_iast": "ātmaivedam agra āsīt puruṣavidhaḥ | so 'nuvīkṣya nānyad ātmano 'paśyat |so 'ham asmīty agre vyāharat | tato 'haṃnāmābhavat | tasmād apy etarhy āmantrito 'ham ayam ity evāgra uktvāthānyan nāma prabrūte yad asya bhavati", "sanskrit_devanagari": "आत्मैवेदम् अग्र आसीत् पुरुषविधः ।  सो ऽनुवीक्ष्य नान्यद् आत्मनो ऽपश्यत् । सो ऽहम् अस्मीत्य् अग्रे व्याहरत् ।  ततो ऽहंनामाभवत् ।  तस्माद् अप्य् एतर्ह्य् आमन्त्रितो ऽहम् अयम् इत्य् एवाग्र उक्त्वाथान्यन् नाम प्रब्रूते यद् अस्य भवति", "translation_slaje": "Am Anfang gab es hier nur das Ursubjekt (ātman) in Mannesgestalt. Als es umherblickte, sah es nichts anderes als sich selbst. »Das da bin ich!« [war, was] es zuallererst aussprach. Deshalb erhielt es den Namen »ich« (abam). Das ist auch der Grund, weshalb heutzutage jemand, wurde er angesprochen, zuerst nur »ich bin es« sagt [und] erst danach seinen anderen Namen nennt, den er hat.", "translation_bohtlingk": "Am Anfange war Dieses das Selbst in der Art des Geistes (Purusha). Als dieses sich umschaute, erblickte es nichts Anderes als sich. Was es zuerst aussprach, war «ich bin da». Darauf erhielt es den Namen Ich. Daher sagt auch heute noch Einer, wenn er angesprochen worden ist, zuerst «ich bin es», und darauf erst verkündet er den andern Namen, den er hat.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 2, "canonical_id": "1.4.2", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.2", "sanskrit_iast": "sa yat pūrvo 'smāt sarvasmāt sarvān pāpmana auṣat tasmāt puruṣaḥ | oṣati ha vai sa taṃ yo 'smāt pūrvo bubhūṣati ya evaṃ veda", "sanskrit_devanagari": "स यत् पूर्वो ऽस्मात् सर्वस्मात् सर्वान् पाप्मन औषत् तस्मात् पुरुषः ।  ओषति ह वै स तं यो ऽस्मात् पूर्वो बुभूषति य एवं वेद", "translation_slaje": "»Mann« (puruṣa) deshalb, weil er noch vor (pūrva) all dem hier alle Übel versengte (uṣ). Wenn es jemand in dieser Weise richtig versteht, versengt er denjenigen, der ihm voraus sein möchte.", "translation_bohtlingk": "Weil dieses (Selbst), bevor (pūrva) noch Alles war, alles Uebel verbrannte (aushat), deshalb ist es Purusha (Geist). Wer Solches kennt, verbrennt denjenigen, der ihm zuvorzukommen trachtet.", "commentary_slaje": [{"lemma": "*denn sie ist vermischt*", "text": "Die Erklärung dieses Teils des nicht völlig klaren Versrätsels läuft darauf hinaus, sich vor Speise zu hüten, die von jedermann konsumiert (und berührt) wird. Ein Indiz für Kontaminationsangst durch Nahrung, wie sie für indische Kommensalitätsschranken auch heute noch charakteristisch ist."}], "apparatus_bohtlingk": []}, {"verse_num": 3, "canonical_id": "1.4.3", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.3", "sanskrit_iast": "so 'bibhet tasmād ekākī bibheti | sa hāyam īkṣāṃ cakre, yan mad anyan nāsti kasmān nu bibhemīti | tata evāsya bhayaṃ vīyāya | kasmād dhy abheṣyat | dvitīyād vai bhayaṃ bhavati", "sanskrit_devanagari": "सो ऽबिभेत् तस्माद् एकाकी बिभेति ।  स हायम् ईक्षां चक्रे, यन् मद् अन्यन् नास्ति कस्मान् नु बिभेमीति ।  तत एवास्य भयं वीयाय ।  कस्माद् ध्य् अभेष्यत् ।  द्वितीयाद् वै भयं भवति", "translation_slaje": "Das [Ursubjekt] fürchtete sich. Deshalb fürchtet sich jemand, der allein ist. Es dachte bei sich: »Wenn es außer mir nichts gibt, wovor fürchte ich mich dann?« Daraufhin verging seine Furcht. Wovor hätte es sich denn fürchten sollen? Furcht entsteht ja vor einem Zweiten.", "translation_bohtlingk": "Es fürchtete sich. Darum fürchtet man sich, wenn man allein ist. Da dachte es bei sich: «da es ausser mir nichts Anderes gibt, wovor fürchte ich mich denn?» Darauf verging seine Furcht; denn wovor hätte es sich fürchten sollen? Man fürchtet sich ja nur vor einem Zweiten.", "commentary_slaje": [{"lemma": "*Neu- und Vollmondsopfer*", "text": "Relativ unkompliziertes Verfahren, das allen Opfern von Vegetabilien (*iṣṭi*) und auch dem Tieropfer (*pašubandha*) als Muster zugrunde liegt. Vgl. Hillebrandt (*Neu- und Vollmondsopfer*). Davon grundlegend verschieden ist das Somaopfer."}, {"lemma": "*keine Iṣṭi-Opfer*", "text": "Die genaue Bedeutung von *iṣṭiyājuka* ist unklar. Deussen (*Upanishad's*, S. 400) übersetzt »keine Wunschopfer«, Olivelle »should not offer sacrifices endlessly« (OLI, S. 53; vgl. 495). Aus dem Kontext ließe es sich aber vielleicht auch als »keine Iṣṭi-Opfer« (ähnlich auch Böhtlingk, *Bṛhadāranjakopanishad*, S. 15) verstehen, insofern die Neu- und Vollmondsopfer ja das Modell für die *iṣṭi* bieten (unter I 5, 3)."}], "apparatus_bohtlingk": []}, {"verse_num": 4, "canonical_id": "1.4.4", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.4", "sanskrit_iast": "sa vai naiva reme | tasmād ekākī na ramate | sa dvitīyam aicchat | sa haitāvān āsa yathā strīpumāṃsau sampariṣvaktau", "sanskrit_devanagari": "स वै नैव रेमे ।  तस्माद् एकाकी न रमते ।  स द्वितीयम् ऐच्छत् ।  स हैतावान् आस यथा स्त्रीपुमांसौ सम्परिष्वक्तौ", "translation_slaje": "Doch es vergnügte sich auch nicht. Deshalb vergnügt sich niemand, der allein ist. Es sehnte sich nach einem Zweiten. Es war so groß wie Mann und Frau, wenn sie umschlungen sind.", "translation_bohtlingk": "Es war gar nicht vergnügt. Darum ist man nicht vergnügt, wenn man allein ist. Es wünschte sich einen Zweiten. Da ward es soviel als ein Mann und ein Weib, die sich umschlungen haben.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 5, "canonical_id": "1.4.5", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.5", "sanskrit_iast": "sa imam evātmānaṃ dvedhāpātayat | tataḥ patiś ca patnī cābhavatām | tasmād idam ardhabṛgalam iva sva iti ha smāha yājñavalkyaḥ | tasmād ayam ākāśaḥ striyā pūryata eva | tāṃ samabhavat | tato manuṣyā ajāyanta", "sanskrit_devanagari": "स इमम् एवात्मानं द्वेधापातयत् ।  ततः पतिश् च पत्नी चाभवताम् ।  तस्माद् इदम् अर्धबृगलम् इव स्व इति ह स्माह याज्ञवल्क्यः ।  तस्माद् अयम् आकाशः स्त्रिया पूर्यत एव ।  तां समभवत् ।  ततो मनुष्या अजायन्त", "translation_slaje": "Es ließ sich selbst in zwei Teile zerfallen (pat). Daraus wurde ein Gatte (pati) und eine Gattin (patni). Deshalb pflegte Yājña- 6. BṚHADĀRĀNYAKA-UPANIṢAD 111 valkya [zu seiner Frau] zu sagen, »wir zwei sind gewissermaßen je eine halbe Portion«. Deshalb wird die Leere in der Tat mit einer Frau ausgefüllt. Er beschlief sie. Daraus entstanden die Menschen.", "translation_bohtlingk": "Es theilte sich (pat) in zwei Theile; darauf entstand ein Gatte (pati) und eine Gattin (patni). Deshalb pflegte Jāgnavalkja zu sagen: «wir zwei sind auf diese Weise jedes gleichsam ein halbes Stück». Darum wird die Leere durch ein Weib erfüllt. Mit diesem vermischte es sich; darauf entstanden die Menschen.", "commentary_slaje": [{"lemma": "*wir zwei sind*", "text": "(Unakzentuiertes) *svas* = »wir zwei sind« als verbum finitum akzeptiert. Deussen möchte *sve* = »an dem Selbste« (*Upanishad's*, S. 393), Hock (*Reader*, S. 94) *svab* = »one's self« lesen."}, {"lemma": "*die Leere*", "text": "Die zweite, unausgefüllte Hälfte."}], "apparatus_bohtlingk": []}, {"verse_num": 6, "canonical_id": "1.4.6", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.6", "sanskrit_iast": "so heyam īkṣāṃ cakre -- kathaṃ nu mātmana eva janayitvā sambhavati | hanta tiro 'sānīti", "sanskrit_devanagari": "सो हेयम् ईक्षां चक्रे -- कथं नु मात्मन एव जनयित्वा सम्भवति ।  हन्त तिरो ऽसानीति", "translation_slaje": "Sie dachte bei sich: »Wie [kann es sein, daß] er mich beschläft, die er zuvor aus sich selbst erzeugt hatte? Ich will mich verbergen!«", "translation_bohtlingk": "Diese aber dachte: «wie kann er sich mit mir, da er mich 1\\* 1,4,5 10 aus sich selbst erzeugte, vermischen? Wohlan, ich will mich verstecken ».", "commentary_slaje": [{"lemma": "*erneutes Sterben*", "text": "Vgl. I 2, 8."}], "apparatus_bohtlingk": [{"note": "Vgl. Böhtlingk (1889), S. 5-9 (Text) u. S. 10-14 (Übersetzung)."}]}, {"verse_num": 7, "canonical_id": "1.4.7", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.7", "sanskrit_iast": "sā gaur abhavad vṛṣabha itaraḥ | tāṃ sam evābhavat | tato gāvo 'jāyanta", "sanskrit_devanagari": "सा गौर् अभवद् वृषभ इतरः ।  तां सम् एवाभवत् ।  ततो गावो ऽजायन्त", "translation_slaje": "Sie wurde zur Kuh – zum Stier der andere. Er besprang sie. Daraus entstanden die Rinder.", "translation_bohtlingk": "Sie ward eine Kuh, der Andere ein Stier. Dieser vermischte sich mit jener; darauf entstanden die Rinder.", "commentary_slaje": [{"lemma": "*Verrichtungen*", "text": "Es könnten auch Opfer-Verrichtungen (*karman*) gemeint sein."}], "apparatus_bohtlingk": []}, {"verse_num": 8, "canonical_id": "1.4.8", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.8", "sanskrit_iast": "vaḍavetarābhavad aśvavṛṣa itaraḥ | gardabhītarā gardabha itaraḥ | tāṃ sam evābhavat | tata ekaśapham ajāyata", "sanskrit_devanagari": "वडवेतराभवद् अश्ववृष इतरः ।  गर्दभीतरा गर्दभ इतरः ।  तां सम् एवाभवत् ।  तत एकशफम् अजायत", "translation_slaje": "Die eine wurde zur Stute – zum Hengst der andere; die eine zur Eselin – zum Esel der andere. Er besprang sie. Daraus entstand der Einhufer.", "translation_bohtlingk": "Die Eine ward eine Stute, der Andere ein Hengst. Dieser vermischte sich mit jener; darauf entstanden die Einhufer.", "commentary_slaje": [{"lemma": "*Sein Vatersbrudersohn", "text": "bhrātrvya*, eine Ableitung von *bhrātr* = »Bruder«, drückt zunächst die enge Verwandtschaftsbeziehung unter Vettern aus. In diesem Begriff schwingt die Konnotation von »Rivalität« mit und steht hier in direktem Bezug zu der (rivalisierenden) Verwandtschaft zwischen Göttern und Dämonen als Nachkommen Prajāpatis."}], "apparatus_bohtlingk": []}, {"verse_num": 9, "canonical_id": "1.4.9", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.9", "sanskrit_iast": "ajetarābhavad basta itaraḥ | avir itarā meṣa itaraḥ | tāṃ sam evābhavat | tato 'jāvayo 'jāyanta | evam eva yad idaṃ kiñca mithunam ā pipīlikābhyas tat sarvam asṛjata", "sanskrit_devanagari": "अजेतराभवद् बस्त इतरः ।  अविर् इतरा मेष इतरः ।  तां सम् एवाभवत् ।  ततो ऽजावयो ऽजायन्त ।  एवम् एव यद् इदं किञ्च मिथुनम् आ पिपीलिकाभ्यस् तत् सर्वम् असृजत", "translation_slaje": "Die eine wurde zur Ziege – zum Bock der andere; die eine zum Mutterschaf – zum Schafbock der andere. Er besprang sie. Daraus entstanden Ziegen und Schafe. Auf ganz dieselbe Weise brachte [das Ursubjekt] bis zu den Ameisen hinab alles hervor, was Paare [bildet].", "translation_bohtlingk": "Die Eine ward eine Geis, der Andere ein Ziegenbock; und auch die Eine ein Schaf, der Andere ein Schafbock. Der Bock vermischte sich mit dem Mutterthier; darauf entstanden die Ziegen und Schafe. Auf diese Weise erschuf es (das Selbst) Alles, was hier als Pärchen besteht, bis zu den Ameisen hinab.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 10, "canonical_id": "1.4.10", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.10", "sanskrit_iast": "so 'ved ahaṃ vāva sṛṣṭir asmy ahaṃ hīdaṃ sarvam asṛkṣīti | tataḥ sṛṣṭir abhavat | sṛṣṭyāṃ hāsyaitasyāṃ bhavati ya evaṃ veda", "sanskrit_devanagari": "सो ऽवेद् अहं वाव सृष्टिर् अस्म्य् अहं हीदं सर्वम् असृक्षीति ।  ततः सृष्टिर् अभवत् ।  सृष्ट्यां हास्यैतस्यां भवति य एवं वेद", "translation_slaje": "Da begriff es: »Ich selbst bin die Schöpfung, denn ich habe soeben alles hervorgebracht!« Von da an gedieh die Schöpfung. Wer es in dieser Weise richtig versteht, gedeiht in seiner Schöpfung hier.", "translation_bohtlingk": "Da erkannte es, dass es die Schöpfung sei, da es ja Alles so eben erschaffen hatte. Darauf ward es die Schöpfung, und derjenige, der Solches kennt, befindet sich in dieser Schöpfung des Selbst.", "commentary_slaje": [{"lemma": "*gedieh*", "text": "Zu *√bhū* = »gedeihen« vgl. Hock (*Reader*, S. 94)."}], "apparatus_bohtlingk": []}, {"verse_num": 11, "canonical_id": "1.4.11", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.11", "sanskrit_iast": "athety abhyamanthat | sa mukhāc ca yoner hastābhyāṃ cāgnim asṛjata | tasmād etad ubhayam alomakam antarataḥ | alomakā hi yonir antarataḥ", "sanskrit_devanagari": "अथेत्य् अभ्यमन्थत् ।  स मुखाच् च योनेर् हस्ताभ्यां चाग्निम् असृजत ।  तस्माद् एतद् उभयम् अलोमकम् अन्तरतः ।  अलोमका हि योनिर् अन्तरतः", "translation_slaje": "Danach rieb es auf diese Art ein Feuer an. Es erzeugte aus [seinem] Mund und aus dem Schoß (yoni) [des Feuers] mit [seinen] beiden Händen Feuer. Das ist der Grund, weshalb beide innen unbehaart sind. Denn innen unbehaart ist [auch] der [weibliche] Schoß.", "translation_bohtlingk": "Darauf rieb es das Feuer in folgender Weise: es schuf dieses aus einer Gebärmutter, dem Munde und den Händen. Daher haben diese Beiden (der Mund und die Hände) inwendig keine Haare, da ja die Gebärmutter inwendig keine Haare hat.", "commentary_slaje": [{"lemma": "*auf diese Art*", "text": "Der Sprecher begleitet den Hinweis mit entsprechenden Gesten."}, {"lemma": "*aus dem Schoß des Feuers*", "text": "Daß *mukha* = »Mund« und *yoni* = »Ursprung, Vulva« hier in appositioneller Stellung stehen sollen, wie von Deussen (*Upanishad's*, S. 394), Olivelle (OLI, S. 47) und Hock (*Reader*, S. 94) angenommen, ist wenig überzeugend. Zum einen wird es dem (dem *mukha* nachgestellten) *ca* = »und« nicht gerecht – obwohl dieses natürlich auch nur satzanreihend gebraucht worden sein könnte –, vor allem aber trifft es in der Sache nicht zu. Als »Ursprung« bzw. »Schoß« STELLENKOMMENTAR ZU I. 3, 8-I. 4, 23 491 des Feuers wurde stets das Holz angesehen, aus dem man es herauszureiben dachte, doch niemals der Mund, der bloß darauf bläst."}, {"lemma": "*beide innen unbehaart*", "text": "Mund und Hände."}], "apparatus_bohtlingk": []}, {"verse_num": 12, "canonical_id": "1.4.12", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.12", "sanskrit_iast": "tad yad idam āhur amuṃ yajāmuṃ yajety ekaikaṃ devam etasyaiva sā visṛṣṭiḥ | eṣa u hy eva sarve devāḥ", "sanskrit_devanagari": "तद् यद् इदम् आहुर् अमुं यजामुं यजेत्य् एकैकं देवम् एतस्यैव सा विसृष्टिः ।  एष उ ह्य् एव सर्वे देवाः", "translation_slaje": "Wenn man hier von jedem einzelnen Gotte sagt: »Opfer diesem, opfer jenem!«, [so ist das alles] nur die Schöpfung des [Ursubjekts]. Denn es allein ist alle Götter. 112 UPANISCHADEN DES WEISSEN YAJUR-VEDA", "translation_bohtlingk": "Wenn man sagt: «opfere diesem und opfere jenem», und so jeden einzelnen Gott nennt, so ist das seine (des Selbst) Schöpfung im Einzelnen, da dieses (das Selbst) ja alle Götter in sich begreift.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 13, "canonical_id": "1.4.13", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.13", "sanskrit_iast": "atha yat kiñcedam ārdraṃ tad retaso 'sṛjata | tad u soma | etāvad vā idaṃ sarvam annaṃ caivānnādaś ca | soma evānnam agnir annādaḥ", "sanskrit_devanagari": "अथ यत् किञ्चेदम् आर्द्रं तद् रेतसो ऽसृजत ।  तद् उ सोम ।  एतावद् वा इदं सर्वम् अन्नं चैवान्नादश् च ।  सोम एवान्नम् अग्निर् अन्नादः", "translation_slaje": "Aus [seinem] Sperma brachte es alles Feuchte hier hervor. Das ist der Somasaft. Das ganze All hier kommt der Nahrung und [ihrem] Verzehrer gleich: Nahrung ist der Somasaft, Verzehrer das Feuer.", "translation_bohtlingk": "Alles Feuchte, was es hier gibt, schuf es aus dem Samen. Das ist auch der Soma. Alles, was hier ist, ist ja entweder Speise oder Verspeiser. Die Speise ist Soma, der Verspeiser — das Feuer.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 14, "canonical_id": "1.4.14", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.14", "sanskrit_iast": "saiṣā brahmaṇo 'tisṛṣṭiḥ | yac chreyaso devān asṛjatātha yan martyaḥ sann amṛtān asṛjata tasmād atisṛṣṭir | atisṛṣṭyāṃ hāsyaitasyāṃ bhavati ya evaṃ veda", "sanskrit_devanagari": "सैषा ब्रह्मणो ऽतिसृष्टिः ।  यच् छ्रेयसो देवान् असृजताथ यन् मर्त्यः सन्न् अमृतान् असृजत तस्माद् अतिसृष्टिर् ।  अतिसृष्ट्यां हास्यैतस्यां भवति य एवं वेद", "translation_slaje": "Die unübertreffliche Schöpfung (atisṛṣṭi) des Urgrunds (brābman) [besteht darin], daß er höhere Götter hervorbrachte, daß er – selbst sterblich – die Unsterblichen hervorbrachte. Deshalb ist es eine unübertreffliche Schöpfung. Wer es in dieser Weise richtig versteht, gedeiht in dieser seiner unübertrefflichen Schöpfung.", "translation_bohtlingk": "Wenn es die Götter, die vorzüglicher sind, erschuf, so ist es die höhere Schöpfung des Brahman. Dass es, obgleich sterblich, Unsterbliche erschuf, deshalb ist es die höhere Schöpfung. Wer Solches kennt, befindet sich in dieser höheren Schöpfung des Selbst.", "commentary_slaje": [{"lemma": "*Schöpfung des Urgrunds*", "text": "Sollte der Passus ursprünglich sein, wäre damit implizit die Identifizierung des Ursubjekts (*ātman*) mit dem Urgrund (*brāhman*) vollzogen, vgl. auch I 4, 24."}, {"lemma": "*selbst sterblich*", "text": "Unklar, weshalb das *brāhman* bzw. der *ātman* hier als sterblich angesehen werden. Auch die *Khilas* überliefern eine Lehrmeinung, wonach das *brāhman* Produkt sei (BĀU V 6, 1). Als solches wäre es dann in der Tat als vergänglich anzusehen."}], "apparatus_bohtlingk": []}, {"verse_num": 15, "canonical_id": "1.4.15", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.15", "sanskrit_iast": "tad dhedaṃ tarhy avyākṛtam āsīt | tan nāmarūpābhyām eva vyākriyatāsau nāmāyam idaṃrūpa iti | tad idam apy etarhi nāmarūpābhyām eva vyākriyata asau nāmāyam idaṃrūpa iti", "sanskrit_devanagari": "तद् धेदं तर्ह्य् अव्याकृतम् आसीत् ।  तन् नामरूपाभ्याम् एव व्याक्रियतासौ नामायम् इदंरूप इति ।  तद् इदम् अप्य् एतर्हि नामरूपाभ्याम् एव व्याक्रियत असौ नामायम् इदंरूप इति", "translation_slaje": "Damals war es hier noch ungesondert (avyākṛta). Es kam zu einer Sonderung nur als Name und Erscheinungsform (nāmarūpa): »Der hat diesen Namen, diese Erscheinungsform.« So wird heute auch hier nur nach Name und Erscheinungsform gesondert: »Der hat diesen Namen, diese Erscheinungsform.«", "translation_bohtlingk": "Damals war Dieses hier noch nicht gesondert. Es wurde durch Name und Erscheinungsform gesondert (durch die Formel): «dieser da in dieser Erscheinungsform ist der und der mit Namen». So wird auch heut zu Tage dieses durch Namen und Er- 11 1,4,23 scheinungsform gesondert (durch die Formel): «dieser da in dieser Erscheinungsform ist der und der mit Namen».", "commentary_slaje": [{"lemma": "*Der hat diesen Namen*", "text": "Lies *asaū-nāmā* als Bahuvrīhikompositum."}], "apparatus_bohtlingk": []}, {"verse_num": 16, "canonical_id": "1.4.16", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.16", "sanskrit_iast": "sa eṣa iha praviṣṭa ā nakhāgrebhyo yathā kṣuraḥ kṣuradhāne 'vahitaḥ syād viśvambharo vā viśvambharakulāye | taṃ na paśyanti | akṛtsno hi saḥ", "sanskrit_devanagari": "स एष इह प्रविष्ट आ नखाग्रेभ्यो यथा क्षुरः क्षुरधाने ऽवहितः स्याद् विश्वम्भरो वा विश्वम्भरकुलाये ।  तं न पश्यन्ति ।  अकृत्स्नो हि सः", "translation_slaje": "Das [Ursubjekt] ist hier bis in die Spitzen der Nägel eingezogen. Es steckt darinnen wie etwa ein Dolch in der Scheide oder eine Termite in der Zelle [ihres] Baus. Man sieht es nicht. Denn es ist nicht vollständig (akṛtsna).", "translation_bohtlingk": "Es (das Selbst) ist hier überall, bis in die Nagelspitzen, eingedrungen. Man sieht es eben so wenig wie ein Scheermesser oder das Feuer, wenn diese in ihren Behältern stecken. Es erscheint ja nicht als Ganzes.", "commentary_slaje": [{"lemma": "*steckt darinnen wie (...) eine Termite*", "text": "Vgl. auch KauśU IV, 20. Zur nicht sicher bestimmten zoologischen Identität von *viśvambhara* = »Termite« (?) vgl. OLI (S. 493)."}], "apparatus_bohtlingk": []}, {"verse_num": 17, "canonical_id": "1.4.17", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.17", "sanskrit_iast": "prāṇann eva prāṇo nāma bhavati | vadan vāk paśyaṃś cakṣuḥ śṛṇvañ chrotraṃ manvāno manaḥ | tāny asyaitāni karmanāmāny eva | sa yo 'ta ekaikam upāste na sa veda | akṛtsno hy eṣo 'ta ekaikena bhavati", "sanskrit_devanagari": "प्राणन्न् एव प्राणो नाम भवति ।  वदन् वाक् पश्यंश् चक्षुः शृण्वञ् छ्रोत्रं मन्वानो मनः ।  तान्य् अस्यैतानि कर्मनामान्य् एव ।  स यो ऽत एकैकम् उपास्ते न स वेद ।  अकृत्स्नो ह्य् एषो ऽत एकैकेन भवति", "translation_slaje": "Atmet es, heißt es Atemkraft (prāṇa); spricht es, Sprechfähigkeit (vāc); sieht es, Schkraft (cakṣus); hört es, Hörkraft (śrotra); denkt es, Denkvermögen (manas). Das alles sind nur Namen seiner Funktionen. Wenn jemand ihm als jedes einzelne davon huldigt, so versteht er es nicht richtig. Denn es ist nicht vollständig. Es ist jede einzelne davon.", "translation_bohtlingk": "Wenn es athmet, heisst es Hauch; wenn es redet — Stimme; wenn es sieht — Auge; wenn es hört — Ohr; wenn es denkt — Denkorgan. Dies sind nur seine der Thätigkeit entsprechenden Namen. Wer das Eine oder Andere von diesen verehrt, hat nicht die richtige Kenntniss. Es erscheint ja als das Eine oder Andere von diesen, nicht ganz.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 18, "canonical_id": "1.4.18", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.18", "sanskrit_iast": "ātmety evopāsīta | atra hy ete sarva ekaṃ bhavanti |tad etat padanīyam asya sarvasya yad ayam ātmā | anena hy etat sarvaṃ veda |yathā ha vai padenānuvinded evaṃ kīrtiṃ ślokaṃ vindate ya evaṃ veda", "sanskrit_devanagari": "आत्मेत्य् एवोपासीत ।  अत्र ह्य् एते सर्व एकं भवन्ति । तद् एतत् पदनीयम् अस्य सर्वस्य यद् अयम् आत्मा ।  अनेन ह्य् एतत् सर्वं वेद । यथा ह वै पदेनानुविन्देद् एवं कीर्तिं श्लोकं विन्दते य एवं वेद", "translation_slaje": "Man darf ihm nur als dem Wesenskern (ātman) huldigen. In ihm nämlich werden sie alle eins. Dieser Wesenskern ist die Spur zu allem hier. Mit seiner Hilfe erfaßt man das Ganze, wie man mittels einer Fußspur [etwas] aufspüren kann. Wer es in dieser Weise richtig versteht, findet in derselben Weise Ruhm und Ehre. 6. BṚHADĀRANYAKA-UPANIṢAD 113", "translation_bohtlingk": "Das Selbst verehre man als Solches, da darin alle jene (der Hauch u. s. w.) zu Eins werden. Was uns den Weg zu Allem weiset, ist dieses Selbst, da man durch es Alles kennt. Wie man nach einer Fusspur Etwas auffinden würde, so findet derjenige, der Solches kennt, Ruhm und Ehre.", "commentary_slaje": [{"lemma": "*Man darf ihm nur als dem Wesenskern*", "text": "Hier ist vom *ātman* nicht mehr als Ursubjekt, sondern in seiner individuellen Form, als Wesenskern einer personalen Existenz, die Rede."}, {"lemma": "*das Ganze*", "text": "Zur älteren Bedeutung von *sarva* = »das Ganze« und zur uneindeutigen Konnotation, die je nach Kontext eben auch »alles« bzw. »das All« ausdrücken kann, vgl. OLI (S. 493, mit Literatur)."}], "apparatus_bohtlingk": []}, {"verse_num": 19, "canonical_id": "1.4.19", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.19", "sanskrit_iast": "tad etat preyaḥ putrāt preyo vittāt preyo 'nyasmāt sarvasmād antarataraṃ yad ayam ātmā | sa yo 'nyam ātmanaḥ priyaṃ bruvāṇaṃ brūyāt priyaṃ rotsyatītīśvaro ha tathaiva syāt | ātmānam eva priyam upāsīta | sa ya ātmānam eva priyam upāste na hāsya priyaṃ pramāyukaṃ bhavati", "sanskrit_devanagari": "तद् एतत् प्रेयः पुत्रात् प्रेयो वित्तात् प्रेयो ऽन्यस्मात् सर्वस्माद् अन्तरतरं यद् अयम् आत्मा ।  स यो ऽन्यम् आत्मनः प्रियं ब्रुवाणं ब्रूयात् प्रियं रोत्स्यतीतीश्वरो ह तथैव स्यात् ।  आत्मानम् एव प्रियम् उपासीत ।  स य आत्मानम् एव प्रियम् उपास्ते न हास्य प्रियं प्रमायुकं भवति", "translation_slaje": "Dieser Wesenskern [ist einem] erwünschter als ein Sohn, [ist einem] teurer als Vermögen, [ist einem] als [sein] Innerstes willkommener als alles andere. Sagte man zu jemandem, der einen anderen als seinen eigenen Wesenskern (ātman) für teuer erklärt: »[Was Dir] teuer [ist], wird sich verlieren«, so könnte es wohl so geschehen. Allein seinem Wesenskern soll man als teuer huldigen. Wer allein seinem Wesenskern als teuer huldigt, verliert nie, was ihm teuer ist.", "translation_bohtlingk": "Dieses Selbst ist uns lieber als ein Sohn, lieber als Vermögen, lieber als alles Andere und steht uns näher. Wenn man zu Jemand, der einen Andern als das Selbst für ein Liebes erklärte, sagen würde, dass er das Liebe einbüssen werde, so könnte dieses wohl eintreffen. Wer das Selbst als das Liebe verehrt, dessen Liebes geht nicht zu Grunde.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 20, "canonical_id": "1.4.20", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.20", "sanskrit_iast": "tad āhur yad brahmavidyayā sarvaṃ bhaviṣyanto manuṣyā manyante | kim u tad brahmāved yasmāt tat sarvam abhavad iti", "sanskrit_devanagari": "तद् आहुर् यद् ब्रह्मविद्यया सर्वं भविष्यन्तो मनुष्या मन्यन्ते ।  किम् उ तद् ब्रह्मावेद् यस्मात् तत् सर्वम् अभवद् इति", "translation_slaje": "Man sagt: »Da die Menschen meinen, durch das Wissen vom Urgrund das Ganze zu werden, was muß da erst der Urgrund [darüber] gewußt haben, weshalb er zum Ganzen wurde?«", "translation_bohtlingk": "In Bezug hierauf sagt man: «Wenn die Menschen durch die Kenntniss des Brahman Alles werden zu können meinen, was muss dann erst das Brahman gekannt haben, da durch es Alles entstanden ist?»", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 21, "canonical_id": "1.4.21", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.21", "sanskrit_iast": "brahma vā idam agra āsīt | tad ātmānam evāvet | ahaṃ brahmāsmīti | tasmāt tat sarvam abhavat | tad yo yo devānāṃ pratyabudhyata sa eva tad abhavat | tatharṣīnām | tathā manuṣyāṇām", "sanskrit_devanagari": "ब्रह्म वा इदम् अग्र आसीत् ।  तद् आत्मानम् एवावेत् ।  अहं ब्रह्मास्मीति ।  तस्मात् तत् सर्वम् अभवत् ।  तद् यो यो देवानां प्रत्यबुध्यत स एव तद् अभवत् ।  तथर्षीनाम् ।  तथा मनुष्याणाम्", "translation_slaje": "Am Anfang gab es hier nur den Urgrund. Der erkannte nur sich selbst als: »Ich bin der Urgrund.« Deshalb wurde er zum Ganzen. Allein wer von den Göttern es ebenso begriff, wurde [ebenfalls] zum [Ganzen]. Desgleichen unter Sehern und Menschen.", "translation_bohtlingk": "Am Anfange war Dieses das Brahman. Dieses erkannte das Selbst, indem es bei sich dachte «ich bin das Brahman». Daher entstand Alles. Wer immer von den Göttern dieses inne wurde, der wurde dieses; so verhielt es sich auch mit den Rshi, so auch mit den Menschen.", "commentary_slaje": [{"lemma": "*es ebenso begriff*", "text": "Der Urgrund zu sein."}], "apparatus_bohtlingk": []}, {"verse_num": 22, "canonical_id": "1.4.22", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.22", "sanskrit_iast": "tad dhaitat paśyann ṛṣir vāmadevaḥ pratipede 'haṃ manur abhavaṃ sūryaś ceti | tad idam apy etarhi ya evaṃ vedāhaṃ brahmāsmīti sa idaṃ sarvaṃ bhavati | tasya ha na devāś canābhūtyā īśate | ātmā hy eṣāṃ sa bhavati | atha yo 'nyāṃ devatām upāste 'nyo 'sāv anyo 'ham asmīti na sa veda | yathā paśur evaṃ sa devānām | yathā ha vai bahavaḥ paśavo manuṣyaṃ bhuñjyur evam ekaikaḥ puruṣo devān bhunakti | ekasminn eva paśāv ādīyamāne 'priyaṃ bhavati kim u bahuṣu | tasmād eṣāṃ tan na priyaṃ yad etan manuṣyā vidyuḥ", "sanskrit_devanagari": "तद् धैतत् पश्यन्न् ऋषिर् वामदेवः प्रतिपेदे ऽहं मनुर् अभवं सूर्यश् चेति ।  तद् इदम् अप्य् एतर्हि य एवं वेदाहं ब्रह्मास्मीति स इदं सर्वं भवति ।  तस्य ह न देवाश् चनाभूत्या ईशते ।  आत्मा ह्य् एषां स भवति ।  अथ यो ऽन्यां देवताम् उपास्ते ऽन्यो ऽसाव् अन्यो ऽहम् अस्मीति न स वेद ।  यथा पशुर् एवं स देवानाम् ।  यथा ह वै बहवः पशवो मनुष्यं भुञ्ज्युर् एवम् एकैकः पुरुषो देवान् भुनक्ति ।  एकस्मिन्न् एव पशाव् आदीयमाने ऽप्रियं भवति किम् उ बहुषु ।  तस्माद् एषां तन् न प्रियं यद् एतन् मनुष्या विद्युः", "translation_slaje": "Als er dasselbe sah, gab der Seher Vāmadeva von sich: »Ich war Manu und war die Sonne.« So wird heute auch hier jemand zum Ganzen, der es in dieser Weise versteht, daß er der Urgrund ist. Nicht einmal die Götter vermögen ihm zu schaden, ist er doch ihr Wesenskern. Wenn aber jemand einer anderen Macht (devatā) huldigt im [Gedanken] »das da ist einer, ich ein anderer«, so versteht er es nicht richtig. Er ist den Göttern Schlachtvieh (paśu). Jeder einzelne Mann ist den Göttern auf dieselbe Weise nützlich, wie vieles Schlachtvieh dem Menschen nützt. Wird [einem] ein einziges Stück Vieh genommen, so ist das unwillkommen. Um wieviel mehr, wenn es viele sind. Deshalb ist es den [Göttern] unwillkommen, wenn die Menschen das wissen, [daß sie der Urgrund sind].", "translation_bohtlingk": "Als der Rshi Vámadeva dieses erschaute, verfiel er auf 1,4,22 12 die Worte: «Ich war einst Manu und die Sonne¹)». Daher geschieht es auch heut zu Tage, dass derjenige, der da weiss, dass er das Brahman ist, Alles wird. Und selbst die Götter vermögen es nicht zu verhindern, dass er es wird, da er ihr Selbst wird. Wer aber eine andere Gottheit verehrt, indem er bei sich denkt: «der und der ist ein Anderer, und ich bin wieder ein Anderer», der hat nicht die richtige Erkenntniss. Er ist für die Götter nichts Anderes als ein Nutzthier. Wie viele Thiere dem Menschen zu Nutzen sind, so ist jeder einzelne Mensch den Göttern zu Nutzen. Schon wenn ein einziges Thier weggenommen wird, so ist dieses etwas Unliebes; wie viel mehr, wenn dieses mit vielen geschieht? Darum ist es ihnen (den Göttern) nicht lieb, wenn die Menschen dieses wissen.", "commentary_slaje": [{"lemma": "*Ich war Manu*", "text": "Vgl. RV IV 26, 1."}], "apparatus_bohtlingk": [{"note": "Vgl. Böhtlingk (1889), S. 5-9 (Text) u. S. 10-14 (Übersetzung)."}]}, {"verse_num": 23, "canonical_id": "1.4.23", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.23", "sanskrit_iast": "brahma vā idam agra āsīd ekam eva | tad ekaṃ san na vyabhavat | tac chreyo rūpam atyasṛjata kṣatraṃ, yāny etāni devatrā kṣatrāṇīndro varuṇaḥ somo rudraḥ parjanyo yamo mṛtyur īśāna iti | tasmāt kṣatrāt paraṃ nāsti | tasmād brāhmaṇaḥ kṣatriyaṃ adhastād upāste rājasūye | kṣatra eva tad yaśo dadhāti | saiṣā kṣatrasya yonir yad brahma | tasmād yady api rājā paramatāṃ gacchati brahmaivāntata upaniśrayati svāṃ yonim | ya u enaṃ hinasti svāṃ sa yonim ṛcchati | sa pāpīyān bhavati yathā śreyāṃsaṃ hiṃsitvā", "sanskrit_devanagari": "ब्रह्म वा इदम् अग्र आसीद् एकम् एव ।  तद् एकं सन् न व्यभवत् ।  तच् छ्रेयो रूपम् अत्यसृजत क्षत्रं, यान्य् एतानि देवत्रा क्षत्राणीन्द्रो वरुणः सोमो रुद्रः पर्जन्यो यमो मृत्युर् ईशान इति ।  तस्मात् क्षत्रात् परं नास्ति ।  तस्माद् ब्राह्मणः क्षत्रियं अधस्ताद् उपास्ते राजसूये ।  क्षत्र एव तद् यशो दधाति ।  सैषा क्षत्रस्य योनिर् यद् ब्रह्म ।  तस्माद् यद्य् अपि राजा परमतां गच्छति ब्रह्मैवान्तत उपनिश्रयति स्वां योनिम् ।  य उ एनं हिनस्ति स्वां स योनिम् ऋच्छति ।  स पापीयान् भवति यथा श्रेयांसं हिंसित्वा", "translation_slaje": "Am Anfang gab es hier nur den Urgrund (brābman), in ausnahmsloser (eva) Singularität (eka). Da er singulär war, unterschied er sich nicht. Da brachte er auf unübertreffliche Weise den Fürstenstand (kṣatra) als höherrangige (śreyas) Erschei- 114 UPANISCHADEN DES WEISSEN YAJUR-VEDA nungsform hervor, nämlich Indra, Varuṇa, Soma, Rudra, Parjanya, Yama, Mṛtyu [und] Īśāna als die Fürsten unter den Göttern. Darum gibt es nichts Höheres als den Fürstenstand. Das ist der Grund, weshalb ein Brahmane beim Rājasūya-Opfer ausgestreckt am Boden [seinem] Fürsten huldigt. Nur dem Fürsten erweist er da diese Ehrung. Der Ursprung des Fürstenstandes ist der [mit dem] Urgrund (brāhman) [gleichnamige Brahmanenstand]. Deshalb, selbst wenn ein Herrscher Absolutheit erlangt, schmiegt er sich letztlich [doch] nur an den [mit dem] Urgrund [gleichnamigen Brahmanenstand] als seinem Ursprung an. Wenn nun ein [Fürst] einem solchen [Angehörigen des Brahmanenstandes] ein Leid zufügt, wendet er sich gegen seinen eigenen Ursprung. Er wird tieferstehend (pāpiyas), als [hätte er seinen] höheren [Rang] (śreyas) [selbst] zerstört.", "translation_bohtlingk": "Am Anfange war Dieses das Brahman, und zwar war dieses ganz allein. Da es allein war, konnte es sich nicht entfalten. Da schuf es aufschreitend eine bessere Erscheinungsform, den Kriegerstand, d. i. folgende Krieger unter den Göttern: Indra, Varuṇa, Soma, Rudra, Parganja, Jama, Mṛtju und Içāna. Darum geht Nichts über den Kriegerstand, und darum verehrt der Brahmane den Krieger in Unterwürfigkeit, nämlich beim Rāgasūja. Auf diese Weise verschafft er dem Krieger Ansehen. Das Brahman (zugleich auch der Priesterstand) ist aber die Geburtsstätte des Kriegerstandes. Darum zieht ein Fürst, auch wenn er die höchste Stellung erreicht hat, schliesslich den Priesterstand als seine Geburtsstätte in seine Nähe. Und wer ihm (dem Brahmanen), seiner Geburtsstätte, ein Leid anhut, der tritt gegen seine Geburtsstätte feindlich auf, dem ergeht es schlechter wie Einem, der einem Bessern ein Leid angethan hat.", "commentary_slaje": [{"lemma": "*unterschied er sich nicht*", "text": "*vi-√bhū* = »auseinandergehen, sich trennen, sich manifestieren«, auch als Subjekt-Objekt-Beziehung sowohl in einem erkenntnistheoretischen wie auch im Sinne von Herrschaft und Macht zu verstehen."}, {"lemma": "*höherrangige Erscheinungsform*", "text": "*śreyas* = »besser, höher« hier als Gegenbegriff zu (weiter) *pāpīyas* = »schlechter, tiefergestellt« zu verstehen. Das relative Ansehen der sozialen Stellung (»besser«) verband sich vor allem mit Besitz und Macht, Geringschätzung (»schlechter«) mit deren Fehlen. Vgl. auch OLI (S. 493, mit Literatur)."}, {"lemma": "beim Rājasūya-Opfer ausgestreckt am Boden", "text": "Zum Rājasūya-Opfer vgl. Heesterman; zur Prostration des Brahmanen vgl. Rau (*Staat*, S. 70). Vgl. auch OLI (S. 493)."}, {"lemma": "seinen höheren Rang selbst zerstört", "text": "So übersetzt, um Subjektswechsel der Verbalhandlungen *bhavati* und *bimsitvā* zu vermeiden."}], "apparatus_bohtlingk": []}, {"verse_num": 24, "canonical_id": "1.4.24", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.24", "sanskrit_iast": "sa naiva vyabhavat | sa viśam asṛjata | yāny etāni devajātāni gaṇaśa ākhyāyante vasavo rudrā ādityā viśve devā maruta iti", "sanskrit_devanagari": "स नैव व्यभवत् ।  स विशम् असृजत ।  यान्य् एतानि देवजातानि गणश आख्यायन्ते वसवो रुद्रा आदित्या विश्वे देवा मरुत इति", "translation_slaje": "Das [Ursubjekt] unterschied sich [noch] nicht vollständig. Da brachte es den Nährstand (viś) als die Götterklassen hervor, nämlich als Vasus, Rudras, Ādityas, Viśve Devāḥ [und] Maruts, die man gruppenweise anführt.", "translation_bohtlingk": "Es (das Selbst²)) konnte sich noch nicht entfalten. Da schuf es die Kaste der Ackerbauer, d. i. folgende in Gruppen angegebene Götterklassen: die Vasu, die Rudra, die Āditja, die Viçve Devās und die Marut. 1) R.V. 4,26,1. 2) Das Selbst und das Brahman gelten für dasselbe. 13 1,4,20", "commentary_slaje": [{"lemma": "*Sā und Ama*", "text": "Vgl. BĀU VI 4, 19; ChU I 6, 1."}, {"lemma": "Das Ursubjekt", "text": "Der hier vorgenommene Genuswechsel erzwingt die Annahme, daß das Bezugswort nun *ātman* = »Ursubjekt«, nicht mehr *brahman* = »Urgrund« wie in I 4, 23, ist. Zu den Implikationen vgl. I 4, 14."}, {"lemma": "Nähstrand als die Götterklassen", "text": "Die soziomorphe Organisation der altindischen Gesellschaft wird auch hier – wie bereits vorhin beim Fürstenstand – zunächst typologisch auf die Gesellschaft der Götter projiziert. Auf dieser Grundlage wird dann der vorliegende Schöpfungsmythos als zeitloser Archetypus und Rechtfertigung für die gesellschaftlichen Hierarchien konstruiert, wie sie zur Zeit der Abfassung dieser Upanischad charakteristisch und als ewig gegeben gedacht worden waren. Mit Nähstrand verband sich vorwiegend die Erwerbstätigkeit als Händler oder Bauer, vgl. auch Michaels (S. 185 ff.)."}], "apparatus_bohtlingk": [{"note": "Vgl. Böhtlingk (1889), S. 5-9 (Text) u. S. 10-14 (Übersetzung)."}]}, {"verse_num": 25, "canonical_id": "1.4.25", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.25", "sanskrit_iast": "sa naiva vyabhavat | sa śaudraṃ varṇam asṛjata pūṣaṇam | iyaṃ vai pūṣā | iyaṃ hīdaṃ sarvaṃ puṣyati yad idaṃ kiñca", "sanskrit_devanagari": "स नैव व्यभवत् ।  स शौद्रं वर्णम् असृजत पूषणम् ।  इयं वै पूषा ।  इयं हीदं सर्वं पुष्यति यद् इदं किञ्च", "translation_slaje": "Das [Ursubjekt] unterschied sich [noch] nicht vollständig. Da brachte es den dienenden Stand (śūdra) als Pūṣan hervor. Pūṣan ist die [Erde] hier, denn sie nährt (pusyati) alles hier, was es gibt.", "translation_bohtlingk": "Es konnte sich noch immer nicht entfalten. Da schuf es die Kaste der Çüdra, den Püshan. Der Püshan ist die Erde, da diese Alles, was es hier nur irgend gibt, zum Gedeihen bringt (pushjati).", "commentary_slaje": [{"lemma": "Pūṣan", "text": "Zur Gestalt und den Funktionen dieses Gottes, einem Gegenstück zum griechischen Pan und römischen Faun, vgl. Oberlies (*Rgveda*, 1. Teil, S. 202-204, mit Literatur) sowie Oberlies (*Pūṣans Zahnlücken*). Das erklärt noch nicht Pūṣans Identifikation mit dem Stand der Unfreien oder Dienenden (*śūdra*) (vgl. Hock, *Reader*, S. 96), die hier vorwiegend volksetymologisch-lautliche Gründe hat."}], "apparatus_bohtlingk": []}, {"verse_num": 26, "canonical_id": "1.4.26", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.26", "sanskrit_iast": "sa naiva vyabhavat | tac chreyo rūpam atyasṛjata dharmam | tad etat kṣatrasya kṣatraṃ yad dharmaḥ | tasmād dharmāt paraṃ nāsti | atho abalīyān balīyāṃsam āśaṃsate dharmeṇa yathā rājñaivam | yo vai sa dharmaḥ satyaṃ vai tat | tasmāt satyaṃ vadantam āhur dharmaṃ vadatīti | dharmaṃ vā vadantaṃ satyaṃ vadatīti | etad dhy evaitad ubhayaṃ bhavati", "sanskrit_devanagari": "स नैव व्यभवत् ।  तच् छ्रेयो रूपम् अत्यसृजत धर्मम् ।  तद् एतत् क्षत्रस्य क्षत्रं यद् धर्मः ।  तस्माद् धर्मात् परं नास्ति ।  अथो अबलीयान् बलीयांसम् आशंसते धर्मेण यथा राज्ञैवम् ।  यो वै स धर्मः सत्यं वै तत् ।  तस्मात् सत्यं वदन्तम् आहुर् धर्मं वदतीति ।  धर्मं वा वदन्तं सत्यं वदतीति ।  एतद् ध्य् एवैतद् उभयं भवति", "translation_slaje": "Das [Ursubjekt] unterschied sich [noch] nicht vollständig. Da brachte es auf unübertreffliche Weise das Recht (dharma) als höherrangige (śreyas) Erscheinungsform hervor. Das Recht ist dem Fürsten ein Fürst. Darum gibt es nichts über dem Recht. So kommt es, daß ein Schwächerer einen Stärkeren mit dem Recht bedroht, als ob [es] ein König [wäre]. Recht ist Wahrheit (satya). Das ist der Grund, weshalb man von jemandem, der wahr spricht, sagt: »Er spricht recht«, oder von jemandem, der recht spricht: »Er spricht wahr.« Diese beiden sind nämlich ein und dasselbe. 6. BṚHADĀRAṆYAKA-UPANIṢAD 115", "translation_bohtlingk": "Es konnte sich noch immer nicht entfalten. Da schuf es aufschreitend eine bessere Erscheinungsform, das Recht. Das Recht ist des Kriegerstandes Kriegerstand. Darum geht Nichts über das Recht. Auch hofft ein Schwächerer einen Stärkeren durch das Recht auf dieselbe Weise wie durch einen Fürsten zu bemeistern. Das Recht ist aber auch die Wahrheit. Darum sagt man von Einem, der die Wahrheit spricht, dass er das Recht spreche, und von Einem, der das Recht spricht, dass er die Wahrheit spreche. So ist denn Beides eines und dasselbe.", "commentary_slaje": [], "apparatus_bohtlingk": []}, {"verse_num": 27, "canonical_id": "1.4.27", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.27", "sanskrit_iast": "tad etad brahma kṣatraṃ viṭ śūdraḥ | tad agninaiva deveṣu brahmābhavad brāhmaṇo manuṣyeṣu, kṣatriyeṇa kṣatriyaḥ, vaiśyena vaiśyaḥ, śūdreṇa śūdraḥ | tasmād agnāv eva deveṣu lokam icchante brāhmaṇe manuṣyeṣu | etābhyāṃ hi rūpābhyāṃ brahmābhavat", "sanskrit_devanagari": "तद् एतद् ब्रह्म क्षत्रं विट् शूद्रः ।  तद् अग्निनैव देवेषु ब्रह्माभवद् ब्राह्मणो मनुष्येषु, क्षत्रियेण क्षत्रियः, वैश्येन वैश्यः, शूद्रेण शूद्रः ।  तस्माद् अग्नाव् एव देवेषु लोकम् इच्छन्ते ब्राह्मणे मनुष्येषु ।  एताभ्यां हि रूपाभ्यां ब्रह्माभवत्", "translation_slaje": "So ist der Urgrund (brāhman) Fürstenstand (kṣatra), Nährstand (viś) [und] dienender Stand (śūdra). Nur als Feuer bestand der Urgrund unter den Göttern; unter den Menschen [wurde er] Brahmane; Fürst [wurde er] als Fürst; Angehöriger des Nährstands [wurde er] als Angehöriger des Nährstands; Angehöriger des dienenden Stands [wurde er] als Angehöriger des dienenden Stands. Deshalb erhofft man sich nur im Feuer einen Daseinsbereich (loka) unter den Göttern [und] in einem Brahmanen [einen] unter den Menschen. Denn [unter ihnen] wurde der Urgrund zu diesen beiden Erscheinungsformen.", "translation_bohtlingk": "So verhält es sich mit den Brahmanen, Kriegern, Ackerbauern und Çüdra. Das Brahman erschien unter den Göttern als Agni, unter den Menschen als Brahmane; der (göttliche) Krieger (erschien hier) als Krieger, der (göttliche) Ackerbauer (hier) als Ackerbauer, der (göttliche) Çüdra (hier) als Çüdra. Darum wünscht man sich, wenn es sich um eine Stätte (Stellung) unter den Göttern handelt, die bei Agni; wenn es sich aber um eine Stätte (Stellung) unter den Menschen handelt, die unter Brahmanen. In diesen zwei Erscheinungsformen erschien ja das Brahman.", "commentary_slaje": [{"lemma": "So ist der Urgrund", "text": "*brāhman* als Subjekt (aber nicht in prädikativer Stellung, wie bei praktisch allen Übersetzern) auch von Hock (*Reader*, S. 96) sicher zu Recht so gesehen."}], "apparatus_bohtlingk": []}, {"verse_num": 28, "canonical_id": "1.4.28", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.28", "sanskrit_iast": "atha yo ha vā asmāl lokāt svaṃ lokam adṛṣṭvā praiti sa enam avidito na bhunakti yathā vedo vānanūkto 'nyad vā karmākṛtam | yadi ha vā apy anevaṃvin mahatpuṇyaṃ karma karoti tad dhāsyāntataḥ kṣīyata eva | ātmānam eva lokam upāsīta | sa ya ātmānam eva lokam upāste na hāsya karma kṣīyate | asmād dhy evātmano yadyat kāmayate tattat sṛjate", "sanskrit_devanagari": "अथ यो ह वा अस्माल् लोकात् स्वं लोकम् अदृष्ट्वा प्रैति स एनम् अविदितो न भुनक्ति यथा वेदो वाननूक्तो ऽन्यद् वा कर्माकृतम् ।  यदि ह वा अप्य् अनेवंविन् महत्पुण्यं कर्म करोति तद् धास्यान्ततः क्षीयत एव ।  आत्मानम् एव लोकम् उपासीत ।  स य आत्मानम् एव लोकम् उपास्ते न हास्य कर्म क्षीयते ।  अस्माद् ध्य् एवात्मनो यद्यत् कामयते तत्तत् सृजते", "translation_slaje": "Scheidet nun jemand von dieser Welt (loka) hier, ohne seinen [wahren] Daseinsbereich gesehen zu haben, nützt der ihm nicht, da er ihm unbekannt (avidita) bleibt. [Das ist] wie beim Veda, wenn er nicht rezitiert, oder bei einem Opferwerk (karman), das nicht ausgeführt wird. Selbst ein großes, verdienstvolles Opferwerk, das jemand vollbringt, entschwindet zuletzt demjenigen, der das nicht richtig versteht. Es ist allein sein Wesenskern, dem man als [seinem] Daseinsbereich huldigen soll. Wer nur seinem Wesenskern als [seinem] Daseinsbereich huldigt, dem entschwinden die Werkfolgen (karman) nicht: Vielmehr bringt er all das aus seinem Wesenskern hervor, was er begehrt.", "translation_bohtlingk": "Wer aber von dieser Stätte scheidet ohne seine Stätte gesehen zu haben, dem ist diese, weil sie nicht erkannt wurde, nicht zu Nutzen, eben so wenig wie der Veda, wenn er nicht studirt wurde, oder ein anderes Werk, das nicht vollendet wurde. Wenn nun Jemand, der Solches nicht kennt, auch ein grosses und gutes Werk vollbringt, so geht dieses ihm doch schliesslich zu Grunde. Das Selbst verehre man als (wahre) Stätte. Wer das Selbst als (wahre) Stätte verehrt, dessen Werk geht nicht zu Grunde; denn aus diesem Selbst schafft er sich Alles, was er wünscht.", "commentary_slaje": [{"lemma": "*entschwindet*", "text": "Im Sinne des Resultats, das sich nicht einstellt."}], "apparatus_bohtlingk": []}, {"verse_num": 29, "canonical_id": "1.4.29", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.29", "sanskrit_iast": "atho ayaṃ vā ātmā sarveṣāṃ bhūtānāṃ lokaḥ |sa yaj juhoti yad yajate tena devānāṃ lokaḥ | atha yad anubrūte tena ṛṣīṇām | atha yat pitṛbhyo nipṛṇāti yat prajām icchate tena pitṝṇām | atha yan manuṣyān vāsayate yad ebhyo 'śanaṃ dadāti tena manuṣyāṇām | atha yat paśubhyas tṛṇodakaṃ vindati tena paśūnām | yad asya gṛheṣu śvāpadā vayāṃsy ā pipīlikābhya upajīvanti tena teṣāṃ lokaḥ | yathā ha vai svāya lokāyāriṣṭim icchet | evaṃ haivaṃvide sarvadā sarvāṇi bhūtāny ariṣṭim icchanti | tad vā etad viditaṃ mīmāṃsitam", "sanskrit_devanagari": "अथो अयं वा आत्मा सर्वेषां भूतानां लोकः । स यज् जुहोति यद् यजते तेन देवानां लोकः ।  अथ यद् अनुब्रूते तेन ऋषीणाम् ।  अथ यत् पितृभ्यो निपृणाति यत् प्रजाम् इच्छते तेन पितॄणाम् ।  अथ यन् मनुष्यान् वासयते यद् एभ्यो ऽशनं ददाति तेन मनुष्याणाम् ।  अथ यत् पशुभ्यस् तृणोदकं विन्दति तेन पशूनाम् ।  यद् अस्य गृहेषु श्वापदा वयांस्य् आ पिपीलिकाभ्य उपजीवन्ति तेन तेषां लोकः ।  यथा ह वै स्वाय लोकायारिष्टिम् इच्छेत् ।  एवं हैवंविदे सर्वदा सर्वाणि भूतान्य् अरिष्टिम् इच्छन्ति ।  तद् वा एतद् विदितं मीमांसितम्", "translation_slaje": "Der Bereich jedes einzelnen Wesens ist folglich [sein] Wesenskern: Der Bereich der Götter dadurch, daß man [geklärte Butter] ins Feuer gießt (juboti), daß man [Opfergaben] darbringt (yajate); [der Bereich] der Seher dadurch, daß man [den Veda] hersagt; des weiteren [der Bereich] der männlichen Ahnen dadurch, daß man Nachkommen erstrebt, daß man für die männlichen Ahnen [Verpflegung] deponiert; [der Bereich] der Menschen dadurch, daß man Menschen beherbergt, daß man ihnen zu essen gibt; [der Bereich] des Viehs dadurch, daß man dem Vieh Gras und Wasser findet; [der Bereich] der Tiere – die Vögel bis hin zu den Ameisen – dadurch, daß sie in jemandes Hause [ihren] Lebensunterhalt finden. Ganz wie man seinem eigenen Bereich Wohlergehen wünscht, wün- 116 UPANISCHADEN DES WEISSEN YAJUR-VEDA schen alle Wesen allzeit demjenigen Wohlergehen, der es in dieser Weise richtig versteht. So wurde, [was] bekannt ist (*vidita*), kritisch erörtert.", "translation_bohtlingk": "Nun ist dieses Selbst die Stätte aller Wesen. Dadurch, dass man opfert und Spenden in's Feuer wirft, ist es die Stätte 1,4,20 14 der Götter; dadurch, dass man Etwas auswendig lernt, die der Rshi; dadurch, dass man sich Nachkommenschaft wünscht und den Vätern Etwas hinlegt, die der Väter; dadurch, dass man Menschen beherbergt und ihnen zu essen gibt, die der Menschen; dadurch, dass man den Nutzthieren Gras und Wasser verschafft, die der Thiere; dadurch, dass reissende Thiere, Vögel (und andere Creaturen) bis zu den Ameisen in seinem Hause ihren Lebensunterhalt finden, die Stätte dieser Thiere. Wie man seiner eigenen Stätte Wohlergehen wünscht, so wünschen dem, der Solches kennt, alle Wesen Wohlergehen. Dieses ist, was man erwogen und erkannt hat.", "commentary_slaje": [{"lemma": "Verpflegung deponiert", "text": "Zu gewissen Jahreszeiten oder bei Eintritt eines glücklichen Ereignisses wird das *sa-pīṇḍi-karaṇa* vollzogen als Aufnahme des Toten in den Kreis der Vorväter. Von da an hat der Verstorbene an der »Kloßgemeinschaft« = Verwandtschaft teil. Da nur drei *piṇḍas* = »Klöße« dargebracht STELLENKOMMENTAR ZU I.4,23-1.5,7 493 werden dürfen, scheidet der älteste Ahne, der Urgroßvater des letzten Toten, aus der Gemeinschaft aus und wird zu den himmlischen Ahnen (*višve devāh*). Daher war sicherzustellen, daß die opferberechtigte Sohneskontinuität erhalten blieb. Vier Wasserkrüge waren mit Sesam, Wohlgerüchen und Wasser zu füllen, drei für die Ahnen (Urgroßvater, Großvater und Vater) und einer für den zuletzt Verstorbenen."}], "apparatus_bohtlingk": []}, {"verse_num": 30, "canonical_id": "1.4.30", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.30", "sanskrit_iast": "ātmaivedam agra āsīd eka eva | so 'kāmayata jāyā me syād atha prajāyeya | atha vittaṃ me syād atha karma kurvīyeti | etāvān vai kāmaḥ | necchaṃś canāto bhūyo vindet | tasmād apy etarhy ekākī kāmayate -- jāyā me syād atha prajāyeyātha vittaṃ me syād atha karma kurvīyeti | sa yāvad apy eteṣām ekaikaṃ na prāpnoty akṛtsna eva tāvan manyate | tasyo kṛtsnatā", "sanskrit_devanagari": "आत्मैवेदम् अग्र आसीद् एक एव ।  सो ऽकामयत जाया मे स्याद् अथ प्रजायेय ।  अथ वित्तं मे स्याद् अथ कर्म कुर्वीयेति ।  एतावान् वै कामः ।  नेच्छंश् चनातो भूयो विन्देत् ।  तस्माद् अप्य् एतर्ह्य् एकाकी कामयते -- जाया मे स्याद् अथ प्रजायेयाथ वित्तं मे स्याद् अथ कर्म कुर्वीयेति ।  स यावद् अप्य् एतेषाम् एकैकं न प्राप्नोत्य् अकृत्स्न एव तावन् मन्यते ।  तस्यो कृत्स्नता", "translation_slaje": "Am Anfang gab es hier nur das Ursubjekt, in ausnahmsloser Singularität. Es begehrte: »Ich will eine Frau, daß ich mich fortpflanzen kann! Ich brauche Vermögen, um Opferwerke auszuführen!« Das ist der volle Umfang eines Begehrens. Mehr als das bekommt man nicht, selbst wenn man möchte. Deshalb begehrt auch heute ein Alleinstehender: »Ich will eine Frau, daß ich mich fortpflanzen kann! Ich brauche Vermögen, um Opferwerke auszuführen!« So lange er keins davon bekommt, hält er sich für rundweg unvollständig. Seine Vollständigkeit aber ist [dies]:", "translation_bohtlingk": "Am Anfange war hier das Selbst, und zwar war dieses ganz allein. Da fühlte es das Verlangen ein Weib zu haben, sich fortzupflanzen, Vermögen zu besitzen und ein (frommes) Werk zu vollbringen. So weit und nicht weiter geht der Wunsch. Trotz aller Wünsche würde man doch nicht mehr als dieses erlangen. Daher hat auch heut zu Tage ein Alleinstehender das Verlangen ein Weib zu haben, sich fortzupflanzen, Vermögen zu besitzen und ein (frommes) Werk zu vollbringen. So lange man nur Eines von diesen nicht erlangt hat, hält man sich für unvollständig. Seine Vollständigkeit besteht aber in Folgendem:", "commentary_slaje": [{"lemma": "*Höhenflug", "text": "abhyāroha* = »Aufstieg«, ein Eröffnungsopfer, das den Opferherrn zu den Göttern erheben soll. Vgl. MYL (S. 33); Hock (*Reader*, S. 92)."}, {"lemma": "*bei den Preßgesängen*", "text": "Spezielle Kategorie von Gesängen, die anlässlich der Somapressung gesungen werden. Zu *pava-māna* vgl. MYL (S. 89)."}, {"lemma": "*Prastotr*", "text": "Priestergehilfe, vgl. ChU I 10, 8."}, {"lemma": "*Präludium*", "text": "Wörtlich »stimmt die Melodie an«. Das entspricht dem *prastāva* = »Präludium«, vgl. ChU II 2, 1. #### I 4"}], "apparatus_bohtlingk": []}, {"verse_num": 31, "canonical_id": "1.4.31", "title": "Bṛhadāraṇyaka-Upaniṣad 1.4.31", "sanskrit_iast": "mana evāsyātmā | vāg jāyā | prāṇaḥ prajā | cakṣur mānuṣaṃ vittam | cakṣuṣā hi tad vindate | śrotraṃ daivam | śrotreṇa hi tac chṛṇoti | ātmaivāsya karma | ātmanā hi karma karoti | sa eṣa pāṅkto yajñaḥ | pāṅktaḥ paśuḥ | pāṅktaḥ puruṣaḥ | pāṅktam idaṃ sarvaṃ yad idaṃ kiñca | tad idaṃ sarvam āpnoti ya evaṃ veda", "sanskrit_devanagari": "मन एवास्यात्मा ।  वाग् जाया ।  प्राणः प्रजा ।  चक्षुर् मानुषं वित्तम् ।  चक्षुषा हि तद् विन्दते ।  श्रोत्रं दैवम् ।  श्रोत्रेण हि तच् छृणोति ।  आत्मैवास्य कर्म ।  आत्मना हि कर्म करोति ।  स एष पाङ्क्तो यज्ञः ।  पाङ्क्तः पशुः ।  पाङ्क्तः पुरुषः ।  पाङ्क्तम् इदं सर्वं यद् इदं किञ्च ।  तद् इदं सर्वम् आप्नोति य एवं वेद", "translation_slaje": "Sein Wesenskern ist nichts als [sein] Denkvermögen; [seine] Frau [seine] Sprechfähigkeit; [seine] Nachkommen [seine] Atemkraft; [sein gegenständliches] Vermögen [seine] Sehkraft, denn mit der Sehkraft findet man [Vermögen]; [sein] göttliches [Vermögen seine] Hörkraft, denn mit der Hörkraft hört man [von den Göttern]. Sein Opferwerk ist er selbst (*ātman*), denn das Opferwerk führt er selbst aus. Somit ist das Opfer fünffach, das Opfertier fünffach, der Mann fünffach, fünffach einfach alles, was immer es hier gibt. Das alles bekommt, wer es in der richtigen Weise versteht. # I f 1 Von sieben Speisen, die der Vater schuf, Durch Selbstqual und Verstand, War eine davon da für jedermann. Zwei teilte er den Göttern zu, Drei bestimmte er für sich, Dem Zuchtvieh überließ er eine. Alles gründet sich auf diese, Was da atmet und was nicht. 6. BRHADĀRANYAKA-UPANIŠAD 117 Warum erschöpfen sie sich nicht, Da man sie unentwegt verspeist? Wer ihre Unerschöpflichkeit begreift, Verzehret Nahrung mit dem Mund. Zu den Göttern geht er, Von Belebendem lebt er. So lauten die Strophen. 2 »Von sieben Speisen, die der Vater schuf durch Selbstqual und Verstand …« – Der Vater schuf sie nämlich mit Verstand, durch Selbstqual. »… war eine davon da für jedermann« – Das ist genau die eine Speise von ihm, die man als allen gemeinsame ißt. Wer der huldigt, trennt sich nicht vom Übel, denn sie ist vermischt. 3 »Zwei teilte er den Göttern zu …« – Ins Feuer gegossene [Butter] und nachgeopferte [Speisen]. Deshalb gießt man für die Götter [geklärte Butter] ins Feuer und bringt [ihnen] hinterher [Speisen] dar. Man erklärt [die beiden Speisen] aber auch als das Neu- und Vollmondsopfer. Deshalb braucht man keine Išti-Opfer durchzuführen. 4 »Dem Zuchtvieh überließ er eine.« – Das ist die Milch. Denn anfänglich ernähren sich die Menschen und das Vieh nur von Milch. Deshalb läßt man den neugeborenen Knaben entweder geklärte Butter lecken oder an der Mutterbrust saugen. 5 So spricht man vom zur Welt gebrachten Kalb [auch] als »nicht grasend«. »Alles gründet sich auf diese, was da atmet und was nicht« – Auf Milch ist nämlich all das hier gegründet, was da atmet und was nicht. 6 Man sagt [auch] Folgendes: »Wer ein Jahr lang Milch [ins Feuer] opfert, wehrt erneutes Sterben [von sich] ab.« So braucht man das nicht aufzufassen. Wer es in der richtigen Weise versteht, wehrt erneutes Sterben schon an dem Tage [von sich] ab, an dem er [Milch] opfert. Denn [damit] spendet", "translation_bohtlingk": "Sein Selbst ist das Denkorgan, sein Weib die Stimme, seine Nachkommenschaft der Hauch; sein menschliches Vermögen ist das Auge, denn mit dem Auge erlangt er dieses; sein göttliches Vermögen ist das Ohr, denn mit dem Ohre hört er dieses; sein (frommes) Werk ist das Selbst, denn mit dem Selbst vollbringt er das (fromme) Werk. Dies ist das fünffache Opfer, das fünffache Opferthier, der fünffache Geist (Purusha), fünffach ist Alles, was es hier gibt. Wer Solches kennt, der erlangt Alles, was es hier gibt.", "commentary_slaje": [{"lemma": "*das Opfer fünffach*", "text": "Hier als die fünf aufgezählten »Kräfte« »Denkvermögen«, »Sprechfähigkeit«, »Atemkraft«, »Sehkraft« und »Hörkraft« gemeint, die zusammengenommen mit demjenigen identifiziert werden, der »selbst« das Opfer ist – also mit ihm in seiner Gesamtheit identifiziert werden. Zu unterschiedlichen Begründungen, weshalb das Opfer als fünffach angesehen wurde, vgl. OLI (S. 494). ## I 5"}], "apparatus_bohtlingk": []}]};
+
+function renderVerses(list) {
+    const container = document.getElementById('versesGrid');
+    if (!list || list.length === 0) {
+        container.innerHTML = '<div style="text-align:center;padding:3rem;color:var(--text-muted);">Keine Verse für diese Suchanfrage gefunden.</div>';
+        return;
+    }
+
+    container.innerHTML = list.map(sec => {
+        let commHtml = '';
+        if (sec.commentary_slaje && sec.commentary_slaje.length > 0) {
+            commHtml = `
+                <div class="commentary-container">
+                    <div class="commentary-title">📝 Philologischer Stellenkommentar (Slaje 2009)</div>
+                    ${sec.commentary_slaje.map(c => `
+                        <div class="commentary-item">
+                            <span class="commentary-lemma">${escapeHtml(c.lemma || '')}</span>
+                            <span>${escapeHtml(c.text || '')}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        return `
+            <article class="verse-card" id="v-${sec.verse_num}">
+                <div class="verse-card-header">
+                    <span class="verse-canonical-badge">BĀU ${sec.canonical_id}</span>
+                    <span class="verse-source-tag">Abschnitt ${sec.verse_num} von 31</span>
+                </div>
+
+                <div class="verse-deva">${escapeHtml(sec.sanskrit_devanagari || '')}</div>
+                <div class="verse-iast">${escapeHtml(sec.sanskrit_iast || '')}</div>
+
+                <div class="verse-synopsis-columns">
+                    <div class="trans-panel slaje">
+                        <div class="trans-meta-header slaje">
+                            <span>Walter Slaje (2009)</span>
+                            <span style="font-weight:normal;opacity:0.8;">Ursubjekt-Konzeption</span>
+                        </div>
+                        <div class="trans-body">${escapeHtml(sec.translation_slaje || '')}</div>
+                    </div>
+
+                    <div class="trans-panel bohtlingk">
+                        <div class="trans-meta-header bohtlingk">
+                            <span>Otto von Böhtlingk (1889)</span>
+                            <span style="font-weight:normal;opacity:0.8;">Mādhyandina-Erstausgabe</span>
+                        </div>
+                        <div class="trans-body">${escapeHtml(sec.translation_bohtlingk || '')}</div>
+                    </div>
+                </div>
+
+                ${commHtml}
+            </article>
+        `;
+    }).join('');
+}
+
+function filterVerses() {
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    if (!q) {
+        renderVerses(DATA.sections);
+        return;
+    }
+
+    const filtered = DATA.sections.filter(sec => {
+        const inDeva = (sec.sanskrit_devanagari || '').toLowerCase().includes(q);
+        const inIast = (sec.sanskrit_iast || '').toLowerCase().includes(q);
+        const inSlaje = (sec.translation_slaje || '').toLowerCase().includes(q);
+        const inBoht = (sec.translation_bohtlingk || '').toLowerCase().includes(q);
+        const inComm = (sec.commentary_slaje || []).some(c => 
+            (c.lemma || '').toLowerCase().includes(q) || (c.text || '').toLowerCase().includes(q)
+        );
+        return inDeva || inIast || inSlaje || inBoht || inComm;
+    });
+
+    renderVerses(filtered);
+}
+
+function escapeHtml(str) {
+    return (str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    renderVerses(DATA.sections);
+});
+</script>
+</body>
+</html>
