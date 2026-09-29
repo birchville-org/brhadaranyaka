@@ -960,11 +960,11 @@ function renderInteractiveIast(sec, secIdx) {{
         if (tokText === '|' || tokText === '||') {{
             return `<span style="color:#64748b;font-style:normal;margin:0 3px;">${{tokText}}</span>`;
         }}
-        return `<span class="iast-word-token" data-sec-idx="${{secIdx}}" data-token-idx="${{tIdx}}" onclick="showPopover(event, ${{secIdx}}, ${{tIdx}})">${{tokText}}</span>`;
+        return `<span class="iast-word-token" data-sec-idx="${{secIdx}}" data-token-idx="${{tIdx}}" onclick="showVerseGrammarPopover(event, ${{secIdx}}, ${{tIdx}})">${{tokText}}</span>`;
     }}).join(' ');
 }}
 
-function showPopover(event, secIdx, tokenIdx) {{
+function showVerseGrammarPopover(event, secIdx, tokenIdx) {{
     if (event) {{
         event.stopPropagation();
     }}
