@@ -390,7 +390,10 @@ header.app-header {{
 .grammar-popover {{
     position: fixed;
     z-index: 999999;
-    width: 320px;
+    width: 350px;
+    max-width: calc(100vw - 24px);
+    max-height: 520px;
+    overflow-y: auto;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
@@ -502,12 +505,33 @@ header.app-header {{
     color: #0f172a;
     font-weight: 600;
 }}
+.popover-word-root {{
+    color: #4338ca;
+    font-weight: 600;
+    font-size: 11px;
+    margin-left: 4px;
+}}
 
+.popover-word-morph-syntax {{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+}}
 .popover-word-morph {{
     font-size: 11.5px;
     font-weight: 600;
     color: #334155;
-    margin-bottom: 3px;
+}}
+.popover-word-syntax {{
+    background: #ecfdf5;
+    color: #047857;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border-left: 2px solid #059669;
 }}
 
 .popover-word-gloss {{
@@ -515,6 +539,49 @@ header.app-header {{
     font-size: 12.5px;
     color: #8b1e22;
     font-style: italic;
+    margin-bottom: 4px;
+}}
+
+.popover-compound-box {{
+    margin-top: 6px;
+    padding: 6px 8px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 3px solid #d97706;
+    border-radius: 4px;
+    font-size: 11px;
+}}
+.popover-compound-header {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}}
+.popover-compound-tag {{
+    font-weight: 700;
+    color: #b45309;
+    text-transform: uppercase;
+    font-size: 9.5px;
+}}
+.popover-compound-members {{
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: #78350f;
+    font-size: 11px;
+}}
+.popover-compound-analysis {{
+    color: #92400e;
+    font-size: 11px;
+    line-height: 1.35;
+}}
+
+.popover-word-note {{
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    font-size: 10.5px;
+    color: #64748b;
+    line-height: 1.3;
 }}
 
 .prev-trans-block {{
@@ -991,10 +1058,24 @@ function showGrammarPopover(event, tokenIdx) {{
                     <span class="popover-word-pos">${{escapeHtml(w.pos || '')}}</span>
                 </div>
                 <div class="popover-word-lemma">
-                    Stamm/Wurzel: <span class="popover-word-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                    Stamm/Lemma: <span class="popover-word-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                    ${{w.root ? ` <span class="popover-word-root">(${{escapeHtml(w.root)}})</span>` : ''}}
                 </div>
-                <div class="popover-word-morph">${{escapeHtml(w.morph || '')}}</div>
+                <div class="popover-word-morph-syntax">
+                    <span class="popover-word-morph">${{escapeHtml(w.morph || '')}}</span>
+                    ${{w.syntax ? `<span class="popover-word-syntax">⮑ ${{escapeHtml(w.syntax)}}</span>` : ''}}
+                </div>
                 <div class="popover-word-gloss">»${{escapeHtml(w.gloss || '')}}«</div>
+                ${{(w.is_compound && (w.compound_type || w.compound_analysis)) ? `
+                    <div class="popover-compound-box">
+                        <div class="popover-compound-header">
+                            <span class="popover-compound-tag">Samāsa: ${{escapeHtml(w.compound_type || 'Kompositum')}}</span>
+                            ${{(w.compound_members && w.compound_members.length) ? `<span class="popover-compound-members">${{escapeHtml(w.compound_members.join(' + '))}}</span>` : ''}}
+                        </div>
+                        ${{w.compound_analysis ? `<div class="popover-compound-analysis">${{escapeHtml(w.compound_analysis)}}</div>` : ''}}
+                    </div>
+                ` : ''}}
+                ${{w.notes ? `<div class="popover-word-note">${{escapeHtml(w.notes)}}</div>` : ''}}
             `;
             listEl.appendChild(div);
         }});

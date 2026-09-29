@@ -488,7 +488,10 @@ section.explorer {{
 .interactive-popover {{
     position: fixed;
     z-index: 999999;
-    width: 320px;
+    width: 350px;
+    max-width: calc(100vw - 24px);
+    max-height: 520px;
+    overflow-y: auto;
     background: rgba(19, 27, 42, 0.96);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -598,12 +601,33 @@ section.explorer {{
     color: var(--gold-light);
     font-weight: 600;
 }}
+.pop-word-root {{
+    color: #818cf8;
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin-left: 4px;
+}}
 
+.pop-word-morph-syntax {{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+}}
 .pop-word-morph {{
     font-size: 0.85rem;
     font-weight: 600;
     color: #e2e8f0;
-    margin-bottom: 3px;
+}}
+.pop-word-syntax {{
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 3px;
+    border-left: 2px solid #10b981;
 }}
 
 .pop-word-gloss {{
@@ -611,6 +635,49 @@ section.explorer {{
     font-size: 0.95rem;
     color: var(--primary-light);
     font-style: italic;
+    margin-bottom: 4px;
+}}
+
+.pop-compound-box {{
+    margin-top: 6px;
+    padding: 6px 8px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    font-size: 0.75rem;
+}}
+.pop-compound-header {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}}
+.pop-compound-tag {{
+    font-weight: 700;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}}
+.pop-compound-members {{
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: #fde68a;
+    font-size: 0.75rem;
+}}
+.pop-compound-analysis {{
+    color: #fef3c7;
+    font-size: 0.75rem;
+    line-height: 1.35;
+}}
+
+.pop-word-note {{
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px dashed rgba(255,255,255,0.1);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    line-height: 1.3;
 }}
 
 .verse-synopsis-columns {{
@@ -998,10 +1065,24 @@ function showVerseGrammarPopover(event, secIdx, tokenIdx) {{
                     <span class="pop-word-pos">${{escapeHtml(w.pos || '')}}</span>
                 </div>
                 <div class="pop-word-lemma">
-                    Stamm/Wurzel: <span class="pop-word-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                    Stamm/Lemma: <span class="pop-word-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                    ${{w.root ? ` <span class="pop-word-root">(${{escapeHtml(w.root)}})</span>` : ''}}
                 </div>
-                <div class="pop-word-morph">${{escapeHtml(w.morph || '')}}</div>
+                <div class="pop-word-morph-syntax">
+                    <span class="pop-word-morph">${{escapeHtml(w.morph || '')}}</span>
+                    ${{w.syntax ? `<span class="pop-word-syntax">⮑ ${{escapeHtml(w.syntax)}}</span>` : ''}}
+                </div>
                 <div class="pop-word-gloss">»${{escapeHtml(w.gloss || '')}}«</div>
+                ${{(w.is_compound && (w.compound_type || w.compound_analysis)) ? `
+                    <div class="pop-compound-box">
+                        <div class="pop-compound-header">
+                            <span class="pop-compound-tag">Samāsa: ${{escapeHtml(w.compound_type || 'Kompositum')}}</span>
+                            ${{(w.compound_members && w.compound_members.length) ? `<span class="pop-compound-members">${{escapeHtml(w.compound_members.join(' + '))}}</span>` : ''}}
+                        </div>
+                        ${{w.compound_analysis ? `<div class="pop-compound-analysis">${{escapeHtml(w.compound_analysis)}}</div>` : ''}}
+                    </div>
+                ` : ''}}
+                ${{w.notes ? `<div class="pop-word-note">${{escapeHtml(w.notes)}}</div>` : ''}}
             `;
             listEl.appendChild(card);
         }});
@@ -1234,7 +1315,10 @@ def build_synopsis_html(data: dict) -> str:
 .synopsis-grammar-popover {{
     position: fixed;
     z-index: 999999;
-    width: 320px;
+    width: 350px;
+    max-width: calc(100vw - 24px);
+    max-height: 520px;
+    overflow-y: auto;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
@@ -1337,8 +1421,71 @@ def build_synopsis_html(data: dict) -> str:
 }}
 .syn-pop-card-gloss {{
     font-size: 11.5px;
-    color: #d97706;
+    color: #8b1e22;
     font-style: italic;
+    margin-bottom: 4px;
+}}
+.syn-word-root {{
+    color: #4338ca;
+    font-weight: 600;
+    font-size: 11px;
+    margin-left: 4px;
+}}
+.syn-word-morph-syntax {{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+}}
+.syn-word-syntax {{
+    background: #ecfdf5;
+    color: #047857;
+    font-size: 10.5px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border-left: 2px solid #059669;
+}}
+.syn-compound-box {{
+    margin-top: 6px;
+    padding: 6px 8px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-left: 3px solid #d97706;
+    border-radius: 4px;
+    font-size: 11px;
+}}
+.syn-compound-header {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}}
+.syn-compound-tag {{
+    font-weight: 700;
+    color: #b45309;
+    text-transform: uppercase;
+    font-size: 9.5px;
+}}
+.syn-compound-members {{
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    color: #78350f;
+    font-size: 11px;
+}}
+.syn-compound-analysis {{
+    color: #92400e;
+    font-size: 11px;
+    line-height: 1.35;
+}}
+.syn-word-note {{
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px dashed #e2e8f0;
+    font-size: 10.5px;
+    color: #64748b;
+    line-height: 1.3;
 }}
 </style>
 
@@ -1390,10 +1537,24 @@ function showSynopsisPopover(event, secIdx, tokenIdx) {{
                     <span class="syn-pop-card-pos">${{escapeHtml(w.pos || '')}}</span>
                 </div>
                 <div class="syn-pop-card-lemma">
-                    Stamm/Wurzel: <span class="syn-pop-card-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                    Stamm/Lemma: <span class="syn-pop-card-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                    ${{w.root ? ` <span class="syn-word-root">(${{escapeHtml(w.root)}})</span>` : ''}}
                 </div>
-                <div class="syn-pop-card-morph">${{escapeHtml(w.morph || '')}}</div>
+                <div class="syn-word-morph-syntax">
+                    <span class="syn-pop-card-morph">${{escapeHtml(w.morph || '')}}</span>
+                    ${{w.syntax ? `<span class="syn-word-syntax">⮑ ${{escapeHtml(w.syntax)}}</span>` : ''}}
+                </div>
                 <div class="syn-pop-card-gloss">»${{escapeHtml(w.gloss || '')}}«</div>
+                ${{(w.is_compound && (w.compound_type || w.compound_analysis)) ? `
+                    <div class="syn-compound-box">
+                        <div class="syn-compound-header">
+                            <span class="syn-compound-tag">Samāsa: ${{escapeHtml(w.compound_type || 'Kompositum')}}</span>
+                            ${{(w.compound_members && w.compound_members.length) ? `<span class="syn-compound-members">${{escapeHtml(w.compound_members.join(' + '))}}</span>` : ''}}
+                        </div>
+                        ${{w.compound_analysis ? `<div class="syn-compound-analysis">${{escapeHtml(w.compound_analysis)}}</div>` : ''}}
+                    </div>
+                ` : ''}}
+                ${{w.notes ? `<div class="syn-word-note">${{escapeHtml(w.notes)}}</div>` : ''}}
             `;
             listEl.appendChild(card);
         }});
