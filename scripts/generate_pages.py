@@ -487,7 +487,7 @@ section.explorer {{
 /* Floating Popover */
 .interactive-popover {{
     position: fixed;
-    z-index: 9999;
+    z-index: 999999;
     width: 320px;
     background: rgba(19, 27, 42, 0.96);
     backdrop-filter: blur(16px);
@@ -840,19 +840,6 @@ footer.global-footer {{
     </div>
 
     <div id="versesGrid" class="verses-grid"></div>
-
-    <!-- Floating Global Grammar Popover -->
-    <div id="globalGrammarPopover" class="interactive-popover">
-        <div class="pop-head">
-            <span id="popTitle" class="pop-title">Token</span>
-            <button class="pop-close" onclick="hideGlobalPopover()">✕</button>
-        </div>
-        <div id="popSandhiBar" class="pop-sandhi">
-            <span class="pop-sandhi-label">Padapāṭha:</span>
-            <span id="popSandhiVal">...</span>
-        </div>
-        <div id="popWordsList" class="pop-words"></div>
-    </div>
 </section>
 
 <section id="artifacts" class="artifacts">
@@ -947,6 +934,19 @@ footer.global-footer {{
     </div>
 </footer>
 
+<!-- Floating Global Grammar Popover (Fixed Viewport Overlay) -->
+<div id="globalGrammarPopover" class="interactive-popover">
+    <div class="pop-head">
+        <span id="popTitle" class="pop-title">Token</span>
+        <button class="pop-close" onclick="hideGlobalPopover()">✕</button>
+    </div>
+    <div id="popSandhiBar" class="pop-sandhi">
+        <span class="pop-sandhi-label">Padapāṭha:</span>
+        <span id="popSandhiVal">...</span>
+    </div>
+    <div id="popWordsList" class="pop-words"></div>
+</div>
+
 <script>
 const DATA = {data_json_str};
 
@@ -965,13 +965,16 @@ function renderInteractiveIast(sec, secIdx) {{
 }}
 
 function showPopover(event, secIdx, tokenIdx) {{
-    event.stopPropagation();
+    if (event) {{
+        event.stopPropagation();
+    }}
     const sec = DATA.sections[secIdx];
     if (!sec || !sec.grammar_analysis || !sec.grammar_analysis[tokenIdx]) return;
 
     const tokenData = sec.grammar_analysis[tokenIdx];
-    const targetEl = event.currentTarget;
+    const targetEl = (event.currentTarget || event.target).closest('.iast-word-token') || event.currentTarget || event.target;
     const pop = document.getElementById('globalGrammarPopover');
+    if (!pop || !targetEl) return;
 
     document.querySelectorAll('.iast-word-token').forEach(el => el.classList.remove('active'));
     targetEl.classList.add('active');
@@ -1006,19 +1009,30 @@ function showPopover(event, secIdx, tokenIdx) {{
 
     pop.style.display = 'block';
     const rect = targetEl.getBoundingClientRect();
+    const popWidth = pop.offsetWidth || 320;
+    const popHeight = pop.offsetHeight || 260;
 
-    let left = rect.left + window.scrollX;
-    let top = rect.bottom + window.scrollY + 6;
+    let left = rect.left;
+    let top = rect.bottom + 6;
 
-    if (left + 330 > window.innerWidth) {{
-        left = Math.max(10, window.innerWidth - 340);
+    if (left + popWidth > window.innerWidth - 12) {{
+        left = Math.max(12, window.innerWidth - popWidth - 12);
     }}
-    if (rect.bottom + pop.offsetHeight > window.innerHeight) {{
-        top = Math.max(10, rect.top + window.scrollY - pop.offsetHeight - 6);
+    if (left < 12) {{
+        left = 12;
     }}
 
-    pop.style.left = left + 'px';
-    pop.style.top = top + 'px';
+    if (top + popHeight > window.innerHeight - 12) {{
+        const flippedTop = rect.top - popHeight - 6;
+        if (flippedTop >= 12) {{
+            top = flippedTop;
+        }} else {{
+            top = Math.max(12, window.innerHeight - popHeight - 12);
+        }}
+    }}
+
+    pop.style.left = Math.round(left) + 'px';
+    pop.style.top = Math.round(top) + 'px';
 }}
 
 function hideGlobalPopover() {{
@@ -1030,7 +1044,7 @@ function hideGlobalPopover() {{
 document.addEventListener('click', (e) => {{
     const pop = document.getElementById('globalGrammarPopover');
     if (pop && pop.style.display === 'block') {{
-        if (!pop.contains(e.target) && !e.target.classList.contains('iast-word-token')) {{
+        if (!pop.contains(e.target) && !e.target.closest('.iast-word-token')) {{
             hideGlobalPopover();
         }}
     }}
@@ -1166,12 +1180,279 @@ def build_synopsis_html(data: dict) -> str:
         <span style="color: #cbd5e1; font-weight: 600;">Bṛhadāraṇyaka-Upaniṣad I.4 — Synoptische Lesefassung</span>
     </div>
     <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-size: 11.5px; color: #fbbf24;">💡 Klick auf ein IAST-Wort öffnet die grammatische Analyse</span>
         <a href="data/output/brhadaranyaka_1_4_synopsis.pdf" target="_blank" style="color: #94a3b8; text-decoration: none;">📄 PDF herunterladen</a>
         <a href="viewer.html" style="background: #8b1e22; color: #fff; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-weight: 600;">🚀 QA-Viewer öffnen</a>
     </div>
 </div>
 """
+
+    # Inject interactive tokens into .iast-block
+    for sec_idx, sec in enumerate(data.get("sections", [])):
+        ga = sec.get("grammar_analysis", [])
+        if not ga:
+            continue
+        raw_iast = sec.get("sanskrit_iast", "")
+        # Build interactive tokens
+        tok_spans = []
+        for t_idx, t in enumerate(ga):
+            tok_text = (t.get("token") or "").replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+            if tok_text in ('|', '||'):
+                tok_spans.append(f'<span style="color:#888;font-style:normal;margin:0 2px;">{tok_text}</span>')
+            else:
+                tok_spans.append(f'<span class="synopsis-iast-tok" data-sec="{sec_idx}" data-tok="{t_idx}" onclick="showSynopsisPopover(event, {sec_idx}, {t_idx})">{tok_text}</span>')
+        interactive_iast = " ".join(tok_spans)
+        # Replace the raw iast block in content
+        target_pattern = f'<div class="iast-block">{raw_iast}</div>'
+        if target_pattern in content:
+            content = content.replace(target_pattern, f'<div class="iast-block interactive-iast">{interactive_iast}</div>')
+
+    # Popover CSS & HTML & JS for synopsis.html
+    synopsis_popover_snippet = f"""
+<style>
+.synopsis-iast-tok {{
+    cursor: pointer;
+    font-style: italic;
+    padding: 1px 3px;
+    margin: 0 1px;
+    border-radius: 3px;
+    border-bottom: 1.5px dotted #7b1113;
+    transition: all 0.15s ease;
+    display: inline-block;
+}}
+.synopsis-iast-tok:hover {{
+    background: #fef3c7;
+    color: #b45309;
+    border-bottom-color: #b45309;
+}}
+.synopsis-iast-tok.active {{
+    background: #fde68a;
+    color: #92400e;
+    font-weight: 600;
+    border-bottom: 2px solid #b45309;
+}}
+.synopsis-grammar-popover {{
+    position: fixed;
+    z-index: 999999;
+    width: 320px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    color: #0f172a;
+    display: none;
+    animation: popoverFadeIn 0.15s ease-out;
+}}
+@keyframes popoverFadeIn {{
+    from {{ opacity: 0; transform: translateY(-4px); }}
+    to {{ opacity: 1; transform: translateY(0); }}
+}}
+.syn-pop-head {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}}
+.syn-pop-title {{
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+    color: #7b1113;
+}}
+.syn-pop-close {{
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 2px 4px;
+}}
+.syn-pop-close:hover {{ color: #0f172a; }}
+.syn-pop-sandhi {{
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: #475569;
+    margin-bottom: 10px;
+    font-family: 'EB Garamond', Georgia, serif;
+}}
+.syn-pop-words {{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 280px;
+    overflow-y: auto;
+}}
+.syn-pop-card {{
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 10px;
+}}
+.syn-pop-card-top {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}}
+.syn-pop-card-form {{
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0f172a;
+}}
+.syn-pop-card-pos {{
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}}
+.syn-pop-card-lemma {{
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 4px;
+}}
+.syn-pop-card-lemma-val {{
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 600;
+    color: #7b1113;
+}}
+.syn-pop-card-morph {{
+    font-size: 11px;
+    color: #334155;
+    margin-bottom: 4px;
+    line-height: 1.35;
+}}
+.syn-pop-card-gloss {{
+    font-size: 11.5px;
+    color: #d97706;
+    font-style: italic;
+}}
+</style>
+
+<!-- Floating Grammar Popover for synopsis.html -->
+<div id="synopsisGrammarPopover" class="synopsis-grammar-popover">
+    <div class="syn-pop-head">
+        <span id="synPopTitle" class="syn-pop-title">Token</span>
+        <button class="syn-pop-close" onclick="hideSynopsisPopover()">✕</button>
+    </div>
+    <div id="synPopSandhi" class="syn-pop-sandhi">
+        <span style="font-weight: 600; color: #64748b; font-size: 10px; text-transform: uppercase;">Padapāṭha:</span>
+        <span id="synPopSandhiVal" style="font-weight: 600; color: #0f172a; margin-left: 4px;">...</span>
+    </div>
+    <div id="synPopWords" class="syn-pop-words"></div>
+</div>
+
+<script>
+const SYNOPSIS_DATA = {json.dumps(data, ensure_ascii=False)};
+
+function showSynopsisPopover(event, secIdx, tokenIdx) {{
+    if (event) event.stopPropagation();
+    const sec = SYNOPSIS_DATA.sections[secIdx];
+    if (!sec || !sec.grammar_analysis || !sec.grammar_analysis[tokenIdx]) return;
+
+    const tokenData = sec.grammar_analysis[tokenIdx];
+    const targetEl = (event.currentTarget || event.target).closest('.synopsis-iast-tok') || event.currentTarget || event.target;
+    const pop = document.getElementById('synopsisGrammarPopover');
+    if (!pop || !targetEl) return;
+
+    document.querySelectorAll('.synopsis-iast-tok').forEach(el => el.classList.remove('active'));
+    targetEl.classList.add('active');
+
+    document.getElementById('synPopTitle').textContent = tokenData.token || '';
+    document.getElementById('synPopSandhiVal').textContent = tokenData.sandhi || tokenData.token || '';
+
+    const listEl = document.getElementById('synPopWords');
+    listEl.innerHTML = '';
+    const words = tokenData.words || [];
+
+    if (words.length === 0) {{
+        listEl.innerHTML = '<div style="color:#64748b;font-size:11px;">Keine morphologische Zerlegung hinterlegt.</div>';
+    }} else {{
+        words.forEach(w => {{
+            const card = document.createElement('div');
+            card.className = 'syn-pop-card';
+            card.innerHTML = `
+                <div class="syn-pop-card-top">
+                    <span class="syn-pop-card-form">${{escapeHtml(w.form || '')}}</span>
+                    <span class="syn-pop-card-pos">${{escapeHtml(w.pos || '')}}</span>
+                </div>
+                <div class="syn-pop-card-lemma">
+                    Stamm/Wurzel: <span class="syn-pop-card-lemma-val">${{escapeHtml(w.lemma || '')}}</span>
+                </div>
+                <div class="syn-pop-card-morph">${{escapeHtml(w.morph || '')}}</div>
+                <div class="syn-pop-card-gloss">»${{escapeHtml(w.gloss || '')}}«</div>
+            `;
+            listEl.appendChild(card);
+        }});
+    }}
+
+    pop.style.display = 'block';
+    const rect = targetEl.getBoundingClientRect();
+    const popWidth = pop.offsetWidth || 320;
+    const popHeight = pop.offsetHeight || 260;
+
+    let left = rect.left;
+    let top = rect.bottom + 6;
+
+    if (left + popWidth > window.innerWidth - 12) {{
+        left = Math.max(12, window.innerWidth - popWidth - 12);
+    }}
+    if (left < 12) left = 12;
+
+    if (top + popHeight > window.innerHeight - 12) {{
+        const flippedTop = rect.top - popHeight - 6;
+        if (flippedTop >= 12) top = flippedTop;
+        else top = Math.max(12, window.innerHeight - popHeight - 12);
+    }}
+
+    pop.style.left = Math.round(left) + 'px';
+    pop.style.top = Math.round(top) + 'px';
+}}
+
+function hideSynopsisPopover() {{
+    const pop = document.getElementById('synopsisGrammarPopover');
+    if (pop) pop.style.display = 'none';
+    document.querySelectorAll('.synopsis-iast-tok').forEach(el => el.classList.remove('active'));
+}}
+
+document.addEventListener('click', (e) => {{
+    const pop = document.getElementById('synopsisGrammarPopover');
+    if (pop && pop.style.display === 'block') {{
+        if (!pop.contains(e.target) && !e.target.closest('.synopsis-iast-tok')) {{
+            hideSynopsisPopover();
+        }}
+    }}
+}});
+document.addEventListener('keydown', (e) => {{
+    if (e.key === 'Escape') hideSynopsisPopover();
+}});
+
+function escapeHtml(str) {{
+    return (str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}}
+</script>
+"""
+
     content = content.replace("<body>", f"<body>\n{nav_bar}")
+    content = content.replace("</body>", f"{synopsis_popover_snippet}\n</body>")
     return content
 
 

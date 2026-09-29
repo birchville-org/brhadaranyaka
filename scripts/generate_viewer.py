@@ -388,13 +388,13 @@ header.app-header {{
 
 /* Floating Grammar Popover */
 .grammar-popover {{
-    position: absolute;
-    z-index: 1000;
+    position: fixed;
+    z-index: 999999;
     width: 320px;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     padding: 14px;
     font-family: var(--font-sans);
     font-size: 12px;
@@ -698,6 +698,7 @@ header.app-header {{
 
     <div class="app-controls">
         <span id="saveStatus" class="save-status">✓ Gespeichert & repariert</span>
+        <button id="btnReset" class="btn btn-outline" onclick="resetToMasterData()" title="Setzt Daten & Grammatik auf Originalstand zurück">↺ Reset</button>
         <button id="btnOpen" class="btn btn-secondary" onclick="openLocalFile()">📂 Öffnen</button>
         <button id="btnSave" class="btn btn-primary" onclick="silentAutoRepairAndSave()">💾 Speichern</button>
         <button id="btnExportJson" class="btn btn-outline" onclick="exportJsonFile()">⬇ JSON Export</button>
@@ -730,19 +731,6 @@ header.app-header {{
                 </div>
             </div>
             <div id="previewBody" class="preview-body"></div>
-
-            <!-- Floating Grammar Popover Container -->
-            <div id="grammarPopover" class="grammar-popover">
-                <div class="popover-header">
-                    <span id="popoverTitle" class="popover-token-title">Token</span>
-                    <button class="popover-close-btn" onclick="hideGrammarPopover()">✕</button>
-                </div>
-                <div id="popoverSandhiBar" class="popover-sandhi-bar">
-                    <span class="popover-sandhi-label">Padapāṭha:</span>
-                    <span id="popoverSandhiVal">...</span>
-                </div>
-                <div id="popoverWordsList" class="popover-words-list"></div>
-            </div>
         </section>
 
         <!-- Pane 2: Editable Source (Right) -->
@@ -814,29 +802,62 @@ header.app-header {{
     </main>
 </div>
 
+<!-- Floating Grammar Popover (Fixed Viewport Overlay) -->
+<div id="grammarPopover" class="grammar-popover">
+    <div class="popover-header">
+        <span id="popoverTitle" class="popover-token-title">Token</span>
+        <button class="popover-close-btn" onclick="hideGrammarPopover()">✕</button>
+    </div>
+    <div id="popoverSandhiBar" class="popover-sandhi-bar">
+        <span class="popover-sandhi-label">Padapāṭha:</span>
+        <span id="popoverSandhiVal">...</span>
+    </div>
+    <div id="popoverWordsList" class="popover-words-list"></div>
+</div>
+
 <script>
 // Embedded Single Source of Truth Master Data
 let MASTER_DATA = {json_str};
 let activeIndex = 0;
 let activeTab = 'synopsis';
 let fileHandle = null;
+let isInitialized = false;
 
 // Initialize
 window.addEventListener('DOMContentLoaded', () => {{
     const cached = localStorage.getItem('as_bau_1_4_data');
     if (cached) {{
         try {{
-            MASTER_DATA = JSON.parse(cached);
-        }} catch(e) {{}}
+            const parsed = JSON.parse(cached);
+            if (parsed && Array.isArray(parsed.sections)) {{
+                // Auto-migrate grammar analysis if cached data lacks tokens
+                const cachedTokens = parsed.sections.reduce((acc, s) => acc + (s.grammar_analysis ? s.grammar_analysis.length : 0), 0);
+                const masterTokens = MASTER_DATA.sections.reduce((acc, s) => acc + (s.grammar_analysis ? s.grammar_analysis.length : 0), 0);
+                
+                if (cachedTokens < masterTokens) {{
+                    console.log(`Auto-migrating grammar tokens into cached data (${{masterTokens}} master vs ${{cachedTokens}} cached)...`);
+                    parsed.sections.forEach((sec, idx) => {{
+                        const mSec = MASTER_DATA.sections[idx] || MASTER_DATA.sections.find(s => s.canonical_id === sec.canonical_id);
+                        if (mSec && mSec.grammar_analysis && mSec.grammar_analysis.length > 0) {{
+                            sec.grammar_analysis = mSec.grammar_analysis;
+                        }}
+                    }});
+                    localStorage.setItem('as_bau_1_4_data', JSON.stringify(parsed));
+                }}
+                MASTER_DATA = parsed;
+            }}
+        }} catch(e) {{
+            console.error('Error parsing localStorage:', e);
+        }}
     }}
     renderVerseList();
     selectVerse(0);
 
-    // Close popover when clicking elsewhere in preview
+    // Close popover when clicking elsewhere
     document.addEventListener('click', (e) => {{
         const pop = document.getElementById('grammarPopover');
         if (pop && pop.style.display === 'block') {{
-            if (!pop.contains(e.target) && !e.target.classList.contains('iast-token-interactive')) {{
+            if (!pop.contains(e.target) && !e.target.closest('.iast-token-interactive')) {{
                 hideGrammarPopover();
             }}
         }}
@@ -846,6 +867,13 @@ window.addEventListener('DOMContentLoaded', () => {{
         if (e.key === 'Escape') hideGrammarPopover();
     }});
 }});
+
+function resetToMasterData() {{
+    if (confirm("Möchten Sie alle Daten auf den Original-Masterstand (inklusive aller 1.087 grammatischen Wortanalysen) zurücksetzen?")) {{
+        localStorage.removeItem('as_bau_1_4_data');
+        location.reload();
+    }}
+}}
 
 function renderVerseList() {{
     const listEl = document.getElementById('verseList');
@@ -884,10 +912,12 @@ function selectVerse(idx) {{
     document.getElementById('editComm').value = JSON.stringify(sec.commentary_slaje || [], null, 2);
 
     renderPreview();
+    isInitialized = true;
 }}
 
 function commitCurrentFormToMemory() {{
-    if (!MASTER_DATA.sections[activeIndex]) return;
+    if (!isInitialized) return;
+    if (!MASTER_DATA.sections || !MASTER_DATA.sections[activeIndex]) return;
     const sec = MASTER_DATA.sections[activeIndex];
     sec.sanskrit_devanagari = document.getElementById('editDeva').value;
     sec.sanskrit_iast = document.getElementById('editIast').value;
@@ -926,14 +956,16 @@ function renderInteractiveIast(sec) {{
 }}
 
 function showGrammarPopover(event, tokenIdx) {{
-    event.stopPropagation();
+    if (event) {{
+        event.stopPropagation();
+    }}
     const sec = MASTER_DATA.sections[activeIndex];
-    if (!sec.grammar_analysis || !sec.grammar_analysis[tokenIdx]) return;
+    if (!sec || !sec.grammar_analysis || !sec.grammar_analysis[tokenIdx]) return;
 
     const tokenData = sec.grammar_analysis[tokenIdx];
-    const targetEl = event.currentTarget;
+    const targetEl = (event.currentTarget || event.target).closest('.iast-token-interactive') || event.currentTarget || event.target;
     const pop = document.getElementById('grammarPopover');
-    const pane = document.getElementById('previewPane');
+    if (!pop || !targetEl) return;
 
     // Remove active state on other tokens
     document.querySelectorAll('.iast-token-interactive').forEach(el => el.classList.remove('active'));
@@ -968,24 +1000,35 @@ function showGrammarPopover(event, tokenIdx) {{
         }});
     }}
 
-    // Position relative to previewPane
+    // Display popover to compute rendered size
     pop.style.display = 'block';
-    const targetRect = targetEl.getBoundingClientRect();
-    const paneRect = pane.getBoundingClientRect();
 
-    let left = targetRect.left - paneRect.left;
-    let top = targetRect.bottom - paneRect.top + 6;
+    const rect = targetEl.getBoundingClientRect();
+    const popWidth = pop.offsetWidth || 320;
+    const popHeight = pop.offsetHeight || 260;
 
-    // Boundary protection
-    if (left + 330 > paneRect.width) {{
-        left = Math.max(10, paneRect.width - 340);
+    let left = rect.left;
+    let top = rect.bottom + 6;
+
+    // Clamping to viewport
+    if (left + popWidth > window.innerWidth - 12) {{
+        left = Math.max(12, window.innerWidth - popWidth - 12);
     }}
-    if (top + pop.offsetHeight > paneRect.height) {{
-        top = Math.max(10, targetRect.top - paneRect.top - pop.offsetHeight - 6);
+    if (left < 12) {{
+        left = 12;
     }}
 
-    pop.style.left = left + 'px';
-    pop.style.top = top + 'px';
+    if (top + popHeight > window.innerHeight - 12) {{
+        const flippedTop = rect.top - popHeight - 6;
+        if (flippedTop >= 12) {{
+            top = flippedTop;
+        }} else {{
+            top = Math.max(12, window.innerHeight - popHeight - 12);
+        }}
+    }}
+
+    pop.style.left = Math.round(left) + 'px';
+    pop.style.top = Math.round(top) + 'px';
 }}
 
 function hideGrammarPopover() {{
