@@ -1,0 +1,15 @@
+[project]
+name = "brhadaranyaka"
+version = "1.0.0"
+description = "Bṛhadāraṇyaka-Upaniṣad I.4: Synoptische philologische Edition, Master-JSON, TEI-P5 XML & QA-Viewer"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pymupdf>=1.24.0",
+    "indic-transliteration>=2.3.82",
+    "weasyprint>=60.0",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

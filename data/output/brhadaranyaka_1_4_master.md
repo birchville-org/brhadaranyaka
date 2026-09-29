@@ -1,0 +1,586 @@
+# Bṛhadāraṇyaka-Upaniṣad 1.4
+**Ursubjekt (ātman) / Schöpfungsmythos** — *Mādhyandina (mit Referenz zur Kāṇva-Zählung)*
+
+## Quellen & Editionen
+- **Slaje (2009):** *Upanischaden: Arkanum des Veda*, Frankfurt am Main.
+- **Böhtlingk (1889):** *Bṛhadāraṇjakopanishad in der Mādhyandina-Recension*, St. Petersburg.
+- **Esposito:** *IAST-Kanontext*.
+
+---
+## Synoptischer Text (1.4.1 – 1.4.31)
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.1
+
+**Devanagari:**
+> आत्मैवेदम् अग्र आसीत् पुरुषविधः ।  सो ऽनुवीक्ष्य नान्यद् आत्मनो ऽपश्यत् । सो ऽहम् अस्मीत्य् अग्रे व्याहरत् ।  ततो ऽहंनामाभवत् ।  तस्माद् अप्य् एतर्ह्य् आमन्त्रितो ऽहम् अयम् इत्य् एवाग्र उक्त्वाथान्यन् नाम प्रब्रूते यद् अस्य भवति
+
+**IAST:**
+> *ātmaivedam agra āsīt puruṣavidhaḥ | so 'nuvīkṣya nānyad ātmano 'paśyat |so 'ham asmīty agre vyāharat | tato 'haṃnāmābhavat | tasmād apy etarhy āmantrito 'ham ayam ity evāgra uktvāthānyan nāma prabrūte yad asya bhavati*
+
+**Übersetzung Walter Slaje (2009):**
+Am Anfang gab es hier nur das Ursubjekt (ātman) in Mannesgestalt. Als es umherblickte, sah es nichts anderes als sich selbst. »Das da bin ich!« [war, was] es zuallererst aussprach. Deshalb erhielt es den Namen »ich« (abam). Das ist auch der Grund, weshalb heutzutage jemand, wurde er angesprochen, zuerst nur »ich bin es« sagt [und] erst danach seinen anderen Namen nennt, den er hat.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Am Anfange war Dieses das Selbst in der Art des Geistes (Purusha). Als dieses sich umschaute, erblickte es nichts Anderes als sich. Was es zuerst aussprach, war «ich bin da». Darauf erhielt es den Namen Ich. Daher sagt auch heute noch Einer, wenn er angesprochen worden ist, zuerst «ich bin es», und darauf erst verkündet er den andern Namen, den er hat.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.2
+
+**Devanagari:**
+> स यत् पूर्वो ऽस्मात् सर्वस्मात् सर्वान् पाप्मन औषत् तस्मात् पुरुषः ।  ओषति ह वै स तं यो ऽस्मात् पूर्वो बुभूषति य एवं वेद
+
+**IAST:**
+> *sa yat pūrvo 'smāt sarvasmāt sarvān pāpmana auṣat tasmāt puruṣaḥ | oṣati ha vai sa taṃ yo 'smāt pūrvo bubhūṣati ya evaṃ veda*
+
+**Übersetzung Walter Slaje (2009):**
+»Mann« (puruṣa) deshalb, weil er noch vor (pūrva) all dem hier alle Übel versengte (uṣ). Wenn es jemand in dieser Weise richtig versteht, versengt er denjenigen, der ihm voraus sein möchte.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Weil dieses (Selbst), bevor (pūrva) noch Alles war, alles Uebel verbrannte (aushat), deshalb ist es Purusha (Geist). Wer Solches kennt, verbrennt denjenigen, der ihm zuvorzukommen trachtet.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **denn sie ist vermischt**: Die Erklärung dieses Teils des nicht völlig klaren Versrätsels läuft darauf hinaus, sich vor Speise zu hüten, die von jedermann konsumiert (und berührt) wird. Ein Indiz für Kontaminationsangst durch Nahrung, wie sie für indische Kommensalitätsschranken auch heute noch charakteristisch ist.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.3
+
+**Devanagari:**
+> सो ऽबिभेत् तस्माद् एकाकी बिभेति ।  स हायम् ईक्षां चक्रे, यन् मद् अन्यन् नास्ति कस्मान् नु बिभेमीति ।  तत एवास्य भयं वीयाय ।  कस्माद् ध्य् अभेष्यत् ।  द्वितीयाद् वै भयं भवति
+
+**IAST:**
+> *so 'bibhet tasmād ekākī bibheti | sa hāyam īkṣāṃ cakre, yan mad anyan nāsti kasmān nu bibhemīti | tata evāsya bhayaṃ vīyāya | kasmād dhy abheṣyat | dvitīyād vai bhayaṃ bhavati*
+
+**Übersetzung Walter Slaje (2009):**
+Das [Ursubjekt] fürchtete sich. Deshalb fürchtet sich jemand, der allein ist. Es dachte bei sich: »Wenn es außer mir nichts gibt, wovor fürchte ich mich dann?« Daraufhin verging seine Furcht. Wovor hätte es sich denn fürchten sollen? Furcht entsteht ja vor einem Zweiten.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es fürchtete sich. Darum fürchtet man sich, wenn man allein ist. Da dachte es bei sich: «da es ausser mir nichts Anderes gibt, wovor fürchte ich mich denn?» Darauf verging seine Furcht; denn wovor hätte es sich fürchten sollen? Man fürchtet sich ja nur vor einem Zweiten.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Neu- und Vollmondsopfer**: Relativ unkompliziertes Verfahren, das allen Opfern von Vegetabilien (*iṣṭi*) und auch dem Tieropfer (*pašubandha*) als Muster zugrunde liegt. Vgl. Hillebrandt (*Neu- und Vollmondsopfer*). Davon grundlegend verschieden ist das Somaopfer.
+- **keine Iṣṭi-Opfer**: Die genaue Bedeutung von *iṣṭiyājuka* ist unklar. Deussen (*Upanishad's*, S. 400) übersetzt »keine Wunschopfer«, Olivelle »should not offer sacrifices endlessly« (OLI, S. 53; vgl. 495). Aus dem Kontext ließe es sich aber vielleicht auch als »keine Iṣṭi-Opfer« (ähnlich auch Böhtlingk, *Bṛhadāranjakopanishad*, S. 15) verstehen, insofern die Neu- und Vollmondsopfer ja das Modell für die *iṣṭi* bieten (unter I 5, 3).
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.4
+
+**Devanagari:**
+> स वै नैव रेमे ।  तस्माद् एकाकी न रमते ।  स द्वितीयम् ऐच्छत् ।  स हैतावान् आस यथा स्त्रीपुमांसौ सम्परिष्वक्तौ
+
+**IAST:**
+> *sa vai naiva reme | tasmād ekākī na ramate | sa dvitīyam aicchat | sa haitāvān āsa yathā strīpumāṃsau sampariṣvaktau*
+
+**Übersetzung Walter Slaje (2009):**
+Doch es vergnügte sich auch nicht. Deshalb vergnügt sich niemand, der allein ist. Es sehnte sich nach einem Zweiten. Es war so groß wie Mann und Frau, wenn sie umschlungen sind.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es war gar nicht vergnügt. Darum ist man nicht vergnügt, wenn man allein ist. Es wünschte sich einen Zweiten. Da ward es soviel als ein Mann und ein Weib, die sich umschlungen haben.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.5
+
+**Devanagari:**
+> स इमम् एवात्मानं द्वेधापातयत् ।  ततः पतिश् च पत्नी चाभवताम् ।  तस्माद् इदम् अर्धबृगलम् इव स्व इति ह स्माह याज्ञवल्क्यः ।  तस्माद् अयम् आकाशः स्त्रिया पूर्यत एव ।  तां समभवत् ।  ततो मनुष्या अजायन्त
+
+**IAST:**
+> *sa imam evātmānaṃ dvedhāpātayat | tataḥ patiś ca patnī cābhavatām | tasmād idam ardhabṛgalam iva sva iti ha smāha yājñavalkyaḥ | tasmād ayam ākāśaḥ striyā pūryata eva | tāṃ samabhavat | tato manuṣyā ajāyanta*
+
+**Übersetzung Walter Slaje (2009):**
+Es ließ sich selbst in zwei Teile zerfallen (pat). Daraus wurde ein Gatte (pati) und eine Gattin (patni). Deshalb pflegte Yājña- 6. BṚHADĀRĀNYAKA-UPANIṢAD 111 valkya [zu seiner Frau] zu sagen, »wir zwei sind gewissermaßen je eine halbe Portion«. Deshalb wird die Leere in der Tat mit einer Frau ausgefüllt. Er beschlief sie. Daraus entstanden die Menschen.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es theilte sich (pat) in zwei Theile; darauf entstand ein Gatte (pati) und eine Gattin (patni). Deshalb pflegte Jāgnavalkja zu sagen: «wir zwei sind auf diese Weise jedes gleichsam ein halbes Stück». Darum wird die Leere durch ein Weib erfüllt. Mit diesem vermischte es sich; darauf entstanden die Menschen.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **wir zwei sind**: (Unakzentuiertes) *svas* = »wir zwei sind« als verbum finitum akzeptiert. Deussen möchte *sve* = »an dem Selbste« (*Upanishad's*, S. 393), Hock (*Reader*, S. 94) *svab* = »one's self« lesen.
+- **die Leere**: Die zweite, unausgefüllte Hälfte.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.6
+
+**Devanagari:**
+> सो हेयम् ईक्षां चक्रे -- कथं नु मात्मन एव जनयित्वा सम्भवति ।  हन्त तिरो ऽसानीति
+
+**IAST:**
+> *so heyam īkṣāṃ cakre -- kathaṃ nu mātmana eva janayitvā sambhavati | hanta tiro 'sānīti*
+
+**Übersetzung Walter Slaje (2009):**
+Sie dachte bei sich: »Wie [kann es sein, daß] er mich beschläft, die er zuvor aus sich selbst erzeugt hatte? Ich will mich verbergen!«
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Diese aber dachte: «wie kann er sich mit mir, da er mich 1\* 1,4,5 10 aus sich selbst erzeugte, vermischen? Wohlan, ich will mich verstecken ».
+
+**Philologischer Kommentar (Slaje 2009):**
+- **erneutes Sterben**: Vgl. I 2, 8.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.7
+
+**Devanagari:**
+> सा गौर् अभवद् वृषभ इतरः ।  तां सम् एवाभवत् ।  ततो गावो ऽजायन्त
+
+**IAST:**
+> *sā gaur abhavad vṛṣabha itaraḥ | tāṃ sam evābhavat | tato gāvo 'jāyanta*
+
+**Übersetzung Walter Slaje (2009):**
+Sie wurde zur Kuh – zum Stier der andere. Er besprang sie. Daraus entstanden die Rinder.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Sie ward eine Kuh, der Andere ein Stier. Dieser vermischte sich mit jener; darauf entstanden die Rinder.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Verrichtungen**: Es könnten auch Opfer-Verrichtungen (*karman*) gemeint sein.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.8
+
+**Devanagari:**
+> वडवेतराभवद् अश्ववृष इतरः ।  गर्दभीतरा गर्दभ इतरः ।  तां सम् एवाभवत् ।  तत एकशफम् अजायत
+
+**IAST:**
+> *vaḍavetarābhavad aśvavṛṣa itaraḥ | gardabhītarā gardabha itaraḥ | tāṃ sam evābhavat | tata ekaśapham ajāyata*
+
+**Übersetzung Walter Slaje (2009):**
+Die eine wurde zur Stute – zum Hengst der andere; die eine zur Eselin – zum Esel der andere. Er besprang sie. Daraus entstand der Einhufer.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Die Eine ward eine Stute, der Andere ein Hengst. Dieser vermischte sich mit jener; darauf entstanden die Einhufer.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Sein Vatersbrudersohn*: bhrātrvya*, eine Ableitung von *bhrātr* = »Bruder«, drückt zunächst die enge Verwandtschaftsbeziehung unter Vettern aus. In diesem Begriff schwingt die Konnotation von »Rivalität« mit und steht hier in direktem Bezug zu der (rivalisierenden) Verwandtschaft zwischen Göttern und Dämonen als Nachkommen Prajāpatis.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.9
+
+**Devanagari:**
+> अजेतराभवद् बस्त इतरः ।  अविर् इतरा मेष इतरः ।  तां सम् एवाभवत् ।  ततो ऽजावयो ऽजायन्त ।  एवम् एव यद् इदं किञ्च मिथुनम् आ पिपीलिकाभ्यस् तत् सर्वम् असृजत
+
+**IAST:**
+> *ajetarābhavad basta itaraḥ | avir itarā meṣa itaraḥ | tāṃ sam evābhavat | tato 'jāvayo 'jāyanta | evam eva yad idaṃ kiñca mithunam ā pipīlikābhyas tat sarvam asṛjata*
+
+**Übersetzung Walter Slaje (2009):**
+Die eine wurde zur Ziege – zum Bock der andere; die eine zum Mutterschaf – zum Schafbock der andere. Er besprang sie. Daraus entstanden Ziegen und Schafe. Auf ganz dieselbe Weise brachte [das Ursubjekt] bis zu den Ameisen hinab alles hervor, was Paare [bildet].
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Die Eine ward eine Geis, der Andere ein Ziegenbock; und auch die Eine ein Schaf, der Andere ein Schafbock. Der Bock vermischte sich mit dem Mutterthier; darauf entstanden die Ziegen und Schafe. Auf diese Weise erschuf es (das Selbst) Alles, was hier als Pärchen besteht, bis zu den Ameisen hinab.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.10
+
+**Devanagari:**
+> सो ऽवेद् अहं वाव सृष्टिर् अस्म्य् अहं हीदं सर्वम् असृक्षीति ।  ततः सृष्टिर् अभवत् ।  सृष्ट्यां हास्यैतस्यां भवति य एवं वेद
+
+**IAST:**
+> *so 'ved ahaṃ vāva sṛṣṭir asmy ahaṃ hīdaṃ sarvam asṛkṣīti | tataḥ sṛṣṭir abhavat | sṛṣṭyāṃ hāsyaitasyāṃ bhavati ya evaṃ veda*
+
+**Übersetzung Walter Slaje (2009):**
+Da begriff es: »Ich selbst bin die Schöpfung, denn ich habe soeben alles hervorgebracht!« Von da an gedieh die Schöpfung. Wer es in dieser Weise richtig versteht, gedeiht in seiner Schöpfung hier.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Da erkannte es, dass es die Schöpfung sei, da es ja Alles so eben erschaffen hatte. Darauf ward es die Schöpfung, und derjenige, der Solches kennt, befindet sich in dieser Schöpfung des Selbst.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **gedieh**: Zu *√bhū* = »gedeihen« vgl. Hock (*Reader*, S. 94).
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.11
+
+**Devanagari:**
+> अथेत्य् अभ्यमन्थत् ।  स मुखाच् च योनेर् हस्ताभ्यां चाग्निम् असृजत ।  तस्माद् एतद् उभयम् अलोमकम् अन्तरतः ।  अलोमका हि योनिर् अन्तरतः
+
+**IAST:**
+> *athety abhyamanthat | sa mukhāc ca yoner hastābhyāṃ cāgnim asṛjata | tasmād etad ubhayam alomakam antarataḥ | alomakā hi yonir antarataḥ*
+
+**Übersetzung Walter Slaje (2009):**
+Danach rieb es auf diese Art ein Feuer an. Es erzeugte aus [seinem] Mund und aus dem Schoß (yoni) [des Feuers] mit [seinen] beiden Händen Feuer. Das ist der Grund, weshalb beide innen unbehaart sind. Denn innen unbehaart ist [auch] der [weibliche] Schoß.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Darauf rieb es das Feuer in folgender Weise: es schuf dieses aus einer Gebärmutter, dem Munde und den Händen. Daher haben diese Beiden (der Mund und die Hände) inwendig keine Haare, da ja die Gebärmutter inwendig keine Haare hat.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **auf diese Art**: Der Sprecher begleitet den Hinweis mit entsprechenden Gesten.
+- **aus dem Schoß des Feuers**: Daß *mukha* = »Mund« und *yoni* = »Ursprung, Vulva« hier in appositioneller Stellung stehen sollen, wie von Deussen (*Upanishad's*, S. 394), Olivelle (OLI, S. 47) und Hock (*Reader*, S. 94) angenommen, ist wenig überzeugend. Zum einen wird es dem (dem *mukha* nachgestellten) *ca* = »und« nicht gerecht – obwohl dieses natürlich auch nur satzanreihend gebraucht worden sein könnte –, vor allem aber trifft es in der Sache nicht zu. Als »Ursprung« bzw. »Schoß« STELLENKOMMENTAR ZU I. 3, 8-I. 4, 23 491 des Feuers wurde stets das Holz angesehen, aus dem man es herauszureiben dachte, doch niemals der Mund, der bloß darauf bläst.
+- **beide innen unbehaart**: Mund und Hände.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.12
+
+**Devanagari:**
+> तद् यद् इदम् आहुर् अमुं यजामुं यजेत्य् एकैकं देवम् एतस्यैव सा विसृष्टिः ।  एष उ ह्य् एव सर्वे देवाः
+
+**IAST:**
+> *tad yad idam āhur amuṃ yajāmuṃ yajety ekaikaṃ devam etasyaiva sā visṛṣṭiḥ | eṣa u hy eva sarve devāḥ*
+
+**Übersetzung Walter Slaje (2009):**
+Wenn man hier von jedem einzelnen Gotte sagt: »Opfer diesem, opfer jenem!«, [so ist das alles] nur die Schöpfung des [Ursubjekts]. Denn es allein ist alle Götter. 112 UPANISCHADEN DES WEISSEN YAJUR-VEDA
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Wenn man sagt: «opfere diesem und opfere jenem», und so jeden einzelnen Gott nennt, so ist das seine (des Selbst) Schöpfung im Einzelnen, da dieses (das Selbst) ja alle Götter in sich begreift.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.13
+
+**Devanagari:**
+> अथ यत् किञ्चेदम् आर्द्रं तद् रेतसो ऽसृजत ।  तद् उ सोम ।  एतावद् वा इदं सर्वम् अन्नं चैवान्नादश् च ।  सोम एवान्नम् अग्निर् अन्नादः
+
+**IAST:**
+> *atha yat kiñcedam ārdraṃ tad retaso 'sṛjata | tad u soma | etāvad vā idaṃ sarvam annaṃ caivānnādaś ca | soma evānnam agnir annādaḥ*
+
+**Übersetzung Walter Slaje (2009):**
+Aus [seinem] Sperma brachte es alles Feuchte hier hervor. Das ist der Somasaft. Das ganze All hier kommt der Nahrung und [ihrem] Verzehrer gleich: Nahrung ist der Somasaft, Verzehrer das Feuer.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Alles Feuchte, was es hier gibt, schuf es aus dem Samen. Das ist auch der Soma. Alles, was hier ist, ist ja entweder Speise oder Verspeiser. Die Speise ist Soma, der Verspeiser — das Feuer.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.14
+
+**Devanagari:**
+> सैषा ब्रह्मणो ऽतिसृष्टिः ।  यच् छ्रेयसो देवान् असृजताथ यन् मर्त्यः सन्न् अमृतान् असृजत तस्माद् अतिसृष्टिर् ।  अतिसृष्ट्यां हास्यैतस्यां भवति य एवं वेद
+
+**IAST:**
+> *saiṣā brahmaṇo 'tisṛṣṭiḥ | yac chreyaso devān asṛjatātha yan martyaḥ sann amṛtān asṛjata tasmād atisṛṣṭir | atisṛṣṭyāṃ hāsyaitasyāṃ bhavati ya evaṃ veda*
+
+**Übersetzung Walter Slaje (2009):**
+Die unübertreffliche Schöpfung (atisṛṣṭi) des Urgrunds (brābman) [besteht darin], daß er höhere Götter hervorbrachte, daß er – selbst sterblich – die Unsterblichen hervorbrachte. Deshalb ist es eine unübertreffliche Schöpfung. Wer es in dieser Weise richtig versteht, gedeiht in dieser seiner unübertrefflichen Schöpfung.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Wenn es die Götter, die vorzüglicher sind, erschuf, so ist es die höhere Schöpfung des Brahman. Dass es, obgleich sterblich, Unsterbliche erschuf, deshalb ist es die höhere Schöpfung. Wer Solches kennt, befindet sich in dieser höheren Schöpfung des Selbst.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Schöpfung des Urgrunds**: Sollte der Passus ursprünglich sein, wäre damit implizit die Identifizierung des Ursubjekts (*ātman*) mit dem Urgrund (*brāhman*) vollzogen, vgl. auch I 4, 24.
+- **selbst sterblich**: Unklar, weshalb das *brāhman* bzw. der *ātman* hier als sterblich angesehen werden. Auch die *Khilas* überliefern eine Lehrmeinung, wonach das *brāhman* Produkt sei (BĀU V 6, 1). Als solches wäre es dann in der Tat als vergänglich anzusehen.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.15
+
+**Devanagari:**
+> तद् धेदं तर्ह्य् अव्याकृतम् आसीत् ।  तन् नामरूपाभ्याम् एव व्याक्रियतासौ नामायम् इदंरूप इति ।  तद् इदम् अप्य् एतर्हि नामरूपाभ्याम् एव व्याक्रियत असौ नामायम् इदंरूप इति
+
+**IAST:**
+> *tad dhedaṃ tarhy avyākṛtam āsīt | tan nāmarūpābhyām eva vyākriyatāsau nāmāyam idaṃrūpa iti | tad idam apy etarhi nāmarūpābhyām eva vyākriyata asau nāmāyam idaṃrūpa iti*
+
+**Übersetzung Walter Slaje (2009):**
+Damals war es hier noch ungesondert (avyākṛta). Es kam zu einer Sonderung nur als Name und Erscheinungsform (nāmarūpa): »Der hat diesen Namen, diese Erscheinungsform.« So wird heute auch hier nur nach Name und Erscheinungsform gesondert: »Der hat diesen Namen, diese Erscheinungsform.«
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Damals war Dieses hier noch nicht gesondert. Es wurde durch Name und Erscheinungsform gesondert (durch die Formel): «dieser da in dieser Erscheinungsform ist der und der mit Namen». So wird auch heut zu Tage dieses durch Namen und Er- 11 1,4,23 scheinungsform gesondert (durch die Formel): «dieser da in dieser Erscheinungsform ist der und der mit Namen».
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Der hat diesen Namen**: Lies *asaū-nāmā* als Bahuvrīhikompositum.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.16
+
+**Devanagari:**
+> स एष इह प्रविष्ट आ नखाग्रेभ्यो यथा क्षुरः क्षुरधाने ऽवहितः स्याद् विश्वम्भरो वा विश्वम्भरकुलाये ।  तं न पश्यन्ति ।  अकृत्स्नो हि सः
+
+**IAST:**
+> *sa eṣa iha praviṣṭa ā nakhāgrebhyo yathā kṣuraḥ kṣuradhāne 'vahitaḥ syād viśvambharo vā viśvambharakulāye | taṃ na paśyanti | akṛtsno hi saḥ*
+
+**Übersetzung Walter Slaje (2009):**
+Das [Ursubjekt] ist hier bis in die Spitzen der Nägel eingezogen. Es steckt darinnen wie etwa ein Dolch in der Scheide oder eine Termite in der Zelle [ihres] Baus. Man sieht es nicht. Denn es ist nicht vollständig (akṛtsna).
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es (das Selbst) ist hier überall, bis in die Nagelspitzen, eingedrungen. Man sieht es eben so wenig wie ein Scheermesser oder das Feuer, wenn diese in ihren Behältern stecken. Es erscheint ja nicht als Ganzes.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **steckt darinnen wie (...) eine Termite**: Vgl. auch KauśU IV, 20. Zur nicht sicher bestimmten zoologischen Identität von *viśvambhara* = »Termite« (?) vgl. OLI (S. 493).
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.17
+
+**Devanagari:**
+> प्राणन्न् एव प्राणो नाम भवति ।  वदन् वाक् पश्यंश् चक्षुः शृण्वञ् छ्रोत्रं मन्वानो मनः ।  तान्य् अस्यैतानि कर्मनामान्य् एव ।  स यो ऽत एकैकम् उपास्ते न स वेद ।  अकृत्स्नो ह्य् एषो ऽत एकैकेन भवति
+
+**IAST:**
+> *prāṇann eva prāṇo nāma bhavati | vadan vāk paśyaṃś cakṣuḥ śṛṇvañ chrotraṃ manvāno manaḥ | tāny asyaitāni karmanāmāny eva | sa yo 'ta ekaikam upāste na sa veda | akṛtsno hy eṣo 'ta ekaikena bhavati*
+
+**Übersetzung Walter Slaje (2009):**
+Atmet es, heißt es Atemkraft (prāṇa); spricht es, Sprechfähigkeit (vāc); sieht es, Schkraft (cakṣus); hört es, Hörkraft (śrotra); denkt es, Denkvermögen (manas). Das alles sind nur Namen seiner Funktionen. Wenn jemand ihm als jedes einzelne davon huldigt, so versteht er es nicht richtig. Denn es ist nicht vollständig. Es ist jede einzelne davon.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Wenn es athmet, heisst es Hauch; wenn es redet — Stimme; wenn es sieht — Auge; wenn es hört — Ohr; wenn es denkt — Denkorgan. Dies sind nur seine der Thätigkeit entsprechenden Namen. Wer das Eine oder Andere von diesen verehrt, hat nicht die richtige Kenntniss. Es erscheint ja als das Eine oder Andere von diesen, nicht ganz.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.18
+
+**Devanagari:**
+> आत्मेत्य् एवोपासीत ।  अत्र ह्य् एते सर्व एकं भवन्ति । तद् एतत् पदनीयम् अस्य सर्वस्य यद् अयम् आत्मा ।  अनेन ह्य् एतत् सर्वं वेद । यथा ह वै पदेनानुविन्देद् एवं कीर्तिं श्लोकं विन्दते य एवं वेद
+
+**IAST:**
+> *ātmety evopāsīta | atra hy ete sarva ekaṃ bhavanti |tad etat padanīyam asya sarvasya yad ayam ātmā | anena hy etat sarvaṃ veda |yathā ha vai padenānuvinded evaṃ kīrtiṃ ślokaṃ vindate ya evaṃ veda*
+
+**Übersetzung Walter Slaje (2009):**
+Man darf ihm nur als dem Wesenskern (ātman) huldigen. In ihm nämlich werden sie alle eins. Dieser Wesenskern ist die Spur zu allem hier. Mit seiner Hilfe erfaßt man das Ganze, wie man mittels einer Fußspur [etwas] aufspüren kann. Wer es in dieser Weise richtig versteht, findet in derselben Weise Ruhm und Ehre. 6. BṚHADĀRANYAKA-UPANIṢAD 113
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Das Selbst verehre man als Solches, da darin alle jene (der Hauch u. s. w.) zu Eins werden. Was uns den Weg zu Allem weiset, ist dieses Selbst, da man durch es Alles kennt. Wie man nach einer Fusspur Etwas auffinden würde, so findet derjenige, der Solches kennt, Ruhm und Ehre.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Man darf ihm nur als dem Wesenskern**: Hier ist vom *ātman* nicht mehr als Ursubjekt, sondern in seiner individuellen Form, als Wesenskern einer personalen Existenz, die Rede.
+- **das Ganze**: Zur älteren Bedeutung von *sarva* = »das Ganze« und zur uneindeutigen Konnotation, die je nach Kontext eben auch »alles« bzw. »das All« ausdrücken kann, vgl. OLI (S. 493, mit Literatur).
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.19
+
+**Devanagari:**
+> तद् एतत् प्रेयः पुत्रात् प्रेयो वित्तात् प्रेयो ऽन्यस्मात् सर्वस्माद् अन्तरतरं यद् अयम् आत्मा ।  स यो ऽन्यम् आत्मनः प्रियं ब्रुवाणं ब्रूयात् प्रियं रोत्स्यतीतीश्वरो ह तथैव स्यात् ।  आत्मानम् एव प्रियम् उपासीत ।  स य आत्मानम् एव प्रियम् उपास्ते न हास्य प्रियं प्रमायुकं भवति
+
+**IAST:**
+> *tad etat preyaḥ putrāt preyo vittāt preyo 'nyasmāt sarvasmād antarataraṃ yad ayam ātmā | sa yo 'nyam ātmanaḥ priyaṃ bruvāṇaṃ brūyāt priyaṃ rotsyatītīśvaro ha tathaiva syāt | ātmānam eva priyam upāsīta | sa ya ātmānam eva priyam upāste na hāsya priyaṃ pramāyukaṃ bhavati*
+
+**Übersetzung Walter Slaje (2009):**
+Dieser Wesenskern [ist einem] erwünschter als ein Sohn, [ist einem] teurer als Vermögen, [ist einem] als [sein] Innerstes willkommener als alles andere. Sagte man zu jemandem, der einen anderen als seinen eigenen Wesenskern (ātman) für teuer erklärt: »[Was Dir] teuer [ist], wird sich verlieren«, so könnte es wohl so geschehen. Allein seinem Wesenskern soll man als teuer huldigen. Wer allein seinem Wesenskern als teuer huldigt, verliert nie, was ihm teuer ist.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Dieses Selbst ist uns lieber als ein Sohn, lieber als Vermögen, lieber als alles Andere und steht uns näher. Wenn man zu Jemand, der einen Andern als das Selbst für ein Liebes erklärte, sagen würde, dass er das Liebe einbüssen werde, so könnte dieses wohl eintreffen. Wer das Selbst als das Liebe verehrt, dessen Liebes geht nicht zu Grunde.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.20
+
+**Devanagari:**
+> तद् आहुर् यद् ब्रह्मविद्यया सर्वं भविष्यन्तो मनुष्या मन्यन्ते ।  किम् उ तद् ब्रह्मावेद् यस्मात् तत् सर्वम् अभवद् इति
+
+**IAST:**
+> *tad āhur yad brahmavidyayā sarvaṃ bhaviṣyanto manuṣyā manyante | kim u tad brahmāved yasmāt tat sarvam abhavad iti*
+
+**Übersetzung Walter Slaje (2009):**
+Man sagt: »Da die Menschen meinen, durch das Wissen vom Urgrund das Ganze zu werden, was muß da erst der Urgrund [darüber] gewußt haben, weshalb er zum Ganzen wurde?«
+
+**Übersetzung Otto von Böhtlingk (1889):**
+In Bezug hierauf sagt man: «Wenn die Menschen durch die Kenntniss des Brahman Alles werden zu können meinen, was muss dann erst das Brahman gekannt haben, da durch es Alles entstanden ist?»
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.21
+
+**Devanagari:**
+> ब्रह्म वा इदम् अग्र आसीत् ।  तद् आत्मानम् एवावेत् ।  अहं ब्रह्मास्मीति ।  तस्मात् तत् सर्वम् अभवत् ।  तद् यो यो देवानां प्रत्यबुध्यत स एव तद् अभवत् ।  तथर्षीनाम् ।  तथा मनुष्याणाम्
+
+**IAST:**
+> *brahma vā idam agra āsīt | tad ātmānam evāvet | ahaṃ brahmāsmīti | tasmāt tat sarvam abhavat | tad yo yo devānāṃ pratyabudhyata sa eva tad abhavat | tatharṣīnām | tathā manuṣyāṇām*
+
+**Übersetzung Walter Slaje (2009):**
+Am Anfang gab es hier nur den Urgrund. Der erkannte nur sich selbst als: »Ich bin der Urgrund.« Deshalb wurde er zum Ganzen. Allein wer von den Göttern es ebenso begriff, wurde [ebenfalls] zum [Ganzen]. Desgleichen unter Sehern und Menschen.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Am Anfange war Dieses das Brahman. Dieses erkannte das Selbst, indem es bei sich dachte «ich bin das Brahman». Daher entstand Alles. Wer immer von den Göttern dieses inne wurde, der wurde dieses; so verhielt es sich auch mit den Rshi, so auch mit den Menschen.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **es ebenso begriff**: Der Urgrund zu sein.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.22
+
+**Devanagari:**
+> तद् धैतत् पश्यन्न् ऋषिर् वामदेवः प्रतिपेदे ऽहं मनुर् अभवं सूर्यश् चेति ।  तद् इदम् अप्य् एतर्हि य एवं वेदाहं ब्रह्मास्मीति स इदं सर्वं भवति ।  तस्य ह न देवाश् चनाभूत्या ईशते ।  आत्मा ह्य् एषां स भवति ।  अथ यो ऽन्यां देवताम् उपास्ते ऽन्यो ऽसाव् अन्यो ऽहम् अस्मीति न स वेद ।  यथा पशुर् एवं स देवानाम् ।  यथा ह वै बहवः पशवो मनुष्यं भुञ्ज्युर् एवम् एकैकः पुरुषो देवान् भुनक्ति ।  एकस्मिन्न् एव पशाव् आदीयमाने ऽप्रियं भवति किम् उ बहुषु ।  तस्माद् एषां तन् न प्रियं यद् एतन् मनुष्या विद्युः
+
+**IAST:**
+> *tad dhaitat paśyann ṛṣir vāmadevaḥ pratipede 'haṃ manur abhavaṃ sūryaś ceti | tad idam apy etarhi ya evaṃ vedāhaṃ brahmāsmīti sa idaṃ sarvaṃ bhavati | tasya ha na devāś canābhūtyā īśate | ātmā hy eṣāṃ sa bhavati | atha yo 'nyāṃ devatām upāste 'nyo 'sāv anyo 'ham asmīti na sa veda | yathā paśur evaṃ sa devānām | yathā ha vai bahavaḥ paśavo manuṣyaṃ bhuñjyur evam ekaikaḥ puruṣo devān bhunakti | ekasminn eva paśāv ādīyamāne 'priyaṃ bhavati kim u bahuṣu | tasmād eṣāṃ tan na priyaṃ yad etan manuṣyā vidyuḥ*
+
+**Übersetzung Walter Slaje (2009):**
+Als er dasselbe sah, gab der Seher Vāmadeva von sich: »Ich war Manu und war die Sonne.« So wird heute auch hier jemand zum Ganzen, der es in dieser Weise versteht, daß er der Urgrund ist. Nicht einmal die Götter vermögen ihm zu schaden, ist er doch ihr Wesenskern. Wenn aber jemand einer anderen Macht (devatā) huldigt im [Gedanken] »das da ist einer, ich ein anderer«, so versteht er es nicht richtig. Er ist den Göttern Schlachtvieh (paśu). Jeder einzelne Mann ist den Göttern auf dieselbe Weise nützlich, wie vieles Schlachtvieh dem Menschen nützt. Wird [einem] ein einziges Stück Vieh genommen, so ist das unwillkommen. Um wieviel mehr, wenn es viele sind. Deshalb ist es den [Göttern] unwillkommen, wenn die Menschen das wissen, [daß sie der Urgrund sind].
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Als der Rshi Vámadeva dieses erschaute, verfiel er auf 1,4,22 12 die Worte: «Ich war einst Manu und die Sonne¹)». Daher geschieht es auch heut zu Tage, dass derjenige, der da weiss, dass er das Brahman ist, Alles wird. Und selbst die Götter vermögen es nicht zu verhindern, dass er es wird, da er ihr Selbst wird. Wer aber eine andere Gottheit verehrt, indem er bei sich denkt: «der und der ist ein Anderer, und ich bin wieder ein Anderer», der hat nicht die richtige Erkenntniss. Er ist für die Götter nichts Anderes als ein Nutzthier. Wie viele Thiere dem Menschen zu Nutzen sind, so ist jeder einzelne Mensch den Göttern zu Nutzen. Schon wenn ein einziges Thier weggenommen wird, so ist dieses etwas Unliebes; wie viel mehr, wenn dieses mit vielen geschieht? Darum ist es ihnen (den Göttern) nicht lieb, wenn die Menschen dieses wissen.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Ich war Manu**: Vgl. RV IV 26, 1.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.23
+
+**Devanagari:**
+> ब्रह्म वा इदम् अग्र आसीद् एकम् एव ।  तद् एकं सन् न व्यभवत् ।  तच् छ्रेयो रूपम् अत्यसृजत क्षत्रं, यान्य् एतानि देवत्रा क्षत्राणीन्द्रो वरुणः सोमो रुद्रः पर्जन्यो यमो मृत्युर् ईशान इति ।  तस्मात् क्षत्रात् परं नास्ति ।  तस्माद् ब्राह्मणः क्षत्रियं अधस्ताद् उपास्ते राजसूये ।  क्षत्र एव तद् यशो दधाति ।  सैषा क्षत्रस्य योनिर् यद् ब्रह्म ।  तस्माद् यद्य् अपि राजा परमतां गच्छति ब्रह्मैवान्तत उपनिश्रयति स्वां योनिम् ।  य उ एनं हिनस्ति स्वां स योनिम् ऋच्छति ।  स पापीयान् भवति यथा श्रेयांसं हिंसित्वा
+
+**IAST:**
+> *brahma vā idam agra āsīd ekam eva | tad ekaṃ san na vyabhavat | tac chreyo rūpam atyasṛjata kṣatraṃ, yāny etāni devatrā kṣatrāṇīndro varuṇaḥ somo rudraḥ parjanyo yamo mṛtyur īśāna iti | tasmāt kṣatrāt paraṃ nāsti | tasmād brāhmaṇaḥ kṣatriyaṃ adhastād upāste rājasūye | kṣatra eva tad yaśo dadhāti | saiṣā kṣatrasya yonir yad brahma | tasmād yady api rājā paramatāṃ gacchati brahmaivāntata upaniśrayati svāṃ yonim | ya u enaṃ hinasti svāṃ sa yonim ṛcchati | sa pāpīyān bhavati yathā śreyāṃsaṃ hiṃsitvā*
+
+**Übersetzung Walter Slaje (2009):**
+Am Anfang gab es hier nur den Urgrund (brābman), in ausnahmsloser (eva) Singularität (eka). Da er singulär war, unterschied er sich nicht. Da brachte er auf unübertreffliche Weise den Fürstenstand (kṣatra) als höherrangige (śreyas) Erschei- 114 UPANISCHADEN DES WEISSEN YAJUR-VEDA nungsform hervor, nämlich Indra, Varuṇa, Soma, Rudra, Parjanya, Yama, Mṛtyu [und] Īśāna als die Fürsten unter den Göttern. Darum gibt es nichts Höheres als den Fürstenstand. Das ist der Grund, weshalb ein Brahmane beim Rājasūya-Opfer ausgestreckt am Boden [seinem] Fürsten huldigt. Nur dem Fürsten erweist er da diese Ehrung. Der Ursprung des Fürstenstandes ist der [mit dem] Urgrund (brāhman) [gleichnamige Brahmanenstand]. Deshalb, selbst wenn ein Herrscher Absolutheit erlangt, schmiegt er sich letztlich [doch] nur an den [mit dem] Urgrund [gleichnamigen Brahmanenstand] als seinem Ursprung an. Wenn nun ein [Fürst] einem solchen [Angehörigen des Brahmanenstandes] ein Leid zufügt, wendet er sich gegen seinen eigenen Ursprung. Er wird tieferstehend (pāpiyas), als [hätte er seinen] höheren [Rang] (śreyas) [selbst] zerstört.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Am Anfange war Dieses das Brahman, und zwar war dieses ganz allein. Da es allein war, konnte es sich nicht entfalten. Da schuf es aufschreitend eine bessere Erscheinungsform, den Kriegerstand, d. i. folgende Krieger unter den Göttern: Indra, Varuṇa, Soma, Rudra, Parganja, Jama, Mṛtju und Içāna. Darum geht Nichts über den Kriegerstand, und darum verehrt der Brahmane den Krieger in Unterwürfigkeit, nämlich beim Rāgasūja. Auf diese Weise verschafft er dem Krieger Ansehen. Das Brahman (zugleich auch der Priesterstand) ist aber die Geburtsstätte des Kriegerstandes. Darum zieht ein Fürst, auch wenn er die höchste Stellung erreicht hat, schliesslich den Priesterstand als seine Geburtsstätte in seine Nähe. Und wer ihm (dem Brahmanen), seiner Geburtsstätte, ein Leid anhut, der tritt gegen seine Geburtsstätte feindlich auf, dem ergeht es schlechter wie Einem, der einem Bessern ein Leid angethan hat.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **unterschied er sich nicht**: *vi-√bhū* = »auseinandergehen, sich trennen, sich manifestieren«, auch als Subjekt-Objekt-Beziehung sowohl in einem erkenntnistheoretischen wie auch im Sinne von Herrschaft und Macht zu verstehen.
+- **höherrangige Erscheinungsform**: *śreyas* = »besser, höher« hier als Gegenbegriff zu (weiter) *pāpīyas* = »schlechter, tiefergestellt« zu verstehen. Das relative Ansehen der sozialen Stellung (»besser«) verband sich vor allem mit Besitz und Macht, Geringschätzung (»schlechter«) mit deren Fehlen. Vgl. auch OLI (S. 493, mit Literatur).
+- *beim Rājasūya-Opfer ausgestreckt am Boden*: Zum Rājasūya-Opfer vgl. Heesterman; zur Prostration des Brahmanen vgl. Rau (*Staat*, S. 70). Vgl. auch OLI (S. 493).
+- *seinen höheren Rang selbst zerstört*: So übersetzt, um Subjektswechsel der Verbalhandlungen *bhavati* und *bimsitvā* zu vermeiden.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.24
+
+**Devanagari:**
+> स नैव व्यभवत् ।  स विशम् असृजत ।  यान्य् एतानि देवजातानि गणश आख्यायन्ते वसवो रुद्रा आदित्या विश्वे देवा मरुत इति
+
+**IAST:**
+> *sa naiva vyabhavat | sa viśam asṛjata | yāny etāni devajātāni gaṇaśa ākhyāyante vasavo rudrā ādityā viśve devā maruta iti*
+
+**Übersetzung Walter Slaje (2009):**
+Das [Ursubjekt] unterschied sich [noch] nicht vollständig. Da brachte es den Nährstand (viś) als die Götterklassen hervor, nämlich als Vasus, Rudras, Ādityas, Viśve Devāḥ [und] Maruts, die man gruppenweise anführt.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es (das Selbst²)) konnte sich noch nicht entfalten. Da schuf es die Kaste der Ackerbauer, d. i. folgende in Gruppen angegebene Götterklassen: die Vasu, die Rudra, die Āditja, die Viçve Devās und die Marut. 1) R.V. 4,26,1. 2) Das Selbst und das Brahman gelten für dasselbe. 13 1,4,20
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Sā und Ama**: Vgl. BĀU VI 4, 19; ChU I 6, 1.
+- *Das Ursubjekt*: Der hier vorgenommene Genuswechsel erzwingt die Annahme, daß das Bezugswort nun *ātman* = »Ursubjekt«, nicht mehr *brahman* = »Urgrund« wie in I 4, 23, ist. Zu den Implikationen vgl. I 4, 14.
+- *Nähstrand als die Götterklassen*: Die soziomorphe Organisation der altindischen Gesellschaft wird auch hier – wie bereits vorhin beim Fürstenstand – zunächst typologisch auf die Gesellschaft der Götter projiziert. Auf dieser Grundlage wird dann der vorliegende Schöpfungsmythos als zeitloser Archetypus und Rechtfertigung für die gesellschaftlichen Hierarchien konstruiert, wie sie zur Zeit der Abfassung dieser Upanischad charakteristisch und als ewig gegeben gedacht worden waren. Mit Nähstrand verband sich vorwiegend die Erwerbstätigkeit als Händler oder Bauer, vgl. auch Michaels (S. 185 ff.).
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.25
+
+**Devanagari:**
+> स नैव व्यभवत् ।  स शौद्रं वर्णम् असृजत पूषणम् ।  इयं वै पूषा ।  इयं हीदं सर्वं पुष्यति यद् इदं किञ्च
+
+**IAST:**
+> *sa naiva vyabhavat | sa śaudraṃ varṇam asṛjata pūṣaṇam | iyaṃ vai pūṣā | iyaṃ hīdaṃ sarvaṃ puṣyati yad idaṃ kiñca*
+
+**Übersetzung Walter Slaje (2009):**
+Das [Ursubjekt] unterschied sich [noch] nicht vollständig. Da brachte es den dienenden Stand (śūdra) als Pūṣan hervor. Pūṣan ist die [Erde] hier, denn sie nährt (pusyati) alles hier, was es gibt.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es konnte sich noch immer nicht entfalten. Da schuf es die Kaste der Çüdra, den Püshan. Der Püshan ist die Erde, da diese Alles, was es hier nur irgend gibt, zum Gedeihen bringt (pushjati).
+
+**Philologischer Kommentar (Slaje 2009):**
+- *Pūṣan*: Zur Gestalt und den Funktionen dieses Gottes, einem Gegenstück zum griechischen Pan und römischen Faun, vgl. Oberlies (*Rgveda*, 1. Teil, S. 202-204, mit Literatur) sowie Oberlies (*Pūṣans Zahnlücken*). Das erklärt noch nicht Pūṣans Identifikation mit dem Stand der Unfreien oder Dienenden (*śūdra*) (vgl. Hock, *Reader*, S. 96), die hier vorwiegend volksetymologisch-lautliche Gründe hat.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.26
+
+**Devanagari:**
+> स नैव व्यभवत् ।  तच् छ्रेयो रूपम् अत्यसृजत धर्मम् ।  तद् एतत् क्षत्रस्य क्षत्रं यद् धर्मः ।  तस्माद् धर्मात् परं नास्ति ।  अथो अबलीयान् बलीयांसम् आशंसते धर्मेण यथा राज्ञैवम् ।  यो वै स धर्मः सत्यं वै तत् ।  तस्मात् सत्यं वदन्तम् आहुर् धर्मं वदतीति ।  धर्मं वा वदन्तं सत्यं वदतीति ।  एतद् ध्य् एवैतद् उभयं भवति
+
+**IAST:**
+> *sa naiva vyabhavat | tac chreyo rūpam atyasṛjata dharmam | tad etat kṣatrasya kṣatraṃ yad dharmaḥ | tasmād dharmāt paraṃ nāsti | atho abalīyān balīyāṃsam āśaṃsate dharmeṇa yathā rājñaivam | yo vai sa dharmaḥ satyaṃ vai tat | tasmāt satyaṃ vadantam āhur dharmaṃ vadatīti | dharmaṃ vā vadantaṃ satyaṃ vadatīti | etad dhy evaitad ubhayaṃ bhavati*
+
+**Übersetzung Walter Slaje (2009):**
+Das [Ursubjekt] unterschied sich [noch] nicht vollständig. Da brachte es auf unübertreffliche Weise das Recht (dharma) als höherrangige (śreyas) Erscheinungsform hervor. Das Recht ist dem Fürsten ein Fürst. Darum gibt es nichts über dem Recht. So kommt es, daß ein Schwächerer einen Stärkeren mit dem Recht bedroht, als ob [es] ein König [wäre]. Recht ist Wahrheit (satya). Das ist der Grund, weshalb man von jemandem, der wahr spricht, sagt: »Er spricht recht«, oder von jemandem, der recht spricht: »Er spricht wahr.« Diese beiden sind nämlich ein und dasselbe. 6. BṚHADĀRAṆYAKA-UPANIṢAD 115
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Es konnte sich noch immer nicht entfalten. Da schuf es aufschreitend eine bessere Erscheinungsform, das Recht. Das Recht ist des Kriegerstandes Kriegerstand. Darum geht Nichts über das Recht. Auch hofft ein Schwächerer einen Stärkeren durch das Recht auf dieselbe Weise wie durch einen Fürsten zu bemeistern. Das Recht ist aber auch die Wahrheit. Darum sagt man von Einem, der die Wahrheit spricht, dass er das Recht spreche, und von Einem, der das Recht spricht, dass er die Wahrheit spreche. So ist denn Beides eines und dasselbe.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.27
+
+**Devanagari:**
+> तद् एतद् ब्रह्म क्षत्रं विट् शूद्रः ।  तद् अग्निनैव देवेषु ब्रह्माभवद् ब्राह्मणो मनुष्येषु, क्षत्रियेण क्षत्रियः, वैश्येन वैश्यः, शूद्रेण शूद्रः ।  तस्माद् अग्नाव् एव देवेषु लोकम् इच्छन्ते ब्राह्मणे मनुष्येषु ।  एताभ्यां हि रूपाभ्यां ब्रह्माभवत्
+
+**IAST:**
+> *tad etad brahma kṣatraṃ viṭ śūdraḥ | tad agninaiva deveṣu brahmābhavad brāhmaṇo manuṣyeṣu, kṣatriyeṇa kṣatriyaḥ, vaiśyena vaiśyaḥ, śūdreṇa śūdraḥ | tasmād agnāv eva deveṣu lokam icchante brāhmaṇe manuṣyeṣu | etābhyāṃ hi rūpābhyāṃ brahmābhavat*
+
+**Übersetzung Walter Slaje (2009):**
+So ist der Urgrund (brāhman) Fürstenstand (kṣatra), Nährstand (viś) [und] dienender Stand (śūdra). Nur als Feuer bestand der Urgrund unter den Göttern; unter den Menschen [wurde er] Brahmane; Fürst [wurde er] als Fürst; Angehöriger des Nährstands [wurde er] als Angehöriger des Nährstands; Angehöriger des dienenden Stands [wurde er] als Angehöriger des dienenden Stands. Deshalb erhofft man sich nur im Feuer einen Daseinsbereich (loka) unter den Göttern [und] in einem Brahmanen [einen] unter den Menschen. Denn [unter ihnen] wurde der Urgrund zu diesen beiden Erscheinungsformen.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+So verhält es sich mit den Brahmanen, Kriegern, Ackerbauern und Çüdra. Das Brahman erschien unter den Göttern als Agni, unter den Menschen als Brahmane; der (göttliche) Krieger (erschien hier) als Krieger, der (göttliche) Ackerbauer (hier) als Ackerbauer, der (göttliche) Çüdra (hier) als Çüdra. Darum wünscht man sich, wenn es sich um eine Stätte (Stellung) unter den Göttern handelt, die bei Agni; wenn es sich aber um eine Stätte (Stellung) unter den Menschen handelt, die unter Brahmanen. In diesen zwei Erscheinungsformen erschien ja das Brahman.
+
+**Philologischer Kommentar (Slaje 2009):**
+- *So ist der Urgrund*: *brāhman* als Subjekt (aber nicht in prädikativer Stellung, wie bei praktisch allen Übersetzern) auch von Hock (*Reader*, S. 96) sicher zu Recht so gesehen.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.28
+
+**Devanagari:**
+> अथ यो ह वा अस्माल् लोकात् स्वं लोकम् अदृष्ट्वा प्रैति स एनम् अविदितो न भुनक्ति यथा वेदो वाननूक्तो ऽन्यद् वा कर्माकृतम् ।  यदि ह वा अप्य् अनेवंविन् महत्पुण्यं कर्म करोति तद् धास्यान्ततः क्षीयत एव ।  आत्मानम् एव लोकम् उपासीत ।  स य आत्मानम् एव लोकम् उपास्ते न हास्य कर्म क्षीयते ।  अस्माद् ध्य् एवात्मनो यद्यत् कामयते तत्तत् सृजते
+
+**IAST:**
+> *atha yo ha vā asmāl lokāt svaṃ lokam adṛṣṭvā praiti sa enam avidito na bhunakti yathā vedo vānanūkto 'nyad vā karmākṛtam | yadi ha vā apy anevaṃvin mahatpuṇyaṃ karma karoti tad dhāsyāntataḥ kṣīyata eva | ātmānam eva lokam upāsīta | sa ya ātmānam eva lokam upāste na hāsya karma kṣīyate | asmād dhy evātmano yadyat kāmayate tattat sṛjate*
+
+**Übersetzung Walter Slaje (2009):**
+Scheidet nun jemand von dieser Welt (loka) hier, ohne seinen [wahren] Daseinsbereich gesehen zu haben, nützt der ihm nicht, da er ihm unbekannt (avidita) bleibt. [Das ist] wie beim Veda, wenn er nicht rezitiert, oder bei einem Opferwerk (karman), das nicht ausgeführt wird. Selbst ein großes, verdienstvolles Opferwerk, das jemand vollbringt, entschwindet zuletzt demjenigen, der das nicht richtig versteht. Es ist allein sein Wesenskern, dem man als [seinem] Daseinsbereich huldigen soll. Wer nur seinem Wesenskern als [seinem] Daseinsbereich huldigt, dem entschwinden die Werkfolgen (karman) nicht: Vielmehr bringt er all das aus seinem Wesenskern hervor, was er begehrt.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Wer aber von dieser Stätte scheidet ohne seine Stätte gesehen zu haben, dem ist diese, weil sie nicht erkannt wurde, nicht zu Nutzen, eben so wenig wie der Veda, wenn er nicht studirt wurde, oder ein anderes Werk, das nicht vollendet wurde. Wenn nun Jemand, der Solches nicht kennt, auch ein grosses und gutes Werk vollbringt, so geht dieses ihm doch schliesslich zu Grunde. Das Selbst verehre man als (wahre) Stätte. Wer das Selbst als (wahre) Stätte verehrt, dessen Werk geht nicht zu Grunde; denn aus diesem Selbst schafft er sich Alles, was er wünscht.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **entschwindet**: Im Sinne des Resultats, das sich nicht einstellt.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.29
+
+**Devanagari:**
+> अथो अयं वा आत्मा सर्वेषां भूतानां लोकः । स यज् जुहोति यद् यजते तेन देवानां लोकः ।  अथ यद् अनुब्रूते तेन ऋषीणाम् ।  अथ यत् पितृभ्यो निपृणाति यत् प्रजाम् इच्छते तेन पितॄणाम् ।  अथ यन् मनुष्यान् वासयते यद् एभ्यो ऽशनं ददाति तेन मनुष्याणाम् ।  अथ यत् पशुभ्यस् तृणोदकं विन्दति तेन पशूनाम् ।  यद् अस्य गृहेषु श्वापदा वयांस्य् आ पिपीलिकाभ्य उपजीवन्ति तेन तेषां लोकः ।  यथा ह वै स्वाय लोकायारिष्टिम् इच्छेत् ।  एवं हैवंविदे सर्वदा सर्वाणि भूतान्य् अरिष्टिम् इच्छन्ति ।  तद् वा एतद् विदितं मीमांसितम्
+
+**IAST:**
+> *atho ayaṃ vā ātmā sarveṣāṃ bhūtānāṃ lokaḥ |sa yaj juhoti yad yajate tena devānāṃ lokaḥ | atha yad anubrūte tena ṛṣīṇām | atha yat pitṛbhyo nipṛṇāti yat prajām icchate tena pitṝṇām | atha yan manuṣyān vāsayate yad ebhyo 'śanaṃ dadāti tena manuṣyāṇām | atha yat paśubhyas tṛṇodakaṃ vindati tena paśūnām | yad asya gṛheṣu śvāpadā vayāṃsy ā pipīlikābhya upajīvanti tena teṣāṃ lokaḥ | yathā ha vai svāya lokāyāriṣṭim icchet | evaṃ haivaṃvide sarvadā sarvāṇi bhūtāny ariṣṭim icchanti | tad vā etad viditaṃ mīmāṃsitam*
+
+**Übersetzung Walter Slaje (2009):**
+Der Bereich jedes einzelnen Wesens ist folglich [sein] Wesenskern: Der Bereich der Götter dadurch, daß man [geklärte Butter] ins Feuer gießt (juboti), daß man [Opfergaben] darbringt (yajate); [der Bereich] der Seher dadurch, daß man [den Veda] hersagt; des weiteren [der Bereich] der männlichen Ahnen dadurch, daß man Nachkommen erstrebt, daß man für die männlichen Ahnen [Verpflegung] deponiert; [der Bereich] der Menschen dadurch, daß man Menschen beherbergt, daß man ihnen zu essen gibt; [der Bereich] des Viehs dadurch, daß man dem Vieh Gras und Wasser findet; [der Bereich] der Tiere – die Vögel bis hin zu den Ameisen – dadurch, daß sie in jemandes Hause [ihren] Lebensunterhalt finden. Ganz wie man seinem eigenen Bereich Wohlergehen wünscht, wün- 116 UPANISCHADEN DES WEISSEN YAJUR-VEDA schen alle Wesen allzeit demjenigen Wohlergehen, der es in dieser Weise richtig versteht. So wurde, [was] bekannt ist (*vidita*), kritisch erörtert.
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Nun ist dieses Selbst die Stätte aller Wesen. Dadurch, dass man opfert und Spenden in's Feuer wirft, ist es die Stätte 1,4,20 14 der Götter; dadurch, dass man Etwas auswendig lernt, die der Rshi; dadurch, dass man sich Nachkommenschaft wünscht und den Vätern Etwas hinlegt, die der Väter; dadurch, dass man Menschen beherbergt und ihnen zu essen gibt, die der Menschen; dadurch, dass man den Nutzthieren Gras und Wasser verschafft, die der Thiere; dadurch, dass reissende Thiere, Vögel (und andere Creaturen) bis zu den Ameisen in seinem Hause ihren Lebensunterhalt finden, die Stätte dieser Thiere. Wie man seiner eigenen Stätte Wohlergehen wünscht, so wünschen dem, der Solches kennt, alle Wesen Wohlergehen. Dieses ist, was man erwogen und erkannt hat.
+
+**Philologischer Kommentar (Slaje 2009):**
+- *Verpflegung deponiert*: Zu gewissen Jahreszeiten oder bei Eintritt eines glücklichen Ereignisses wird das *sa-pīṇḍi-karaṇa* vollzogen als Aufnahme des Toten in den Kreis der Vorväter. Von da an hat der Verstorbene an der »Kloßgemeinschaft« = Verwandtschaft teil. Da nur drei *piṇḍas* = »Klöße« dargebracht STELLENKOMMENTAR ZU I.4,23-1.5,7 493 werden dürfen, scheidet der älteste Ahne, der Urgroßvater des letzten Toten, aus der Gemeinschaft aus und wird zu den himmlischen Ahnen (*višve devāh*). Daher war sicherzustellen, daß die opferberechtigte Sohneskontinuität erhalten blieb. Vier Wasserkrüge waren mit Sesam, Wohlgerüchen und Wasser zu füllen, drei für die Ahnen (Urgroßvater, Großvater und Vater) und einer für den zuletzt Verstorbenen.
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.30
+
+**Devanagari:**
+> आत्मैवेदम् अग्र आसीद् एक एव ।  सो ऽकामयत जाया मे स्याद् अथ प्रजायेय ।  अथ वित्तं मे स्याद् अथ कर्म कुर्वीयेति ।  एतावान् वै कामः ।  नेच्छंश् चनातो भूयो विन्देत् ।  तस्माद् अप्य् एतर्ह्य् एकाकी कामयते -- जाया मे स्याद् अथ प्रजायेयाथ वित्तं मे स्याद् अथ कर्म कुर्वीयेति ।  स यावद् अप्य् एतेषाम् एकैकं न प्राप्नोत्य् अकृत्स्न एव तावन् मन्यते ।  तस्यो कृत्स्नता
+
+**IAST:**
+> *ātmaivedam agra āsīd eka eva | so 'kāmayata jāyā me syād atha prajāyeya | atha vittaṃ me syād atha karma kurvīyeti | etāvān vai kāmaḥ | necchaṃś canāto bhūyo vindet | tasmād apy etarhy ekākī kāmayate -- jāyā me syād atha prajāyeyātha vittaṃ me syād atha karma kurvīyeti | sa yāvad apy eteṣām ekaikaṃ na prāpnoty akṛtsna eva tāvan manyate | tasyo kṛtsnatā*
+
+**Übersetzung Walter Slaje (2009):**
+Am Anfang gab es hier nur das Ursubjekt, in ausnahmsloser Singularität. Es begehrte: »Ich will eine Frau, daß ich mich fortpflanzen kann! Ich brauche Vermögen, um Opferwerke auszuführen!« Das ist der volle Umfang eines Begehrens. Mehr als das bekommt man nicht, selbst wenn man möchte. Deshalb begehrt auch heute ein Alleinstehender: »Ich will eine Frau, daß ich mich fortpflanzen kann! Ich brauche Vermögen, um Opferwerke auszuführen!« So lange er keins davon bekommt, hält er sich für rundweg unvollständig. Seine Vollständigkeit aber ist [dies]:
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Am Anfange war hier das Selbst, und zwar war dieses ganz allein. Da fühlte es das Verlangen ein Weib zu haben, sich fortzupflanzen, Vermögen zu besitzen und ein (frommes) Werk zu vollbringen. So weit und nicht weiter geht der Wunsch. Trotz aller Wünsche würde man doch nicht mehr als dieses erlangen. Daher hat auch heut zu Tage ein Alleinstehender das Verlangen ein Weib zu haben, sich fortzupflanzen, Vermögen zu besitzen und ein (frommes) Werk zu vollbringen. So lange man nur Eines von diesen nicht erlangt hat, hält man sich für unvollständig. Seine Vollständigkeit besteht aber in Folgendem:
+
+**Philologischer Kommentar (Slaje 2009):**
+- **Höhenflug*: abhyāroha* = »Aufstieg«, ein Eröffnungsopfer, das den Opferherrn zu den Göttern erheben soll. Vgl. MYL (S. 33); Hock (*Reader*, S. 92).
+- **bei den Preßgesängen**: Spezielle Kategorie von Gesängen, die anlässlich der Somapressung gesungen werden. Zu *pava-māna* vgl. MYL (S. 89).
+- **Prastotr**: Priestergehilfe, vgl. ChU I 10, 8.
+- **Präludium**: Wörtlich »stimmt die Melodie an«. Das entspricht dem *prastāva* = »Präludium«, vgl. ChU II 2, 1. #### I 4
+
+---
+
+### Bṛhadāraṇyaka-Upaniṣad 1.4.31
+
+**Devanagari:**
+> मन एवास्यात्मा ।  वाग् जाया ।  प्राणः प्रजा ।  चक्षुर् मानुषं वित्तम् ।  चक्षुषा हि तद् विन्दते ।  श्रोत्रं दैवम् ।  श्रोत्रेण हि तच् छृणोति ।  आत्मैवास्य कर्म ।  आत्मना हि कर्म करोति ।  स एष पाङ्क्तो यज्ञः ।  पाङ्क्तः पशुः ।  पाङ्क्तः पुरुषः ।  पाङ्क्तम् इदं सर्वं यद् इदं किञ्च ।  तद् इदं सर्वम् आप्नोति य एवं वेद
+
+**IAST:**
+> *mana evāsyātmā | vāg jāyā | prāṇaḥ prajā | cakṣur mānuṣaṃ vittam | cakṣuṣā hi tad vindate | śrotraṃ daivam | śrotreṇa hi tac chṛṇoti | ātmaivāsya karma | ātmanā hi karma karoti | sa eṣa pāṅkto yajñaḥ | pāṅktaḥ paśuḥ | pāṅktaḥ puruṣaḥ | pāṅktam idaṃ sarvaṃ yad idaṃ kiñca | tad idaṃ sarvam āpnoti ya evaṃ veda*
+
+**Übersetzung Walter Slaje (2009):**
+Sein Wesenskern ist nichts als [sein] Denkvermögen; [seine] Frau [seine] Sprechfähigkeit; [seine] Nachkommen [seine] Atemkraft; [sein gegenständliches] Vermögen [seine] Sehkraft, denn mit der Sehkraft findet man [Vermögen]; [sein] göttliches [Vermögen seine] Hörkraft, denn mit der Hörkraft hört man [von den Göttern]. Sein Opferwerk ist er selbst (*ātman*), denn das Opferwerk führt er selbst aus. Somit ist das Opfer fünffach, das Opfertier fünffach, der Mann fünffach, fünffach einfach alles, was immer es hier gibt. Das alles bekommt, wer es in der richtigen Weise versteht. # I f 1 Von sieben Speisen, die der Vater schuf, Durch Selbstqual und Verstand, War eine davon da für jedermann. Zwei teilte er den Göttern zu, Drei bestimmte er für sich, Dem Zuchtvieh überließ er eine. Alles gründet sich auf diese, Was da atmet und was nicht. 6. BRHADĀRANYAKA-UPANIŠAD 117 Warum erschöpfen sie sich nicht, Da man sie unentwegt verspeist? Wer ihre Unerschöpflichkeit begreift, Verzehret Nahrung mit dem Mund. Zu den Göttern geht er, Von Belebendem lebt er. So lauten die Strophen. 2 »Von sieben Speisen, die der Vater schuf durch Selbstqual und Verstand …« – Der Vater schuf sie nämlich mit Verstand, durch Selbstqual. »… war eine davon da für jedermann« – Das ist genau die eine Speise von ihm, die man als allen gemeinsame ißt. Wer der huldigt, trennt sich nicht vom Übel, denn sie ist vermischt. 3 »Zwei teilte er den Göttern zu …« – Ins Feuer gegossene [Butter] und nachgeopferte [Speisen]. Deshalb gießt man für die Götter [geklärte Butter] ins Feuer und bringt [ihnen] hinterher [Speisen] dar. Man erklärt [die beiden Speisen] aber auch als das Neu- und Vollmondsopfer. Deshalb braucht man keine Išti-Opfer durchzuführen. 4 »Dem Zuchtvieh überließ er eine.« – Das ist die Milch. Denn anfänglich ernähren sich die Menschen und das Vieh nur von Milch. Deshalb läßt man den neugeborenen Knaben entweder geklärte Butter lecken oder an der Mutterbrust saugen. 5 So spricht man vom zur Welt gebrachten Kalb [auch] als »nicht grasend«. »Alles gründet sich auf diese, was da atmet und was nicht« – Auf Milch ist nämlich all das hier gegründet, was da atmet und was nicht. 6 Man sagt [auch] Folgendes: »Wer ein Jahr lang Milch [ins Feuer] opfert, wehrt erneutes Sterben [von sich] ab.« So braucht man das nicht aufzufassen. Wer es in der richtigen Weise versteht, wehrt erneutes Sterben schon an dem Tage [von sich] ab, an dem er [Milch] opfert. Denn [damit] spendet
+
+**Übersetzung Otto von Böhtlingk (1889):**
+Sein Selbst ist das Denkorgan, sein Weib die Stimme, seine Nachkommenschaft der Hauch; sein menschliches Vermögen ist das Auge, denn mit dem Auge erlangt er dieses; sein göttliches Vermögen ist das Ohr, denn mit dem Ohre hört er dieses; sein (frommes) Werk ist das Selbst, denn mit dem Selbst vollbringt er das (fromme) Werk. Dies ist das fünffache Opfer, das fünffache Opferthier, der fünffache Geist (Purusha), fünffach ist Alles, was es hier gibt. Wer Solches kennt, der erlangt Alles, was es hier gibt.
+
+**Philologischer Kommentar (Slaje 2009):**
+- **das Opfer fünffach**: Hier als die fünf aufgezählten »Kräfte« »Denkvermögen«, »Sprechfähigkeit«, »Atemkraft«, »Sehkraft« und »Hörkraft« gemeint, die zusammengenommen mit demjenigen identifiziert werden, der »selbst« das Opfer ist – also mit ihm in seiner Gesamtheit identifiziert werden. Zu unterschiedlichen Begründungen, weshalb das Opfer als fünffach angesehen wurde, vgl. OLI (S. 494). ## I 5
+
+---

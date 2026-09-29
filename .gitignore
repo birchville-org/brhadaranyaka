@@ -1,0 +1,18 @@
+# Virtual environments
+.venv/
+venv/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# OS & Editor
+.DS_Store
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+
+# Intermediate caches
+data/processing/
