@@ -136,7 +136,7 @@ body {{
     font-size: 13pt;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #b22222;
+    color: #48626e;
     margin-bottom: 8mm;
     font-weight: 600;
 }}
@@ -160,7 +160,7 @@ body {{
 .divider-ornament {{
     margin: 8mm auto;
     width: 60mm;
-    border-top: 1.5pt solid #b22222;
+    border-top: 1.5pt solid #eab308;
 }}
 
 .edition-meta {{
@@ -175,7 +175,7 @@ body {{
     background: #f1eee7;
     padding: 6mm 8mm;
     border: 0.75pt solid #d9d4cb;
-    border-left: 3pt solid #b22222;
+    border-left: 3pt solid #03192e;
     border-radius: 2px;
 }}
 
@@ -197,8 +197,8 @@ body {{
 .chapter-title {{
     font-size: 18pt;
     font-weight: 700;
-    color: #b22222;
-    border-bottom: 1pt solid #b22222;
+    color: #03192e;
+    border-bottom: 1pt solid #03192e;
     padding-bottom: 3mm;
     margin-bottom: 6mm;
 }}
@@ -235,7 +235,7 @@ body {{
 }}
 
 .verse-badge {{
-    background: #b22222;
+    background: #03192e;
     color: #ffffff;
     font-size: 9pt;
     font-weight: 700;
@@ -305,7 +305,7 @@ body {{
 .siglum {{
     font-size: 9.5pt;
     font-weight: 700;
-    color: #b22222;
+    color: #03192e;
     display: block;
 }}
 
@@ -350,7 +350,7 @@ body {{
 
 .comment-lemma {{
     font-weight: 600;
-    color: #b22222;
+    color: #ca8a04;
     margin-right: 1.5mm;
 }}
 </style>

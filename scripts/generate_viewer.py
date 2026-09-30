@@ -39,11 +39,12 @@ def generate_viewer() -> None:
     --text: #03192e;
     --text-muted: #48626e;
     --text-dim: #788a96;
-    --primary: #b22222;
-    --primary-hover: #8b1e22;
-    --primary-light: #fef2f2;
+    --primary: #03192e;
+    --primary-hover: #0a2a44;
+    --primary-light: rgba(3, 25, 46, 0.05);
     --accent: #03192e;
     --accent-light: rgba(3, 25, 46, 0.05);
+    --sanskrit-red: #b22222;
     --gold: #eab308;
     --gold-light: #fefce8;
     --gold-dark: #ca8a04;
@@ -94,8 +95,9 @@ header.app-header {{
 }}
 
 .app-badge {{
-    background: var(--primary);
-    color: #fff;
+    background: #03192e;
+    color: #eab308;
+    border: 1px solid rgba(234, 179, 8, 0.4);
     font-size: 11px;
     font-weight: 700;
     padding: 3px 8px;
@@ -341,11 +343,11 @@ header.app-header {{
     font-family: var(--font-deva);
     font-size: 20px;
     line-height: 1.65;
-    color: #b22222;
+    color: var(--sanskrit-red);
     font-weight: 600;
     margin-bottom: 12px;
     padding-bottom: 12px;
-    border-bottom: 1px dashed #e2e8f0;
+    border-bottom: 1px dashed var(--border);
 }}
 
 .prev-iast {{
@@ -378,7 +380,7 @@ header.app-header {{
     padding: 1px 3px;
     margin: 0 1px;
     border-radius: 3px;
-    border-bottom: 1.5px dotted var(--primary);
+    border-bottom: 1.5px dotted var(--text-muted);
     transition: all 0.15s ease;
     display: inline-block;
 }}
@@ -547,7 +549,7 @@ header.app-header {{
 .popover-word-gloss {{
     font-family: var(--font-serif);
     font-size: 12.5px;
-    color: var(--primary);
+    color: var(--text-muted);
     font-style: italic;
     margin-bottom: 4px;
 }}
@@ -702,7 +704,7 @@ header.app-header {{
 .snippet-btn.deva {{
     font-family: var(--font-deva);
     font-size: 13px;
-    color: var(--primary);
+    color: var(--sanskrit-red);
 }}
 
 .snippet-divider {{
@@ -748,12 +750,12 @@ header.app-header {{
 .form-textarea:focus {{
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(178,34,34,0.15);
+    box-shadow: 0 0 0 2px rgba(3,25,46,0.15);
 }}
 .form-textarea.deva {{
     font-family: var(--font-deva);
     font-size: 16px;
-    color: var(--primary);
+    color: var(--sanskrit-red);
 }}
 .form-textarea.iast {{
     font-family: var(--font-serif);

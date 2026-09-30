@@ -34,36 +34,39 @@ def build_index_html(data: dict) -> str:
 
 <style>
 :root {{
-    /* Payer "Die illuminierte Handschrift bei Kerzenlicht" Scholarly Dark Palette */
-    --bg-base: #0a1628;
-    --bg-surface: #0f1e35;
-    --bg-surface-elevated: #152744;
-    --bg-card: rgba(15, 30, 53, 0.85);
-    --border-subtle: #334155;
-    --border-accent: rgba(234, 179, 8, 0.35);
+    /* Payer Light Palette (Standard from https://payer.birchville.org & ../Payer) */
+    --bg-base: #fcf9f2;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #f1eee7;
+    --bg-card: #ffffff;
+    --border-subtle: #dcd6c8;
+    --border-accent: #eab308;
     
-    --primary: #b22222;
-    --primary-light: #ef4444;
-    --primary-dark: #8b1e22;
-    --primary-glow: rgba(178, 34, 34, 0.25);
+    --primary: #03192e; /* Payer Midnight Prussian Ink */
+    --primary-light: #1e2d37;
+    --primary-dark: #00101f;
+    --primary-glow: rgba(3, 25, 46, 0.15);
     
+    --slate: #48626e;
     --gold: #eab308;
-    --gold-light: #fde047;
+    --gold-light: #fefce8;
     --gold-dark: #ca8a04;
     --gold-glow: rgba(234, 179, 8, 0.2);
     
-    --text-main: #e8e0d3;
-    --text-muted: #c4bba5;
-    --text-dim: #a09080;
+    --sanskrit-red: #b22222; /* Scholastic Red strictly for Devanagari Sanskrit */
     
-    --font-heading: 'Cinzel', 'Source Serif 4', 'EB Garamond', serif;
+    --text-main: #03192e;
+    --text-muted: #48626e;
+    --text-dim: #788a96;
+    
+    --font-heading: 'Source Serif 4', 'EB Garamond', Georgia, serif;
     --font-serif: 'Source Serif 4', 'EB Garamond', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-deva: 'Sanskrit2003', 'Devanagari MT', 'Noto Sans Devanagari', serif;
     
     --radius-sm: 6px;
     --radius-md: 10px;
-    --radius-lg: 16px;
+    --radius-lg: 14px;
     --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }}
 
@@ -79,11 +82,6 @@ body {{
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
-    background-image: 
-        radial-gradient(circle at 15% 20%, rgba(178, 34, 34, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 85% 65%, rgba(234, 179, 8, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 90%, rgba(3, 25, 46, 0.45) 0%, transparent 60%);
-    background-attachment: fixed;
 }}
 
 /* Navigation Bar */
@@ -91,9 +89,9 @@ nav.global-nav {{
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 22, 40, 0.9);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(252, 249, 242, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-subtle);
     padding: 0.75rem 2rem;
     display: flex;
@@ -110,25 +108,22 @@ nav.global-nav {{
 }}
 
 .brand-badge {{
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: #fff;
-    font-family: var(--font-heading);
+    background: var(--primary);
+    color: #ffffff;
+    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: var(--radius-sm);
-    letter-spacing: 0.08em;
-    box-shadow: 0 0 12px var(--primary-glow);
+    letter-spacing: 0.06em;
 }}
 
 .brand-title {{
     font-family: var(--font-heading);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
-    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.02em;
+    color: var(--primary);
 }}
 
 .nav-links {{
@@ -145,24 +140,24 @@ nav.global-nav {{
     transition: var(--transition);
 }}
 .nav-link:hover {{
-    color: var(--text-main);
+    color: var(--primary);
 }}
 
 .btn-nav {{
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: var(--primary);
     color: #fff;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-sm);
-    box-shadow: 0 0 14px var(--primary-glow);
     transition: var(--transition);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: none;
+    box-shadow: 0 2px 6px rgba(3,25,46,0.15);
 }}
 .btn-nav:hover {{
+    background: #0a2a44;
     transform: translateY(-1px);
-    box-shadow: 0 0 20px var(--primary-glow);
 }}
 
 /* Hero Section */
@@ -177,13 +172,13 @@ header.hero {{
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(201, 59, 59, 0.12);
-    border: 1px solid var(--border-accent);
-    color: var(--primary-light);
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-subtle);
+    color: var(--slate);
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     padding: 0.35rem 0.9rem;
     border-radius: 9999px;
     margin-bottom: 1.5rem;
@@ -192,20 +187,18 @@ header.hero {{
 .hero-title {{
     font-family: var(--font-heading);
     font-size: 3.25rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin-bottom: 1rem;
-    background: linear-gradient(180deg, #ffffff 20%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--primary);
 }}
 
 .hero-subtitle {{
     font-family: var(--font-serif);
     font-size: 1.45rem;
     font-style: italic;
-    color: var(--gold-light);
+    color: var(--slate);
     margin-bottom: 1.5rem;
 }}
 
@@ -222,32 +215,21 @@ header.hero {{
     max-width: 880px;
     margin: 0 auto 3rem auto;
     background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-accent);
+    border: 1px solid var(--border-subtle);
+    border-top: 3px solid var(--gold);
     border-radius: var(--radius-lg);
     padding: 1.75rem 2.25rem;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 20px rgba(3,25,46,0.06);
     text-align: center;
     position: relative;
     overflow: hidden;
-}}
-
-.sanskrit-quote-card::before {{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--primary), var(--gold), transparent);
 }}
 
 .sanskrit-quote-deva {{
     font-family: var(--font-deva);
     font-size: 1.6rem;
     line-height: 1.6;
-    color: #f87171;
+    color: var(--sanskrit-red);
     font-weight: 600;
     margin-bottom: 0.75rem;
     letter-spacing: 0.02em;
@@ -257,7 +239,7 @@ header.hero {{
     font-family: var(--font-serif);
     font-size: 1.05rem;
     font-style: italic;
-    color: #cbd5e1;
+    color: var(--primary);
     margin-bottom: 1rem;
 }}
 
@@ -271,7 +253,7 @@ header.hero {{
 .sanskrit-quote-author {{
     margin-top: 0.75rem;
     font-size: 0.85rem;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -300,24 +282,25 @@ header.hero {{
 }}
 
 .btn-primary-action {{
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: var(--primary);
     color: #ffffff;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 4px 16px var(--primary-glow);
+    border: 1px solid var(--primary);
+    box-shadow: 0 3px 10px rgba(3,25,46,0.18);
 }}
 .btn-primary-action:hover {{
+    background: #0a2a44;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--primary-glow);
+    box-shadow: 0 6px 16px rgba(3,25,46,0.25);
 }}
 
 .btn-secondary-action {{
-    background: var(--bg-surface);
-    color: var(--text-main);
+    background: var(--bg-surface-elevated);
+    color: var(--primary);
     border: 1px solid var(--border-subtle);
 }}
 .btn-secondary-action:hover {{
-    background: var(--bg-surface-elevated);
-    border-color: rgba(255,255,255,0.2);
+    background: #e8e3d8;
+    border-color: #c4bba5;
     transform: translateY(-2px);
 }}
 
@@ -345,7 +328,7 @@ section.explorer {{
     font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: #fff;
+    color: var(--primary);
     margin-bottom: 0.35rem;
 }}
 
@@ -398,10 +381,11 @@ section.explorer {{
     padding: 1.75rem 2rem;
     transition: var(--transition);
     position: relative;
+    box-shadow: 0 2px 8px rgba(3,25,46,0.03);
 }}
 .verse-card:hover {{
-    border-color: rgba(201, 59, 59, 0.4);
-    box-shadow: 0 8px 30px -10px rgba(0,0,0,0.6);
+    border-color: var(--gold);
+    box-shadow: 0 6px 20px rgba(3,25,46,0.08);
 }}
 
 .verse-card-header {{
@@ -415,8 +399,8 @@ section.explorer {{
 
 .verse-canonical-badge {{
     background: var(--primary);
-    color: #fff;
-    font-family: var(--font-heading);
+    color: #ffffff;
+    font-family: var(--font-sans);
     font-size: 0.85rem;
     font-weight: 700;
     padding: 4px 10px;
@@ -426,7 +410,7 @@ section.explorer {{
 
 .verse-source-tag {{
     font-size: 0.8rem;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -436,19 +420,20 @@ section.explorer {{
     font-family: var(--font-deva);
     font-size: 1.4rem;
     line-height: 1.65;
-    color: #ffffff;
+    color: var(--sanskrit-red);
+    font-weight: 600;
     margin-bottom: 0.75rem;
 }}
 
 .verse-iast-container {{
     margin-bottom: 1.5rem;
     padding-bottom: 1.25rem;
-    border-bottom: 1px dashed rgba(255,255,255,0.08);
+    border-bottom: 1px dashed var(--border-subtle);
 }}
 
 .iast-hint-banner {{
     font-size: 0.75rem;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -461,7 +446,7 @@ section.explorer {{
 .verse-iast-tokens {{
     font-family: var(--font-serif);
     font-size: 1.15rem;
-    color: #cbd5e1;
+    color: var(--text-main);
     line-height: 1.7;
 }}
 
@@ -472,19 +457,20 @@ section.explorer {{
     padding: 1px 4px;
     margin: 0 1px;
     border-radius: 4px;
-    border-bottom: 1.5px dotted var(--primary-light);
+    border-bottom: 1.5px dotted var(--slate);
     transition: var(--transition);
     display: inline-block;
 }}
 .iast-word-token:hover {{
-    background: rgba(201, 59, 59, 0.2);
-    color: #ffffff;
-    border-bottom-color: var(--gold-light);
+    background: var(--gold-light);
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold);
 }}
 .iast-word-token.active {{
-    background: rgba(217, 119, 6, 0.3);
-    color: #fff;
-    border-bottom: 2px solid var(--gold-light);
+    background: #fde047;
+    color: #78350f;
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold-dark);
 }}
 
 /* Floating Popover */
@@ -495,12 +481,10 @@ section.explorer {{
     max-width: calc(100vw - 24px);
     max-height: 520px;
     overflow-y: auto;
-    background: rgba(19, 27, 42, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border-accent);
+    background: var(--bg-base);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 30px -5px rgba(3, 25, 46, 0.25), 0 8px 10px -6px rgba(3, 25, 46, 0.1);
     padding: 16px;
     display: none;
     animation: popoverFadeIn 0.15s ease-out;
@@ -525,7 +509,7 @@ section.explorer {{
     font-size: 1.2rem;
     font-weight: 700;
     font-style: italic;
-    color: var(--primary-light);
+    color: var(--primary);
 }}
 
 .pop-close {{
@@ -536,12 +520,12 @@ section.explorer {{
     font-size: 1.1rem;
 }}
 .pop-close:hover {{
-    color: #fff;
+    color: var(--primary);
 }}
 
 .pop-sandhi {{
-    background: #0a1628;
-    border: 1px solid #334155;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--border-subtle);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -550,7 +534,7 @@ section.explorer {{
     font-family: var(--font-serif);
 }}
 .pop-sandhi-label {{
-    color: var(--gold-light);
+    color: var(--gold-dark);
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.7rem;
@@ -564,8 +548,8 @@ section.explorer {{
 }}
 
 .pop-word-card {{
-    background: #0a1628;
-    border: 1px solid #334155;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
     border-left: 3px solid var(--gold);
     border-radius: 4px;
     padding: 8px 10px;
@@ -582,12 +566,12 @@ section.explorer {{
     font-family: var(--font-serif);
     font-size: 1rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--primary);
 }}
 
 .pop-word-pos {{
-    background: rgba(234, 179, 8, 0.15);
-    color: #fde047;
+    background: rgba(3, 25, 46, 0.08);
+    color: var(--primary);
     font-size: 0.7rem;
     font-weight: 600;
     padding: 1px 6px;
@@ -603,11 +587,11 @@ section.explorer {{
 .pop-word-lemma-val {{
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--gold-light);
+    color: var(--primary);
     font-weight: 600;
 }}
 .pop-word-root {{
-    color: var(--text-main);
+    color: var(--slate);
     font-weight: 600;
     font-size: 0.75rem;
     margin-left: 4px;
@@ -626,19 +610,19 @@ section.explorer {{
     color: var(--text-muted);
 }}
 .pop-word-syntax {{
-    background: rgba(16, 185, 129, 0.15);
-    color: #6ee7b7;
+    background: var(--bg-surface-elevated);
+    color: var(--primary);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 1px 6px;
     border-radius: 3px;
-    border-left: 2px solid #10b981;
+    border-left: 2px solid var(--gold);
 }}
 
 .pop-word-gloss {{
     font-family: var(--font-serif);
     font-size: 0.95rem;
-    color: var(--primary-light);
+    color: var(--text-muted);
     font-style: italic;
     margin-bottom: 4px;
 }}
@@ -646,9 +630,9 @@ section.explorer {{
 .pop-compound-box {{
     margin-top: 6px;
     padding: 6px 8px;
-    background: #241500;
-    border: 1px solid #ca8a04;
-    border-left: 3px solid #eab308;
+    background: var(--gold-light);
+    border: 1px solid #fde68a;
+    border-left: 3px solid var(--gold);
     border-radius: 4px;
     font-size: 0.75rem;
 }}
@@ -660,18 +644,18 @@ section.explorer {{
 }}
 .pop-compound-tag {{
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     text-transform: uppercase;
     font-size: 0.7rem;
 }}
 .pop-compound-members {{
     font-family: var(--font-serif);
     font-style: italic;
-    color: #fde68a;
+    color: #78350f;
     font-size: 0.75rem;
 }}
 .pop-compound-analysis {{
-    color: #fef3c7;
+    color: #92400e;
     font-size: 0.75rem;
     line-height: 1.35;
 }}
@@ -679,7 +663,7 @@ section.explorer {{
 .pop-word-note {{
     margin-top: 5px;
     padding-top: 4px;
-    border-top: 1px dashed rgba(255,255,255,0.1);
+    border-top: 1px dashed var(--border-subtle);
     font-size: 0.75rem;
     color: var(--text-dim);
     line-height: 1.3;
@@ -699,16 +683,18 @@ section.explorer {{
 }}
 
 .trans-panel {{
-    background: rgba(11, 15, 23, 0.55);
+    background: #ffffff;
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     padding: 1.2rem;
 }}
 .trans-panel.slaje {{
     border-left: 3px solid var(--primary);
+    background: #ffffff;
 }}
 .trans-panel.bohtlingk {{
-    border-left: 3px solid #64748b;
+    border-left: 3px solid var(--border-subtle);
+    background: #faf8f4;
 }}
 
 .trans-meta-header {{
@@ -721,24 +707,25 @@ section.explorer {{
     justify-content: space-between;
 }}
 .trans-meta-header.slaje {{
-    color: var(--primary-light);
+    color: var(--primary);
 }}
 .trans-meta-header.bohtlingk {{
-    color: #94a3b8;
+    color: var(--slate);
 }}
 
 .trans-body {{
     font-family: var(--font-serif);
     font-size: 1.05rem;
     line-height: 1.6;
-    color: #f1f5f9;
+    color: var(--text-main);
 }}
 
 /* Commentary Box */
 .commentary-container {{
     margin-top: 1rem;
-    background: rgba(217, 119, 6, 0.06);
-    border: 1px solid rgba(217, 119, 6, 0.2);
+    background: var(--gold-light);
+    border: 1px solid #fde68a;
+    border-left: 4px solid var(--gold);
     border-radius: var(--radius-md);
     padding: 1rem 1.25rem;
 }}
@@ -746,7 +733,7 @@ section.explorer {{
 .commentary-title {{
     font-size: 0.8rem;
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.6rem;
@@ -758,12 +745,12 @@ section.explorer {{
 .commentary-item {{
     font-size: 0.95rem;
     line-height: 1.5;
-    color: #e2e8f0;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
 }}
 .commentary-lemma {{
     font-weight: 600;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     margin-right: 0.4rem;
 }}
 
@@ -795,7 +782,7 @@ section.artifacts {{
 .artifact-card:hover {{
     border-color: var(--gold);
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px -6px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 24px -6px rgba(3,25,46,0.1);
 }}
 
 .artifact-type {{
@@ -803,7 +790,7 @@ section.artifacts {{
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--gold-light);
+    color: var(--gold-dark);
     margin-bottom: 0.5rem;
 }}
 
@@ -812,6 +799,7 @@ section.artifacts {{
     font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--primary);
 }}
 
 .artifact-desc {{
@@ -824,7 +812,7 @@ section.artifacts {{
 .artifact-link-action {{
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--primary-light);
+    color: var(--primary);
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
@@ -832,18 +820,18 @@ section.artifacts {{
 
 /* Footer */
 footer.global-footer {{
-    background: #070a10;
+    background: var(--bg-surface-elevated);
     border-top: 1px solid var(--border-subtle);
     padding: 3rem 2rem;
     text-align: center;
-    color: var(--text-dim);
+    color: var(--text-muted);
     font-size: 0.875rem;
 }}
 
 .footer-quote {{
     font-family: var(--font-serif);
     font-style: italic;
-    color: var(--text-muted);
+    color: var(--primary);
     margin-bottom: 1rem;
 }}
 </style>
@@ -1268,7 +1256,7 @@ def build_synopsis_html(data: dict) -> str:
     <div style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 11.5px; color: #fbbf24;">💡 Klick auf ein IAST-Wort öffnet die grammatische Analyse</span>
         <a href="data/output/brhadaranyaka_1_4_synopsis.pdf" target="_blank" style="color: #94a3b8; text-decoration: none;">📄 PDF herunterladen</a>
-        <a href="viewer.html" style="background: #b22222; color: #fff; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-weight: 600;">🚀 QA-Viewer öffnen</a>
+        <a href="viewer.html" style="background: #eab308; color: #03192e; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-weight: 700;">🚀 QA-Viewer öffnen</a>
     </div>
 </div>
 """
@@ -1302,7 +1290,7 @@ def build_synopsis_html(data: dict) -> str:
     padding: 1px 3px;
     margin: 0 1px;
     border-radius: 3px;
-    border-bottom: 1.5px dotted #b22222;
+    border-bottom: 1.5px dotted #48626e;
     transition: all 0.15s ease;
     display: inline-block;
 }}
@@ -1352,7 +1340,7 @@ def build_synopsis_html(data: dict) -> str:
     font-size: 16px;
     font-weight: 700;
     font-style: italic;
-    color: #b22222;
+    color: #03192e;
 }}
 .syn-pop-close {{
     background: transparent;
@@ -1416,7 +1404,7 @@ def build_synopsis_html(data: dict) -> str:
 .syn-pop-card-lemma-val {{
     font-family: 'Source Serif 4', 'EB Garamond', Georgia, serif;
     font-weight: 600;
-    color: #b22222;
+    color: #03192e;
 }}
 .syn-pop-card-morph {{
     font-size: 11px;
@@ -1426,7 +1414,7 @@ def build_synopsis_html(data: dict) -> str:
 }}
 .syn-pop-card-gloss {{
     font-size: 11.5px;
-    color: #03192e;
+    color: #48626e;
     font-style: italic;
     margin-bottom: 4px;
 }}
