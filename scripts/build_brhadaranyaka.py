@@ -117,11 +117,11 @@ def generate_html(data: dict) -> str:
 }}
 
 body {{
-    font-family: 'EB Garamond', 'Linux Libertine O', 'Times New Roman', serif;
+    font-family: 'Source Serif 4', 'EB Garamond', 'Linux Libertine O', Georgia, serif;
     font-size: 10.5pt;
     line-height: 1.55;
-    color: #1a1a1a;
-    background: #ffffff;
+    color: #03192e;
+    background: #fcf9f2;
     -webkit-font-smoothing: antialiased;
 }}
 
@@ -136,7 +136,7 @@ body {{
     font-size: 13pt;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #7b1113;
+    color: #b22222;
     margin-bottom: 8mm;
     font-weight: 600;
 }}
@@ -147,34 +147,35 @@ body {{
     line-height: 1.2;
     margin-bottom: 6mm;
     letter-spacing: -0.01em;
-    color: #111;
+    color: #03192e;
 }}
 
 .subtitle {{
     font-size: 15pt;
     font-style: italic;
-    color: #444;
+    color: #48626e;
     margin-bottom: 12mm;
 }}
 
 .divider-ornament {{
     margin: 8mm auto;
     width: 60mm;
-    border-top: 1.5pt solid #7b1113;
+    border-top: 1.5pt solid #b22222;
 }}
 
 .edition-meta {{
     margin-top: 20mm;
     font-size: 10.5pt;
-    color: #333;
+    color: #03192e;
     line-height: 1.7;
     max-width: 140mm;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
-    background: #fdfbf7;
+    background: #f1eee7;
     padding: 6mm 8mm;
-    border-left: 3pt solid #7b1113;
+    border: 0.75pt solid #d9d4cb;
+    border-left: 3pt solid #b22222;
     border-radius: 2px;
 }}
 
@@ -184,7 +185,7 @@ body {{
 
 .meta-label {{
     font-weight: 600;
-    color: #222;
+    color: #03192e;
 }}
 
 /* Introduction Chapter */
@@ -196,8 +197,8 @@ body {{
 .chapter-title {{
     font-size: 18pt;
     font-weight: 700;
-    color: #7b1113;
-    border-bottom: 1pt solid #7b1113;
+    color: #b22222;
+    border-bottom: 1pt solid #b22222;
     padding-bottom: 3mm;
     margin-bottom: 6mm;
 }}
@@ -225,7 +226,7 @@ body {{
 }}
 
 .verse-header {{
-    background: #f7f4ed;
+    background: #f1eee7;
     border-bottom: 0.75pt solid #d9d4cb;
     padding: 3mm 5mm;
     display: flex;
@@ -234,7 +235,7 @@ body {{
 }}
 
 .verse-badge {{
-    background: #7b1113;
+    background: #b22222;
     color: #ffffff;
     font-size: 9pt;
     font-weight: 700;
@@ -246,7 +247,7 @@ body {{
 .verse-title {{
     font-size: 9.5pt;
     font-weight: 600;
-    color: #555;
+    color: #48626e;
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }}
@@ -254,14 +255,15 @@ body {{
 .sanskrit-container {{
     background: #fdfbf7;
     padding: 4mm 6mm;
-    border-bottom: 0.5pt solid #e6e0d4;
+    border-bottom: 0.5pt solid #d9d4cb;
 }}
 
 .devanagari-block {{
-    font-family: 'Devanagari MT', 'Noto Sans Devanagari', 'Shobhika', serif;
+    font-family: 'Sanskrit2003', 'Devanagari MT', 'Noto Sans Devanagari', serif;
     font-size: 13.5pt;
     line-height: 1.6;
-    color: #1a1a1a;
+    color: #b22222;
+    font-weight: 600;
     margin-bottom: 2mm;
     text-align: justify;
 }}
@@ -269,7 +271,7 @@ body {{
 .iast-block {{
     font-size: 10.5pt;
     font-style: italic;
-    color: #4a3b32;
+    color: #03192e;
     line-height: 1.45;
 }}
 
@@ -277,7 +279,7 @@ body {{
 .synopsis-grid {{
     display: flex;
     flex-direction: row;
-    border-bottom: 0.5pt solid #e6e0d4;
+    border-bottom: 0.5pt solid #d9d4cb;
 }}
 
 .trans-column {{
@@ -286,7 +288,7 @@ body {{
 }}
 
 .slaje-col {{
-    border-right: 0.5pt solid #e6e0d4;
+    border-right: 0.5pt solid #d9d4cb;
     background: #ffffff;
 }}
 
@@ -296,20 +298,20 @@ body {{
 
 .col-header {{
     margin-bottom: 2.5mm;
-    border-bottom: 0.5pt solid #ece8e0;
+    border-bottom: 0.5pt solid #d9d4cb;
     padding-bottom: 1.5mm;
 }}
 
 .siglum {{
     font-size: 9.5pt;
     font-weight: 700;
-    color: #7b1113;
+    color: #b22222;
     display: block;
 }}
 
 .trans-label {{
     font-size: 8pt;
-    color: #777;
+    color: #48626e;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }}
@@ -319,14 +321,15 @@ body {{
     line-height: 1.5;
     text-align: justify;
     text-justify: inter-word;
-    color: #222;
+    color: #03192e;
 }}
 
 /* Commentary Box */
 .commentary-box {{
-    background: #f5f2ea;
+    background: #fefce8;
     padding: 3.5mm 5mm;
-    border-top: 0.5pt solid #e0dbce;
+    border-top: 0.5pt solid #fde68a;
+    border-left: 3.5pt solid #eab308;
 }}
 
 .box-title {{
@@ -334,7 +337,7 @@ body {{
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #5d4037;
+    color: #ca8a04;
     margin-bottom: 2mm;
 }}
 
@@ -342,12 +345,12 @@ body {{
     font-size: 9pt;
     line-height: 1.45;
     margin-bottom: 1.5mm;
-    color: #333;
+    color: #03192e;
 }}
 
 .comment-lemma {{
     font-weight: 600;
-    color: #7b1113;
+    color: #b22222;
     margin-right: 1.5mm;
 }}
 </style>

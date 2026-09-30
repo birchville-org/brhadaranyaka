@@ -34,30 +34,32 @@ def build_index_html(data: dict) -> str:
 
 <style>
 :root {{
-    --bg-base: #0b0f17;
-    --bg-surface: #131b2a;
-    --bg-surface-elevated: #1a253a;
-    --bg-card: rgba(22, 32, 50, 0.75);
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(184, 51, 42, 0.35);
+    /* Payer "Die illuminierte Handschrift bei Kerzenlicht" Scholarly Dark Palette */
+    --bg-base: #0a1628;
+    --bg-surface: #0f1e35;
+    --bg-surface-elevated: #152744;
+    --bg-card: rgba(15, 30, 53, 0.85);
+    --border-subtle: #334155;
+    --border-accent: rgba(234, 179, 8, 0.35);
     
-    --primary: #c93b3b;
-    --primary-light: #e55353;
+    --primary: #b22222;
+    --primary-light: #ef4444;
     --primary-dark: #8b1e22;
-    --primary-glow: rgba(201, 59, 59, 0.25);
+    --primary-glow: rgba(178, 34, 34, 0.25);
     
-    --gold: #d97706;
-    --gold-light: #fbbf24;
-    --gold-glow: rgba(217, 119, 6, 0.2);
+    --gold: #eab308;
+    --gold-light: #fde047;
+    --gold-dark: #ca8a04;
+    --gold-glow: rgba(234, 179, 8, 0.2);
     
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
-    --text-dim: #64748b;
+    --text-main: #e8e0d3;
+    --text-muted: #c4bba5;
+    --text-dim: #a09080;
     
-    --font-heading: 'Cinzel', serif;
-    --font-serif: 'EB Garamond', Georgia, serif;
+    --font-heading: 'Cinzel', 'Source Serif 4', 'EB Garamond', serif;
+    --font-serif: 'Source Serif 4', 'EB Garamond', Georgia, serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-deva: 'Noto Sans Devanagari', 'Devanagari MT', serif;
+    --font-deva: 'Sanskrit2003', 'Devanagari MT', 'Noto Sans Devanagari', serif;
     
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -78,9 +80,9 @@ body {{
     line-height: 1.6;
     overflow-x: hidden;
     background-image: 
-        radial-gradient(circle at 15% 20%, rgba(139, 30, 34, 0.15) 0%, transparent 45%),
-        radial-gradient(circle at 85% 65%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.06) 0%, transparent 60%);
+        radial-gradient(circle at 15% 20%, rgba(178, 34, 34, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(234, 179, 8, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(3, 25, 46, 0.45) 0%, transparent 60%);
     background-attachment: fixed;
 }}
 
@@ -89,7 +91,7 @@ nav.global-nav {{
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(11, 15, 23, 0.85);
+    background: rgba(10, 22, 40, 0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
@@ -245,7 +247,8 @@ header.hero {{
     font-family: var(--font-deva);
     font-size: 1.6rem;
     line-height: 1.6;
-    color: #ffffff;
+    color: #f87171;
+    font-weight: 600;
     margin-bottom: 0.75rem;
     letter-spacing: 0.02em;
 }}
@@ -261,7 +264,7 @@ header.hero {{
 .sanskrit-quote-de {{
     font-family: var(--font-serif);
     font-size: 1.15rem;
-    color: #f8fafc;
+    color: var(--text-main);
     line-height: 1.6;
 }}
 
@@ -537,7 +540,8 @@ section.explorer {{
 }}
 
 .pop-sandhi {{
-    background: rgba(255,255,255,0.04);
+    background: #0a1628;
+    border: 1px solid #334155;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -560,7 +564,8 @@ section.explorer {{
 }}
 
 .pop-word-card {{
-    background: rgba(11, 15, 23, 0.6);
+    background: #0a1628;
+    border: 1px solid #334155;
     border-left: 3px solid var(--gold);
     border-radius: 4px;
     padding: 8px 10px;
@@ -581,8 +586,8 @@ section.explorer {{
 }}
 
 .pop-word-pos {{
-    background: rgba(37, 99, 235, 0.2);
-    color: #93c5fd;
+    background: rgba(234, 179, 8, 0.15);
+    color: #fde047;
     font-size: 0.7rem;
     font-weight: 600;
     padding: 1px 6px;
@@ -602,7 +607,7 @@ section.explorer {{
     font-weight: 600;
 }}
 .pop-word-root {{
-    color: #818cf8;
+    color: var(--text-main);
     font-weight: 600;
     font-size: 0.75rem;
     margin-left: 4px;
@@ -618,7 +623,7 @@ section.explorer {{
 .pop-word-morph {{
     font-size: 0.85rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: var(--text-muted);
 }}
 .pop-word-syntax {{
     background: rgba(16, 185, 129, 0.15);
@@ -641,9 +646,9 @@ section.explorer {{
 .pop-compound-box {{
     margin-top: 6px;
     padding: 6px 8px;
-    background: rgba(245, 158, 11, 0.1);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    border-left: 3px solid var(--gold);
+    background: #241500;
+    border: 1px solid #ca8a04;
+    border-left: 3px solid #eab308;
     border-radius: 4px;
     font-size: 0.75rem;
 }}
@@ -1252,7 +1257,7 @@ def build_synopsis_html(data: dict) -> str:
     content = src.read_text(encoding="utf-8")
 
     nav_bar = """
-<div style="position: sticky; top: 0; z-index: 1000; background: #1e293b; color: #fff; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; font-family: -apple-system, sans-serif; font-size: 13px; border-bottom: 1px solid #334155; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+<div style="position: sticky; top: 0; z-index: 1000; background: #03192e; color: #fcf9f2; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; font-family: -apple-system, sans-serif; font-size: 13px; border-bottom: 1px solid #1e2d37; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <div style="display: flex; align-items: center; gap: 12px;">
         <a href="index.html" style="color: #fff; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
             <span>← Zur Startseite</span>
@@ -1263,7 +1268,7 @@ def build_synopsis_html(data: dict) -> str:
     <div style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 11.5px; color: #fbbf24;">💡 Klick auf ein IAST-Wort öffnet die grammatische Analyse</span>
         <a href="data/output/brhadaranyaka_1_4_synopsis.pdf" target="_blank" style="color: #94a3b8; text-decoration: none;">📄 PDF herunterladen</a>
-        <a href="viewer.html" style="background: #8b1e22; color: #fff; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-weight: 600;">🚀 QA-Viewer öffnen</a>
+        <a href="viewer.html" style="background: #b22222; color: #fff; padding: 4px 12px; border-radius: 4px; text-decoration: none; font-weight: 600;">🚀 QA-Viewer öffnen</a>
     </div>
 </div>
 """
@@ -1297,20 +1302,20 @@ def build_synopsis_html(data: dict) -> str:
     padding: 1px 3px;
     margin: 0 1px;
     border-radius: 3px;
-    border-bottom: 1.5px dotted #7b1113;
+    border-bottom: 1.5px dotted #b22222;
     transition: all 0.15s ease;
     display: inline-block;
 }}
 .synopsis-iast-tok:hover {{
-    background: #fef3c7;
-    color: #b45309;
-    border-bottom-color: #b45309;
+    background: #fefce8;
+    color: #ca8a04;
+    border-bottom-color: #eab308;
 }}
 .synopsis-iast-tok.active {{
-    background: #fde68a;
-    color: #92400e;
+    background: #fde047;
+    color: #78350f;
     font-weight: 600;
-    border-bottom: 2px solid #b45309;
+    border-bottom: 2px solid #ca8a04;
 }}
 .synopsis-grammar-popover {{
     position: fixed;
@@ -1319,14 +1324,14 @@ def build_synopsis_html(data: dict) -> str:
     max-width: calc(100vw - 24px);
     max-height: 520px;
     overflow-y: auto;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
+    background: #fcf9f2;
+    border: 1px solid #d9d4cb;
     border-radius: 8px;
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(3, 25, 46, 0.25), 0 8px 10px -6px rgba(3, 25, 46, 0.1);
     padding: 14px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 12px;
-    color: #0f172a;
+    color: #03192e;
     display: none;
     animation: popoverFadeIn 0.15s ease-out;
 }}
@@ -1343,11 +1348,11 @@ def build_synopsis_html(data: dict) -> str:
     margin-bottom: 10px;
 }}
 .syn-pop-title {{
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Source Serif 4', 'EB Garamond', Georgia, serif;
     font-size: 16px;
     font-weight: 700;
     font-style: italic;
-    color: #7b1113;
+    color: #b22222;
 }}
 .syn-pop-close {{
     background: transparent;
@@ -1360,14 +1365,14 @@ def build_synopsis_html(data: dict) -> str:
 }}
 .syn-pop-close:hover {{ color: #0f172a; }}
 .syn-pop-sandhi {{
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: #f1eee7;
+    border: 1px solid #d9d4cb;
     border-radius: 4px;
     padding: 6px 10px;
     font-size: 12px;
-    color: #475569;
+    color: #48626e;
     margin-bottom: 10px;
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Source Serif 4', 'EB Garamond', Georgia, serif;
 }}
 .syn-pop-words {{
     display: flex;
@@ -1377,8 +1382,8 @@ def build_synopsis_html(data: dict) -> str:
     overflow-y: auto;
 }}
 .syn-pop-card {{
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    border: 1px solid #d9d4cb;
     border-radius: 6px;
     padding: 8px 10px;
 }}
@@ -1389,14 +1394,14 @@ def build_synopsis_html(data: dict) -> str:
     margin-bottom: 4px;
 }}
 .syn-pop-card-form {{
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Source Serif 4', 'EB Garamond', Georgia, serif;
     font-weight: 700;
     font-size: 14px;
-    color: #0f172a;
+    color: #03192e;
 }}
 .syn-pop-card-pos {{
-    background: #eff6ff;
-    color: #1d4ed8;
+    background: rgba(3, 25, 46, 0.08);
+    color: #03192e;
     font-size: 10px;
     font-weight: 700;
     padding: 2px 6px;
@@ -1409,9 +1414,9 @@ def build_synopsis_html(data: dict) -> str:
     margin-bottom: 4px;
 }}
 .syn-pop-card-lemma-val {{
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'Source Serif 4', 'EB Garamond', Georgia, serif;
     font-weight: 600;
-    color: #7b1113;
+    color: #b22222;
 }}
 .syn-pop-card-morph {{
     font-size: 11px;
@@ -1421,7 +1426,7 @@ def build_synopsis_html(data: dict) -> str:
 }}
 .syn-pop-card-gloss {{
     font-size: 11.5px;
-    color: #8b1e22;
+    color: #03192e;
     font-style: italic;
     margin-bottom: 4px;
 }}
@@ -1450,9 +1455,9 @@ def build_synopsis_html(data: dict) -> str:
 .syn-compound-box {{
     margin-top: 6px;
     padding: 6px 8px;
-    background: #fffbeb;
+    background: #fefce8;
     border: 1px solid #fde68a;
-    border-left: 3px solid #d97706;
+    border-left: 3px solid #eab308;
     border-radius: 4px;
     font-size: 11px;
 }}
@@ -1464,7 +1469,7 @@ def build_synopsis_html(data: dict) -> str:
 }}
 .syn-compound-tag {{
     font-weight: 700;
-    color: #b45309;
+    color: #ca8a04;
     text-transform: uppercase;
     font-size: 9.5px;
 }}
@@ -1497,7 +1502,7 @@ def build_synopsis_html(data: dict) -> str:
     </div>
     <div id="synPopSandhi" class="syn-pop-sandhi">
         <span style="font-weight: 600; color: #64748b; font-size: 10px; text-transform: uppercase;">Padapāṭha:</span>
-        <span id="synPopSandhiVal" style="font-weight: 600; color: #0f172a; margin-left: 4px;">...</span>
+        <span id="synPopSandhiVal" style="font-weight: 600; color: #03192e; margin-left: 4px;">...</span>
     </div>
     <div id="synPopWords" class="syn-pop-words"></div>
 </div>

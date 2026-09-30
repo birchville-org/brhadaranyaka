@@ -31,25 +31,31 @@ def generate_viewer() -> None:
 <title>QA Viewer & Editor — Bṛhadāraṇyaka-Upaniṣad I.4</title>
 <style>
 :root {{
-    --bg: #f8fafc;
+    --bg: #fcf9f2;
     --panel-bg: #ffffff;
-    --border: #e2e8f0;
-    --text: #0f172a;
-    --text-muted: #64748b;
-    --primary: #8b1e22;
-    --primary-hover: #70161a;
+    --panel-alt: #f1eee7;
+    --border: #d9d4cb;
+    --border-subtle: #e0dece;
+    --text: #03192e;
+    --text-muted: #48626e;
+    --text-dim: #788a96;
+    --primary: #b22222;
+    --primary-hover: #8b1e22;
     --primary-light: #fef2f2;
-    --accent: #2563eb;
-    --accent-light: #eff6ff;
-    --gold: #d97706;
-    --gold-light: #fef3c7;
+    --accent: #03192e;
+    --accent-light: rgba(3, 25, 46, 0.05);
+    --gold: #eab308;
+    --gold-light: #fefce8;
+    --gold-dark: #ca8a04;
+    --orange: #ea580c;
+    --orange-light: #ffedd5;
     --warning: #f59e0b;
     --success: #10b981;
     --radius: 6px;
-    --font-serif: 'EB Garamond', 'Linux Libertine O', Georgia, serif;
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    --font-deva: 'Devanagari MT', 'Noto Sans Devanagari', 'Shobhika', serif;
-    --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
+    --font-serif: 'Source Serif 4', 'EB Garamond', 'Linux Libertine O', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-deva: 'Sanskrit2003', 'Devanagari MT', 'Noto Sans Devanagari', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }}
 
 * {{
@@ -70,14 +76,14 @@ body {{
 
 /* Top App Header */
 header.app-header {{
-    background: #1e293b;
+    background: #03192e;
     color: #ffffff;
     height: 52px;
     padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid #1e2d37;
     flex-shrink: 0;
 }}
 
@@ -106,7 +112,7 @@ header.app-header {{
 
 .app-subtitle {{
     font-size: 12px;
-    color: #94a3b8;
+    color: #c4bba5;
     margin-left: 4px;
 }}
 
@@ -141,9 +147,9 @@ header.app-header {{
 }}
 
 .btn-secondary {{
-    background: #334155;
-    color: #f1f5f9;
-    border-color: #475569;
+    background: #1e2d37;
+    color: #fcf9f2;
+    border-color: #334155;
 }}
 .btn-secondary:hover {{
     background: #475569;
@@ -151,8 +157,8 @@ header.app-header {{
 
 .btn-outline {{
     background: transparent;
-    color: #f1f5f9;
-    border-color: #475569;
+    color: #fcf9f2;
+    border-color: #48626e;
 }}
 .btn-outline:hover {{
     background: rgba(255,255,255,0.08);
@@ -160,8 +166,8 @@ header.app-header {{
 
 /* Blinking Animation for Silent Auto-Repair on Save */
 @keyframes saveYellowBlink {{
-    0% {{ background: #f59e0b; color: #000; }}
-    50% {{ background: #fde68a; color: #000; }}
+    0% {{ background: #eab308; color: #000; }}
+    50% {{ background: #fef08a; color: #000; }}
     100% {{ background: var(--primary); color: #fff; }}
 }}
 
@@ -205,6 +211,7 @@ header.app-header {{
     font-size: 12px;
     font-weight: 600;
     color: var(--text-muted);
+    background: var(--panel-alt);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     display: flex;
@@ -220,7 +227,7 @@ header.app-header {{
 
 .verse-item {{
     padding: 9px 14px;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid var(--panel-alt);
     cursor: pointer;
     font-size: 13px;
     display: flex;
@@ -229,11 +236,11 @@ header.app-header {{
     transition: background 0.1s;
 }}
 .verse-item:hover {{
-    background: #f8fafc;
+    background: var(--panel-alt);
 }}
 .verse-item.active {{
-    background: var(--primary-light);
-    border-left: 3px solid var(--primary);
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
     font-weight: 600;
     color: var(--primary);
 }}
@@ -266,7 +273,7 @@ header.app-header {{
     height: 44px;
     padding: 0 16px;
     border-bottom: 1px solid var(--border);
-    background: #fcfdfe;
+    background: var(--panel-alt);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -298,9 +305,9 @@ header.app-header {{
     cursor: pointer;
 }}
 .tab-btn.active {{
-    background: var(--accent-light);
-    color: var(--accent);
-    border-color: #bfdbfe;
+    background: var(--panel-bg);
+    color: var(--primary);
+    border-color: var(--border);
     font-weight: 600;
 }}
 
@@ -332,9 +339,10 @@ header.app-header {{
 
 .prev-deva {{
     font-family: var(--font-deva);
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.65;
-    color: #111;
+    color: #b22222;
+    font-weight: 600;
     margin-bottom: 12px;
     padding-bottom: 12px;
     border-bottom: 1px dashed #e2e8f0;
@@ -343,20 +351,20 @@ header.app-header {{
 .prev-iast {{
     font-family: var(--font-serif);
     font-size: 15px;
-    color: #334155;
+    color: var(--text);
     line-height: 1.7;
     margin-bottom: 16px;
     padding: 10px 14px;
-    background: #f8fafc;
+    background: var(--bg);
     border-radius: 6px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border);
 }}
 
 .iast-hint {{
     display: block;
     font-family: var(--font-sans);
     font-size: 10.5px;
-    color: var(--gold);
+    color: var(--gold-dark);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -376,14 +384,14 @@ header.app-header {{
 }}
 .iast-token-interactive:hover {{
     background: var(--gold-light);
-    color: #b45309;
-    border-bottom-color: #b45309;
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold);
 }}
 .iast-token-interactive.active {{
-    background: #fef3c7;
-    color: #92400e;
+    background: #fde047;
+    color: #78350f;
     font-weight: 600;
-    border-bottom: 2px solid #b45309;
+    border-bottom: 2px solid var(--gold-dark);
 }}
 
 /* Floating Grammar Popover */
@@ -394,8 +402,8 @@ header.app-header {{
     max-width: calc(100vw - 24px);
     max-height: 520px;
     overflow-y: auto;
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     padding: 14px;
@@ -441,11 +449,12 @@ header.app-header {{
 }}
 
 .popover-sandhi-bar {{
-    background: #f1f5f9;
+    background: var(--panel-alt);
+    border: 1px solid var(--border);
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 11.5px;
-    color: #475569;
+    color: var(--text-muted);
     margin-bottom: 10px;
     font-family: var(--font-serif);
 }}
@@ -465,8 +474,9 @@ header.app-header {{
 
 .popover-word-entry {{
     padding: 8px 10px;
-    background: #f8fafc;
-    border-left: 3px solid var(--accent);
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
     border-radius: 4px;
 }}
 
@@ -481,12 +491,12 @@ header.app-header {{
     font-family: var(--font-serif);
     font-size: 14px;
     font-weight: 700;
-    color: #1e293b;
+    color: var(--text);
 }}
 
 .popover-word-pos {{
-    background: #e0f2fe;
-    color: #0369a1;
+    background: rgba(3, 25, 46, 0.08);
+    color: var(--text);
     font-size: 10px;
     font-weight: 600;
     padding: 1px 6px;
@@ -502,11 +512,11 @@ header.app-header {{
 .popover-word-lemma-val {{
     font-family: var(--font-serif);
     font-style: italic;
-    color: #0f172a;
+    color: var(--primary);
     font-weight: 600;
 }}
 .popover-word-root {{
-    color: #4338ca;
+    color: var(--text);
     font-weight: 600;
     font-size: 11px;
     margin-left: 4px;
@@ -522,22 +532,22 @@ header.app-header {{
 .popover-word-morph {{
     font-size: 11.5px;
     font-weight: 600;
-    color: #334155;
+    color: var(--text-muted);
 }}
 .popover-word-syntax {{
-    background: #ecfdf5;
-    color: #047857;
+    background: var(--panel-alt);
+    color: var(--text);
     font-size: 10.5px;
     font-weight: 600;
     padding: 1px 5px;
     border-radius: 3px;
-    border-left: 2px solid #059669;
+    border-left: 2px solid var(--gold);
 }}
 
 .popover-word-gloss {{
     font-family: var(--font-serif);
     font-size: 12.5px;
-    color: #8b1e22;
+    color: var(--primary);
     font-style: italic;
     margin-bottom: 4px;
 }}
@@ -545,9 +555,9 @@ header.app-header {{
 .popover-compound-box {{
     margin-top: 6px;
     padding: 6px 8px;
-    background: #fffbeb;
+    background: var(--gold-light);
     border: 1px solid #fde68a;
-    border-left: 3px solid #d97706;
+    border-left: 3px solid var(--gold);
     border-radius: 4px;
     font-size: 11px;
 }}
@@ -559,7 +569,7 @@ header.app-header {{
 }}
 .popover-compound-tag {{
     font-weight: 700;
-    color: #b45309;
+    color: var(--gold-dark);
     text-transform: uppercase;
     font-size: 9.5px;
 }}
@@ -588,12 +598,13 @@ header.app-header {{
     margin-top: 14px;
     padding: 12px;
     border-radius: 6px;
-    background: #f8fafc;
-    border-left: 3px solid #cbd5e1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
 }}
 .prev-trans-block.slaje {{
     border-left-color: var(--primary);
-    background: #fffafa;
+    background: #fdfaf7;
 }}
 
 .prev-trans-label {{
@@ -612,14 +623,15 @@ header.app-header {{
     font-family: var(--font-serif);
     font-size: 13.5px;
     line-height: 1.55;
-    color: #1e293b;
+    color: var(--text);
 }}
 
 .prev-comm-box {{
     margin-top: 16px;
     padding: 12px;
-    background: #fdfaf5;
-    border: 1px solid #f1e7d8;
+    background: var(--gold-light);
+    border: 1px solid #fde68a;
+    border-left: 4px solid var(--gold);
     border-radius: 6px;
 }}
 
@@ -627,8 +639,8 @@ header.app-header {{
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #854d0e;
+8letter-spacing: 0.05em;
+    color: var(--gold-dark);
     margin-bottom: 8px;
 }}
 
@@ -636,7 +648,7 @@ header.app-header {{
     font-size: 12.5px;
     line-height: 1.5;
     margin-bottom: 6px;
-    color: #334155;
+    color: var(--text);
 }}
 .prev-comm-lemma {{
     font-weight: 600;
@@ -654,7 +666,7 @@ header.app-header {{
 /* Snippet Toolbar (Global Web Editor Standard Requirement 3) */
 .snippet-toolbar {{
     padding: 6px 12px;
-    background: #f8fafc;
+    background: var(--panel-alt);
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -672,24 +684,25 @@ header.app-header {{
 }}
 
 .snippet-btn {{
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
+    background: var(--bg);
+    border: 1px solid var(--border);
     border-radius: 3px;
     padding: 2px 7px;
     font-size: 12px;
     cursor: pointer;
     font-family: var(--font-serif);
-    color: #0f172a;
+    color: var(--text);
     transition: all 0.1s;
 }}
 .snippet-btn:hover {{
-    background: #eff6ff;
-    border-color: #3b82f6;
-    color: #1d4ed8;
+    background: #ffffff;
+    border-color: var(--primary);
+    color: var(--primary);
 }}
 .snippet-btn.deva {{
     font-family: var(--font-deva);
     font-size: 13px;
+    color: var(--primary);
 }}
 
 .snippet-divider {{
@@ -734,12 +747,13 @@ header.app-header {{
 }}
 .form-textarea:focus {{
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(37,99,235,0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(178,34,34,0.15);
 }}
 .form-textarea.deva {{
     font-family: var(--font-deva);
-    font-size: 15px;
+    font-size: 16px;
+    color: var(--primary);
 }}
 .form-textarea.iast {{
     font-family: var(--font-serif);
